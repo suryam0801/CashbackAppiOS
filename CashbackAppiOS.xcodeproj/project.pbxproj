@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,9 +13,40 @@
 		17553B25250C5B2B00FF8D71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17553B24250C5B2B00FF8D71 /* Assets.xcassets */; };
 		17553B28250C5B2B00FF8D71 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17553B27250C5B2B00FF8D71 /* Preview Assets.xcassets */; };
 		17553B2B250C5B2B00FF8D71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17553B29250C5B2B00FF8D71 /* LaunchScreen.storyboard */; };
+		17553B37250C5ED700FF8D71 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 17553B36250C5ED700FF8D71 /* GoogleService-Info.plist */; };
+		17553B39250C61D900FF8D71 /* DbReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17553B38250C61D900FF8D71 /* DbReader.swift */; };
+		17553B3C250C620900FF8D71 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17553B3B250C620900FF8D71 /* Helpers.swift */; };
+		17553B3E250C624700FF8D71 /* DatabaseReadHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17553B3D250C624700FF8D71 /* DatabaseReadHelper.swift */; };
+		17553B40250C626C00FF8D71 /* DBInstanceInitialize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17553B3F250C626C00FF8D71 /* DBInstanceInitialize.swift */; };
+		17553B42250C62BF00FF8D71 /* SnapshotHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17553B41250C62BF00FF8D71 /* SnapshotHelpers.swift */; };
+		17553B45250C653200FF8D71 /* PhoneVerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17553B44250C653200FF8D71 /* PhoneVerificationView.swift */; };
+		17553B47250C65A700FF8D71 /* CountryPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17553B46250C65A700FF8D71 /* CountryPickerView.swift */; };
+		17553B49250C65E500FF8D71 /* PhoneAuthHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17553B48250C65E500FF8D71 /* PhoneAuthHelper.swift */; };
+		17553B4C250C661E00FF8D71 /* CountryCodeDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17553B4B250C661E00FF8D71 /* CountryCodeDictionary.swift */; };
+		17553B54250C66D600FF8D71 /* KeyboardAdaptive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17553B51250C66D500FF8D71 /* KeyboardAdaptive.swift */; };
+		17553B55250C66D600FF8D71 /* UIResponder+Current.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17553B52250C66D600FF8D71 /* UIResponder+Current.swift */; };
+		17553B56250C66D600FF8D71 /* KeyboardHeightPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17553B53250C66D600FF8D71 /* KeyboardHeightPublisher.swift */; };
+		17553B58250C672100FF8D71 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17553B57250C672100FF8D71 /* Extensions.swift */; };
+		17553B5A250C675600FF8D71 /* OTPVerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17553B59250C675500FF8D71 /* OTPVerificationView.swift */; };
+		17553B5C250C677800FF8D71 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17553B5B250C677800FF8D71 /* Loader.swift */; };
+		17553B5F250C67CC00FF8D71 /* UserRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17553B5E250C67CC00FF8D71 /* UserRegistration.swift */; };
+		17553B61250C687200FF8D71 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17553B60250C687200FF8D71 /* Customer.swift */; };
+		17553B63250C6A5A00FF8D71 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17553B62250C6A5A00FF8D71 /* UIColor.swift */; };
+		17553B66250C6AE400FF8D71 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17553B65250C6AE400FF8D71 /* UserViewModel.swift */; };
+		17553B69250C6BDD00FF8D71 /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17553B68250C6BDD00FF8D71 /* GlobalVariables.swift */; };
+		17553B6B250C6C6600FF8D71 /* DBWriteHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17553B6A250C6C6600FF8D71 /* DBWriteHelper.swift */; };
+		17553B6E250C6FA200FF8D71 /* CartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17553B6D250C6FA200FF8D71 /* CartItem.swift */; };
+		17553B70250C732A00FF8D71 /* FirebaseTokenHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17553B6F250C732A00FF8D71 /* FirebaseTokenHelper.swift */; };
+		17553B73250C740100FF8D71 /* ItemsGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17553B72250C740100FF8D71 /* ItemsGridView.swift */; };
+		17553B75250C743700FF8D71 /* OnBoardingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17553B74250C743700FF8D71 /* OnBoardingPageView.swift */; };
+		17553B77250C8EEB00FF8D71 /* DBReferenceNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17553B76250C8EEB00FF8D71 /* DBReferenceNames.swift */; };
+		17553B79250C912700FF8D71 /* ItemsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17553B78250C912700FF8D71 /* ItemsViewModel.swift */; };
+		17553B7B250C915900FF8D71 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17553B7A250C915900FF8D71 /* Item.swift */; };
+		7EB8EDD911C7DE6442A11CC3 /* Pods_CashbackAppiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 083DE08C87004BE721C8F8D6 /* Pods_CashbackAppiOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		083DE08C87004BE721C8F8D6 /* Pods_CashbackAppiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CashbackAppiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		17553B1B250C5B2900FF8D71 /* CashbackAppiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CashbackAppiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17553B1E250C5B2900FF8D71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17553B20250C5B2900FF8D71 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +55,38 @@
 		17553B27250C5B2B00FF8D71 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		17553B2A250C5B2B00FF8D71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		17553B2C250C5B2B00FF8D71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17553B36250C5ED700FF8D71 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		17553B38250C61D900FF8D71 /* DbReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DbReader.swift; sourceTree = "<group>"; };
+		17553B3B250C620900FF8D71 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		17553B3D250C624700FF8D71 /* DatabaseReadHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseReadHelper.swift; sourceTree = "<group>"; };
+		17553B3F250C626C00FF8D71 /* DBInstanceInitialize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBInstanceInitialize.swift; sourceTree = "<group>"; };
+		17553B41250C62BF00FF8D71 /* SnapshotHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotHelpers.swift; sourceTree = "<group>"; };
+		17553B44250C653200FF8D71 /* PhoneVerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneVerificationView.swift; sourceTree = "<group>"; };
+		17553B46250C65A700FF8D71 /* CountryPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPickerView.swift; sourceTree = "<group>"; };
+		17553B48250C65E500FF8D71 /* PhoneAuthHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneAuthHelper.swift; sourceTree = "<group>"; };
+		17553B4B250C661E00FF8D71 /* CountryCodeDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCodeDictionary.swift; sourceTree = "<group>"; };
+		17553B51250C66D500FF8D71 /* KeyboardAdaptive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardAdaptive.swift; sourceTree = "<group>"; };
+		17553B52250C66D600FF8D71 /* UIResponder+Current.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIResponder+Current.swift"; sourceTree = "<group>"; };
+		17553B53250C66D600FF8D71 /* KeyboardHeightPublisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardHeightPublisher.swift; sourceTree = "<group>"; };
+		17553B57250C672100FF8D71 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		17553B59250C675500FF8D71 /* OTPVerificationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OTPVerificationView.swift; sourceTree = "<group>"; };
+		17553B5B250C677800FF8D71 /* Loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
+		17553B5E250C67CC00FF8D71 /* UserRegistration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRegistration.swift; sourceTree = "<group>"; };
+		17553B60250C687200FF8D71 /* Customer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
+		17553B62250C6A5A00FF8D71 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		17553B65250C6AE400FF8D71 /* UserViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		17553B68250C6BDD00FF8D71 /* GlobalVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
+		17553B6A250C6C6600FF8D71 /* DBWriteHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBWriteHelper.swift; sourceTree = "<group>"; };
+		17553B6C250C6DB800FF8D71 /* CashbackAppiOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CashbackAppiOS.entitlements; sourceTree = "<group>"; };
+		17553B6D250C6FA200FF8D71 /* CartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItem.swift; sourceTree = "<group>"; };
+		17553B6F250C732A00FF8D71 /* FirebaseTokenHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseTokenHelper.swift; sourceTree = "<group>"; };
+		17553B72250C740100FF8D71 /* ItemsGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsGridView.swift; sourceTree = "<group>"; };
+		17553B74250C743700FF8D71 /* OnBoardingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingPageView.swift; sourceTree = "<group>"; };
+		17553B76250C8EEB00FF8D71 /* DBReferenceNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBReferenceNames.swift; sourceTree = "<group>"; };
+		17553B78250C912700FF8D71 /* ItemsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewModel.swift; sourceTree = "<group>"; };
+		17553B7A250C915900FF8D71 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		BB9705A4A60FA50212CD37B7 /* Pods-CashbackAppiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CashbackAppiOS.release.xcconfig"; path = "Target Support Files/Pods-CashbackAppiOS/Pods-CashbackAppiOS.release.xcconfig"; sourceTree = "<group>"; };
+		ECFEA4C2398CA77C2507460A /* Pods-CashbackAppiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CashbackAppiOS.debug.xcconfig"; path = "Target Support Files/Pods-CashbackAppiOS/Pods-CashbackAppiOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EB8EDD911C7DE6442A11CC3 /* Pods_CashbackAppiOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +106,8 @@
 			children = (
 				17553B1D250C5B2900FF8D71 /* CashbackAppiOS */,
 				17553B1C250C5B2900FF8D71 /* Products */,
+				319FE35DA9A5ADA80C139D65 /* Pods */,
+				21744A87D0EDE6FBCF14CA44 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,12 +122,16 @@
 		17553B1D250C5B2900FF8D71 /* CashbackAppiOS */ = {
 			isa = PBXGroup;
 			children = (
-				17553B1E250C5B2900FF8D71 /* AppDelegate.swift */,
-				17553B20250C5B2900FF8D71 /* SceneDelegate.swift */,
-				17553B22250C5B2900FF8D71 /* ContentView.swift */,
-				17553B24250C5B2B00FF8D71 /* Assets.xcassets */,
-				17553B29250C5B2B00FF8D71 /* LaunchScreen.storyboard */,
+				17553B6C250C6DB800FF8D71 /* CashbackAppiOS.entitlements */,
+				17553B32250C5DEC00FF8D71 /* App */,
+				17553B33250C5E0700FF8D71 /* Resources */,
+				17553B35250C5E4700FF8D71 /* DataLayer */,
+				17553B34250C5E1800FF8D71 /* View */,
+				17553B64250C6ACF00FF8D71 /* ViewModel */,
+				17553B4A250C65F900FF8D71 /* Model */,
+				17553B3A250C61F900FF8D71 /* Helpers */,
 				17553B2C250C5B2B00FF8D71 /* Info.plist */,
+				17553B36250C5ED700FF8D71 /* GoogleService-Info.plist */,
 				17553B26250C5B2B00FF8D71 /* Preview Content */,
 			);
 			path = CashbackAppiOS;
@@ -75,6 +145,137 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		17553B32250C5DEC00FF8D71 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				17553B22250C5B2900FF8D71 /* ContentView.swift */,
+				17553B1E250C5B2900FF8D71 /* AppDelegate.swift */,
+				17553B20250C5B2900FF8D71 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		17553B33250C5E0700FF8D71 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				17553B24250C5B2B00FF8D71 /* Assets.xcassets */,
+				17553B29250C5B2B00FF8D71 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		17553B34250C5E1800FF8D71 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				17553B71250C73E200FF8D71 /* Main */,
+				17553B5D250C67C200FF8D71 /* Registration */,
+				17553B43250C651900FF8D71 /* Login */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		17553B35250C5E4700FF8D71 /* DataLayer */ = {
+			isa = PBXGroup;
+			children = (
+				17553B38250C61D900FF8D71 /* DbReader.swift */,
+				17553B3D250C624700FF8D71 /* DatabaseReadHelper.swift */,
+				17553B3F250C626C00FF8D71 /* DBInstanceInitialize.swift */,
+				17553B41250C62BF00FF8D71 /* SnapshotHelpers.swift */,
+				17553B48250C65E500FF8D71 /* PhoneAuthHelper.swift */,
+				17553B6A250C6C6600FF8D71 /* DBWriteHelper.swift */,
+				17553B6F250C732A00FF8D71 /* FirebaseTokenHelper.swift */,
+			);
+			path = DataLayer;
+			sourceTree = "<group>";
+		};
+		17553B3A250C61F900FF8D71 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				17553B50250C66C000FF8D71 /* KeyboardHelper */,
+				17553B62250C6A5A00FF8D71 /* UIColor.swift */,
+				17553B5B250C677800FF8D71 /* Loader.swift */,
+				17553B3B250C620900FF8D71 /* Helpers.swift */,
+				17553B57250C672100FF8D71 /* Extensions.swift */,
+				17553B68250C6BDD00FF8D71 /* GlobalVariables.swift */,
+				17553B74250C743700FF8D71 /* OnBoardingPageView.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		17553B43250C651900FF8D71 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				17553B44250C653200FF8D71 /* PhoneVerificationView.swift */,
+				17553B59250C675500FF8D71 /* OTPVerificationView.swift */,
+				17553B46250C65A700FF8D71 /* CountryPickerView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		17553B4A250C65F900FF8D71 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				17553B60250C687200FF8D71 /* Customer.swift */,
+				17553B6D250C6FA200FF8D71 /* CartItem.swift */,
+				17553B4B250C661E00FF8D71 /* CountryCodeDictionary.swift */,
+				17553B76250C8EEB00FF8D71 /* DBReferenceNames.swift */,
+				17553B7A250C915900FF8D71 /* Item.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		17553B50250C66C000FF8D71 /* KeyboardHelper */ = {
+			isa = PBXGroup;
+			children = (
+				17553B51250C66D500FF8D71 /* KeyboardAdaptive.swift */,
+				17553B53250C66D600FF8D71 /* KeyboardHeightPublisher.swift */,
+				17553B52250C66D600FF8D71 /* UIResponder+Current.swift */,
+			);
+			path = KeyboardHelper;
+			sourceTree = "<group>";
+		};
+		17553B5D250C67C200FF8D71 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				17553B5E250C67CC00FF8D71 /* UserRegistration.swift */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		17553B64250C6ACF00FF8D71 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				17553B65250C6AE400FF8D71 /* UserViewModel.swift */,
+				17553B78250C912700FF8D71 /* ItemsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		17553B71250C73E200FF8D71 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				17553B72250C740100FF8D71 /* ItemsGridView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		21744A87D0EDE6FBCF14CA44 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				083DE08C87004BE721C8F8D6 /* Pods_CashbackAppiOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		319FE35DA9A5ADA80C139D65 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ECFEA4C2398CA77C2507460A /* Pods-CashbackAppiOS.debug.xcconfig */,
+				BB9705A4A60FA50212CD37B7 /* Pods-CashbackAppiOS.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -82,9 +283,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 17553B2F250C5B2B00FF8D71 /* Build configuration list for PBXNativeTarget "CashbackAppiOS" */;
 			buildPhases = (
+				F0E34CEA7A2BA9EFDF899023 /* [CP] Check Pods Manifest.lock */,
 				17553B17250C5B2900FF8D71 /* Sources */,
 				17553B18250C5B2900FF8D71 /* Frameworks */,
 				17553B19250C5B2900FF8D71 /* Resources */,
+				91F50AC3CDC40571D754D22E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -136,19 +339,90 @@
 				17553B2B250C5B2B00FF8D71 /* LaunchScreen.storyboard in Resources */,
 				17553B28250C5B2B00FF8D71 /* Preview Assets.xcassets in Resources */,
 				17553B25250C5B2B00FF8D71 /* Assets.xcassets in Resources */,
+				17553B37250C5ED700FF8D71 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		91F50AC3CDC40571D754D22E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CashbackAppiOS/Pods-CashbackAppiOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CashbackAppiOS/Pods-CashbackAppiOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CashbackAppiOS/Pods-CashbackAppiOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F0E34CEA7A2BA9EFDF899023 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CashbackAppiOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		17553B17250C5B2900FF8D71 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17553B69250C6BDD00FF8D71 /* GlobalVariables.swift in Sources */,
 				17553B1F250C5B2900FF8D71 /* AppDelegate.swift in Sources */,
+				17553B66250C6AE400FF8D71 /* UserViewModel.swift in Sources */,
+				17553B63250C6A5A00FF8D71 /* UIColor.swift in Sources */,
 				17553B21250C5B2900FF8D71 /* SceneDelegate.swift in Sources */,
+				17553B79250C912700FF8D71 /* ItemsViewModel.swift in Sources */,
+				17553B7B250C915900FF8D71 /* Item.swift in Sources */,
+				17553B77250C8EEB00FF8D71 /* DBReferenceNames.swift in Sources */,
+				17553B49250C65E500FF8D71 /* PhoneAuthHelper.swift in Sources */,
+				17553B3E250C624700FF8D71 /* DatabaseReadHelper.swift in Sources */,
+				17553B45250C653200FF8D71 /* PhoneVerificationView.swift in Sources */,
+				17553B6E250C6FA200FF8D71 /* CartItem.swift in Sources */,
+				17553B42250C62BF00FF8D71 /* SnapshotHelpers.swift in Sources */,
+				17553B55250C66D600FF8D71 /* UIResponder+Current.swift in Sources */,
+				17553B56250C66D600FF8D71 /* KeyboardHeightPublisher.swift in Sources */,
+				17553B61250C687200FF8D71 /* Customer.swift in Sources */,
+				17553B5C250C677800FF8D71 /* Loader.swift in Sources */,
+				17553B47250C65A700FF8D71 /* CountryPickerView.swift in Sources */,
+				17553B54250C66D600FF8D71 /* KeyboardAdaptive.swift in Sources */,
+				17553B4C250C661E00FF8D71 /* CountryCodeDictionary.swift in Sources */,
+				17553B58250C672100FF8D71 /* Extensions.swift in Sources */,
+				17553B70250C732A00FF8D71 /* FirebaseTokenHelper.swift in Sources */,
+				17553B39250C61D900FF8D71 /* DbReader.swift in Sources */,
+				17553B3C250C620900FF8D71 /* Helpers.swift in Sources */,
+				17553B5F250C67CC00FF8D71 /* UserRegistration.swift in Sources */,
 				17553B23250C5B2900FF8D71 /* ContentView.swift in Sources */,
+				17553B40250C626C00FF8D71 /* DBInstanceInitialize.swift in Sources */,
+				17553B5A250C675600FF8D71 /* OTPVerificationView.swift in Sources */,
+				17553B73250C740100FF8D71 /* ItemsGridView.swift in Sources */,
+				17553B75250C743700FF8D71 /* OnBoardingPageView.swift in Sources */,
+				17553B6B250C6C6600FF8D71 /* DBWriteHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,8 +556,10 @@
 		};
 		17553B30250C5B2B00FF8D71 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ECFEA4C2398CA77C2507460A /* Pods-CashbackAppiOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CashbackAppiOS/CashbackAppiOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"CashbackAppiOS/Preview Content\"";
 				DEVELOPMENT_TEAM = 478XDR2NPK;
@@ -302,8 +578,10 @@
 		};
 		17553B31250C5B2B00FF8D71 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB9705A4A60FA50212CD37B7 /* Pods-CashbackAppiOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CashbackAppiOS/CashbackAppiOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"CashbackAppiOS/Preview Content\"";
 				DEVELOPMENT_TEAM = 478XDR2NPK;
