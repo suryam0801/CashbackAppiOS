@@ -18,7 +18,7 @@ class UserViewModel {
         DBHelper.fetchSingleValueFromDB(dbInstance.db.reference(withPath: DBReferenceNames.USER_REF_NAME).child(userId)) { (snapshot) in
             do{
                 let user:Customer = try FirebaseDecoder().decode(Customer.self, from: snapshot.value!)
-                Helpers.storeUserToUserDefaults(user)
+                Helpers.storeCustomerToDefaults(user)
                 completion(true)
             } catch let error {
                 print(error)

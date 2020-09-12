@@ -19,17 +19,17 @@ enum ChildReturnStatus {
 class Helpers {
     
     //MARK: User Helpers
-    static func storeUserToUserDefaults (_ userObj: Customer) {
+    static func storeCustomerToDefaults (_ userObj: Customer) {
         let encoder = JSONEncoder()
         if let encoded = try? encoder.encode(userObj) {
             let defaults = UserDefaults.standard
             defaults.set(encoded, forKey: "savedUser")
         }
         
-        user = userObj
+        customer = userObj
     }
 
-    static func retrieveStoredUser () -> Customer? {
+    static func retrieveStoredCustomer () -> Customer? {
         let defaults = UserDefaults.standard
         var user:Customer?
         if let savedPerson = defaults.object(forKey: "savedUser") as? Data {
@@ -76,7 +76,7 @@ class Helpers {
         }).compactMap { $0 })
         return dict
     }
-
+    
     //MARK: View Model Helpers
     static func makeItemsIntoGrid (itemList:[Item]) -> [Row] {
         var itemGrid:[Row] = []
@@ -88,7 +88,6 @@ class Helpers {
                 row.id = counter
                 let tempCarry:[Item] = [item]
                 row.rows = tempCarry
-                print("APPENDING \(row)")
             } else {
                 row.rows!.append(item)
                 guard row != nil else { return itemGrid }

@@ -12,17 +12,17 @@ import FirebaseMessaging
 
 class DBWriteHelper {
     //MARK:- USER DATA
-    static func createNewUser (userObj:Customer, _ completion: @escaping  ((_ userCreated:Bool)->())) {
+    static func createNewCustomer (userObj:Customer, _ completion: @escaping  ((_ userCreated:Bool)->())) {
         
         var tempUserObj = userObj
         
-        func writeUser () {
+        func writeCustomer () {
             dbInstance.db.reference(withPath: DBReferenceNames.USER_REF_NAME).child(tempUserObj.id).setValue(Helpers.asDictionary(object: tempUserObj)) {
                 (error:Error?, ref:DatabaseReference) in
                 if error != nil {
                     completion(false)
                 } else {
-                    Helpers.storeUserToUserDefaults(tempUserObj)
+                    Helpers.storeCustomerToDefaults(tempUserObj)
                     completion(true)
                 }
             }
@@ -30,12 +30,26 @@ class DBWriteHelper {
         
         if let token = Messaging.messaging().fcmToken {
             tempUserObj.deviceToken = token
-            writeUser()
+            writeCustomer()
         }
     }
     
-    static func updateUser () {
-        dbInstance.db.reference(withPath: DBReferenceNames.USER_REF_NAME).child(user!.id).setValue(Helpers.asDictionary(object: user!))
-        Helpers.storeUserToUserDefaults(user!)
+    static func updateToken (newToken:String) {
+        dbInstance.db.reference(withPath: DBReferenceNames.USER_REF_NAME).child(customer!.id).child("deviceToken").setValue(newToken)
+        Helpers.storeCustomerToDefaults(customer!)
+    }
+    
+    static func updateCustomer () {
+        dbInstance.db.reference(withPath: DBReferenceNames.USER_REF_NAME).child(customer!.id).setValue(Helpers.asDictionary(object: customer!))
+        Helpers.storeCustomerToDefaults(customer!)
+    }
+
+    //MARK: Cart Data
+    static func addToCart (cartItem:CartItem) {
+        dbInstance.db.reference(withPath: DBReferenceNames.USER_REF_NAME).child(customer!.id).child("cart").child(cartItem.itemId).setValue(Helpers.asDictionary(object: cartItem))
+        
+        var userCart = customer?.cart ?? [String:CartItem]()
+        userCart[cartItem.itemId] = cartItem
+        Helpers.storeCustomerToDefaults(customer!)
     }
 }

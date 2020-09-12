@@ -8,9 +8,9 @@
 
 import Foundation
 
-var user:Customer? = Helpers.retrieveStoredUser()
+var customer:Customer? = Helpers.retrieveStoredCustomer()
 
 var sizes = ["XS","S","M","X","XL"]
 
-var types = ["Men","Women","Kids","All"]
+var types = ["All","Men","Women","Kids"]
 

@@ -38,6 +38,8 @@ struct ItemsScroll : View {
             }
         }.onAppear(){
             self.itemViewModel.fetchItems()
+        }.onDisappear(){
+            self.itemViewModel.cleanup()
         }
     }
 }

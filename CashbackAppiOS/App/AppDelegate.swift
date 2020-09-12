@@ -124,11 +124,11 @@ extension AppDelegate : MessagingDelegate {
         let dataDict:[String: String] = ["token": fcmToken]
         NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
         
-        if user != nil {
+        if customer != nil {
             //update userObject each time app is opened
-            UserViewModel().fetchUser(user!.id) {_ in
-                user!.deviceToken = fcmToken
-                DBWriteHelper.updateUser()
+            UserViewModel().fetchUser(customer!.id) {_ in
+                customer!.deviceToken = fcmToken
+                DBWriteHelper.updateToken(newToken: fcmToken)
             }
         }
     }

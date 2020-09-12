@@ -10,55 +10,55 @@ import SwiftUI
 
 struct HomePageView: View {
     var body: some View {
+        
         NavigationView{
-         
+            
             VStack(spacing: 15){
                 
-                ZStack{
-                    
-                    Text("Seasons").font(.title)
-                    
-                    HStack(spacing: 18){
-                        
-                        Button(action: {
-                            
-                        }) {
-                            
-                            Image("Menu").renderingMode(.original)
-                        }
-                        
-                        Spacer()
-                        
-                        Button(action: {
-                            
-                        }) {
-                            
-                            Image("search").renderingMode(.original)
-                        }
-                        
-                        Button(action: {
-                            
-                        }) {
-                            
-                            Image("noti").renderingMode(.original)
-                        }
-                        
-                        Button(action: {
-                            
-                        }) {
-                            
-                            Image("shop").renderingMode(.original)
-                        }
-
-                    }
-                }.background(Color.white)
-                .padding([.leading,.trailing,.top], 15)
+                NavBar
                 
                 ItemsDisplayMainView()
+                Spacer()
             }.navigationBarBackButtonHidden(true)
-            .navigationBarTitle("")
-            .navigationBarHidden(true)
-            
+                .navigationBarTitle("")
+                .navigationBarHidden(true)
+                .edgesIgnoringSafeArea(.bottom)
         }
+        
+    }
+    
+    var NavBar : some View {
+        ZStack{
+            
+            Text("Cashback").font(.title)
+            
+            HStack(spacing: 18){
+                
+                Button(action: {
+                    
+                }) {
+                    
+                    Image("Menu").renderingMode(.original)
+                }
+
+                Spacer()
+
+                Button(action: {
+                    
+                }) {
+                    
+                    Image("noti").renderingMode(.original)
+                }
+                
+                Button(action: {
+                    
+                }) {
+                    
+                    Image("shop").renderingMode(.original)
+                }
+                
+            }
+        }.background(Color.white)
+            .padding([.leading,.trailing,.top], 15)
     }
 }

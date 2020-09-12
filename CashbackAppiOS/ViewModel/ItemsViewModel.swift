@@ -28,7 +28,6 @@ class ItemsViewModel : ObservableObject {
         DBHelper!.fetchFromDatabase(dbInstance.db.reference(withPath: DBReferenceNames.ITEM_REF_NAME)) { snapShotArray in
             self.itemsList = SnapshotHelpers.decodeArray(modelType: Item.self, array: snapShotArray)
             self.itemGrid = Helpers.makeItemsIntoGrid(itemList: self.itemsList)
-            print(self.itemGrid)
         }
     }
 

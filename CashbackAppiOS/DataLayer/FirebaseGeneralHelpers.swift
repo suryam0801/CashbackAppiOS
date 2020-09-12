@@ -14,3 +14,9 @@ class FirebaseTokenHelper {
         return Messaging.messaging().fcmToken!
     }
 }
+
+class FirebasePushKeyHelper {
+    static func getPushKey() -> String {
+        return dbInstance.db.reference().childByAutoId().key!
+    }
+}
