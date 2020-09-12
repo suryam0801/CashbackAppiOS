@@ -15,7 +15,7 @@ class DBWriteHelper {
     static func createNewCustomer (userObj:Customer, _ completion: @escaping  ((_ userCreated:Bool)->())) {
         
         var tempUserObj = userObj
-        
+
         func writeCustomer () {
             dbInstance.db.reference(withPath: DBReferenceNames.USER_REF_NAME).child(tempUserObj.id).setValue(Helpers.asDictionary(object: tempUserObj)) {
                 (error:Error?, ref:DatabaseReference) in
@@ -27,7 +27,7 @@ class DBWriteHelper {
                 }
             }
         }
-        
+
         if let token = Messaging.messaging().fcmToken {
             tempUserObj.deviceToken = token
             writeCustomer()
@@ -47,9 +47,17 @@ class DBWriteHelper {
     //MARK: Cart Data
     static func addToCart (cartItem:CartItem) {
         dbInstance.db.reference(withPath: DBReferenceNames.USER_REF_NAME).child(customer!.id).child("cart").child(cartItem.itemId).setValue(Helpers.asDictionary(object: cartItem))
-        
+
         var userCart = customer?.cart ?? [String:CartItem]()
         userCart[cartItem.itemId] = cartItem
+        Helpers.storeCustomerToDefaults(customer!)
+    }
+    
+    static func removeFromCart (cartItem:CartItem) {
+        dbInstance.db.reference(withPath: DBReferenceNames.USER_REF_NAME).child(customer!.id).child("cart").child(cartItem.itemId).removeValue()
+
+        var userCart = customer?.cart ?? [String:CartItem]()
+        userCart[cartItem.itemId] = nil
         Helpers.storeCustomerToDefaults(customer!)
     }
 }

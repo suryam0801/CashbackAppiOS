@@ -15,25 +15,33 @@ struct DetailedItemView : View {
     @State var size = "M"
     @State var selectedColor = ""
     @State var quantity = 1
+    @State var showCart:Bool = false
     
     var body : some View{
         
-        VStack(spacing : 0){
+        NavigationView {
             
-            customNavBar
+            if self.showCart {
+                NavigationLink(destination: CartView(show: self.$showCart), isActive: self.$showCart) {EmptyView()}
+            }
             
-            Image("pic").resizable()
-
-            VStack(alignment: .leading ,spacing: 15){
-                itemDetailHeader
-                Text("Fitted top made from a polyamide blend. Features wide straps and chest reinforcement.")
-                sizePicker
-                checkOutHelper
-            }.padding()
-            .background(RoundedBG().fill(Color.white))
-            .padding(.top, -50)
-            
-        }
+            VStack(spacing : 0){
+                
+                customNavBar
+                
+                Image("pic").resizable()
+                
+                VStack(alignment: .leading ,spacing: 15){
+                    itemDetailHeader
+                    Text("Fitted top made from a polyamide blend. Features wide straps and chest reinforcement.")
+                    sizePicker
+                    checkOutHelper
+                }.padding()
+                    .background(RoundedBG().fill(Color.white))
+                    .padding(.top, -50)
+                
+            }
+        }.navigationBarTitle("").navigationBarHidden(true)
     }
     
     var customNavBar : some View {
@@ -50,25 +58,13 @@ struct DetailedItemView : View {
             
             Spacer()
             
-            Button(action: {
-                
-            }) {
-                
-                Image("search").renderingMode(.original)
-            }
+            NavBarEndButtons(showCart: self.$showCart)
             
-            Button(action: {
-                
-            }) {
-                
-                Image("shop").renderingMode(.original)
-            }
-
         }.navigationBarTitle("")
-        .navigationBarHidden(true)
-        .navigationBarBackButtonHidden(true)
-        .padding(15)
-            
+            .navigationBarHidden(true)
+            .navigationBarBackButtonHidden(true)
+            .padding(15)
+        
     }
     
     var itemDetailHeader : some View {
@@ -89,7 +85,7 @@ struct DetailedItemView : View {
                 Circle().fill(Color.red).frame(width: 20, height: 20)
             }
         }
-
+        
     }
     
     var sizePicker : some View {
@@ -119,8 +115,8 @@ struct DetailedItemView : View {
             
             Button(action: {
                 
-                let cartItem:CartItem = CartItem(itemId: FirebasePushKeyHelper.getPushKey(), name: self.item.name, price: self.item.price, photos: self.item.photos, storeIds: self.item.storeIds, color: self.selectedColor, size: self.size, quantity: self.quantity)
-                
+                let cartItem:CartItem = CartItem(itemId: self.item.id, name: self.item.name, price: self.item.price, photos: self.item.photos, storeIds: self.item.storeIds, color: self.selectedColor, size: self.size, quantity: self.quantity)
+
                 DBWriteHelper.addToCart(cartItem: cartItem)
             }) {
                 
@@ -137,10 +133,10 @@ struct DetailedItemView : View {
                 Text("Buy Now").padding()
                 
             }.foregroundColor(.white)
-            .background(Color.black)
-            .cornerRadius(10)
+                .background(Color.black)
+                .cornerRadius(10)
             
         }.padding([.leading,.trailing], 15)
-        .padding(.top, 15)
+            .padding(.top, 15)
     }
 }

@@ -17,7 +17,7 @@ struct ItemsDisplayMainView : View {
         VStack(spacing: 15){
             
             ScrollViewHeaderCategory(selected: self.$selected)
-            
+                        
             ItemsScroll()
             
         }.padding()

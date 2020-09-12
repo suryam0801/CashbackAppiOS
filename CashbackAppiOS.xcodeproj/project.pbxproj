@@ -51,6 +51,8 @@
 		17553B96250CC8D100FF8D71 /* ScrollViewHeaderCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17553B95250CC8D100FF8D71 /* ScrollViewHeaderCategory.swift */; };
 		17C8BEE0250CE9A600C89EB3 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C8BEDF250CE9A600C89EB3 /* CartView.swift */; };
 		17C8BEE4250CE9D900C89EB3 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C8BEE3250CE9D900C89EB3 /* CartViewModel.swift */; };
+		17C8BEE8250CFE2200C89EB3 /* NavBarEndButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C8BEE7250CFE2200C89EB3 /* NavBarEndButtons.swift */; };
+		17C8BEEA250D014000C89EB3 /* CartItemCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C8BEE9250D014000C89EB3 /* CartItemCard.swift */; };
 		7EB8EDD911C7DE6442A11CC3 /* Pods_CashbackAppiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 083DE08C87004BE721C8F8D6 /* Pods_CashbackAppiOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -103,6 +105,8 @@
 		17553B95250CC8D100FF8D71 /* ScrollViewHeaderCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewHeaderCategory.swift; sourceTree = "<group>"; };
 		17C8BEDF250CE9A600C89EB3 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
 		17C8BEE3250CE9D900C89EB3 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
+		17C8BEE7250CFE2200C89EB3 /* NavBarEndButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarEndButtons.swift; sourceTree = "<group>"; };
+		17C8BEE9250D014000C89EB3 /* CartItemCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemCard.swift; sourceTree = "<group>"; };
 		BB9705A4A60FA50212CD37B7 /* Pods-CashbackAppiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CashbackAppiOS.release.xcconfig"; path = "Target Support Files/Pods-CashbackAppiOS/Pods-CashbackAppiOS.release.xcconfig"; sourceTree = "<group>"; };
 		ECFEA4C2398CA77C2507460A /* Pods-CashbackAppiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CashbackAppiOS.debug.xcconfig"; path = "Target Support Files/Pods-CashbackAppiOS/Pods-CashbackAppiOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -221,6 +225,7 @@
 				17553B74250C743700FF8D71 /* OnBoardingPageView.swift */,
 				17553B91250CAA7E00FF8D71 /* RoundedBG.swift */,
 				17553B93250CAEA400FF8D71 /* Indicator.swift */,
+				17C8BEE7250CFE2200C89EB3 /* NavBarEndButtons.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -238,11 +243,11 @@
 		17553B4A250C65F900FF8D71 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				17553B7A250C915900FF8D71 /* Item.swift */,
 				17553B60250C687200FF8D71 /* Customer.swift */,
 				17553B6D250C6FA200FF8D71 /* CartItem.swift */,
 				17553B4B250C661E00FF8D71 /* CountryCodeDictionary.swift */,
 				17553B76250C8EEB00FF8D71 /* DBReferenceNames.swift */,
-				17553B7A250C915900FF8D71 /* Item.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -298,6 +303,7 @@
 			isa = PBXGroup;
 			children = (
 				17C8BEDF250CE9A600C89EB3 /* CartView.swift */,
+				17C8BEE9250D014000C89EB3 /* CartItemCard.swift */,
 			);
 			path = Cart;
 			sourceTree = "<group>";
@@ -442,6 +448,7 @@
 				17553B21250C5B2900FF8D71 /* SceneDelegate.swift in Sources */,
 				17553B79250C912700FF8D71 /* ItemsViewModel.swift in Sources */,
 				17553B94250CAEA400FF8D71 /* Indicator.swift in Sources */,
+				17C8BEEA250D014000C89EB3 /* CartItemCard.swift in Sources */,
 				17553B7B250C915900FF8D71 /* Item.swift in Sources */,
 				17553B77250C8EEB00FF8D71 /* DBReferenceNames.swift in Sources */,
 				17553B92250CAA7E00FF8D71 /* RoundedBG.swift in Sources */,
@@ -450,6 +457,7 @@
 				17553B49250C65E500FF8D71 /* PhoneAuthHelper.swift in Sources */,
 				17553B3E250C624700FF8D71 /* DatabaseReadHelper.swift in Sources */,
 				17553B45250C653200FF8D71 /* PhoneVerificationView.swift in Sources */,
+				17C8BEE8250CFE2200C89EB3 /* NavBarEndButtons.swift in Sources */,
 				17C8BEE0250CE9A600C89EB3 /* CartView.swift in Sources */,
 				17553B6E250C6FA200FF8D71 /* CartItem.swift in Sources */,
 				17553B42250C62BF00FF8D71 /* SnapshotHelpers.swift in Sources */,

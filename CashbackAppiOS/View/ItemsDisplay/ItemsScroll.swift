@@ -22,13 +22,11 @@ struct ItemsScroll : View {
                 ScrollView(.vertical, showsIndicators: false) {
                     
                     VStack(spacing: 12){
+                        cashbackBanner
                         
                         ForEach(self.itemViewModel.itemGrid){i in
-                            
                             HStack{
-                                
                                 ForEach(i!.rows!){j in
-                                    
                                     ItemCard(item: j)
                                 }
                             }
@@ -41,5 +39,11 @@ struct ItemsScroll : View {
         }.onDisappear(){
             self.itemViewModel.cleanup()
         }
+    }
+    
+    var cashbackBanner : some View {
+        VStack (alignment: .center) {
+            Text("1,54,801₹ won in cashback!").font(.system(size: 25)).foregroundColor(Color.white)
+            }.frame(width: UIScreen.main.bounds.width - 35, height: 70).background(LinearGradient(gradient: Gradient(colors: [Color(UIColor.supportTextBlue), .blue]), startPoint: .leading, endPoint: .trailing)).cornerRadius(10)
     }
 }

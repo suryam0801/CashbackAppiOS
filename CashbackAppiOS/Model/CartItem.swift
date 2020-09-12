@@ -19,7 +19,7 @@ struct CartItem : Codable {
         self.size = size
         self.quantity = quantity
     }
-
+    
     var itemId:String!
     var name:String!
     var price: Int!
