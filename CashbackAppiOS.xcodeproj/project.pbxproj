@@ -37,11 +37,16 @@
 		17553B6B250C6C6600FF8D71 /* DBWriteHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17553B6A250C6C6600FF8D71 /* DBWriteHelper.swift */; };
 		17553B6E250C6FA200FF8D71 /* CartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17553B6D250C6FA200FF8D71 /* CartItem.swift */; };
 		17553B70250C732A00FF8D71 /* FirebaseTokenHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17553B6F250C732A00FF8D71 /* FirebaseTokenHelper.swift */; };
-		17553B73250C740100FF8D71 /* ItemsGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17553B72250C740100FF8D71 /* ItemsGridView.swift */; };
+		17553B73250C740100FF8D71 /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17553B72250C740100FF8D71 /* HomePageView.swift */; };
 		17553B75250C743700FF8D71 /* OnBoardingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17553B74250C743700FF8D71 /* OnBoardingPageView.swift */; };
 		17553B77250C8EEB00FF8D71 /* DBReferenceNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17553B76250C8EEB00FF8D71 /* DBReferenceNames.swift */; };
 		17553B79250C912700FF8D71 /* ItemsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17553B78250C912700FF8D71 /* ItemsViewModel.swift */; };
 		17553B7B250C915900FF8D71 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17553B7A250C915900FF8D71 /* Item.swift */; };
+		17553B88250CA98700FF8D71 /* ItemsDisplayMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17553B87250CA98700FF8D71 /* ItemsDisplayMainView.swift */; };
+		17553B8A250CA9EE00FF8D71 /* ItemsScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17553B89250CA9EE00FF8D71 /* ItemsScroll.swift */; };
+		17553B8C250CAA1000FF8D71 /* ItemCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17553B8B250CAA1000FF8D71 /* ItemCard.swift */; };
+		17553B8F250CAA3D00FF8D71 /* DetailedItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17553B8E250CAA3D00FF8D71 /* DetailedItemView.swift */; };
+		17553B92250CAA7E00FF8D71 /* RoundedBG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17553B91250CAA7E00FF8D71 /* RoundedBG.swift */; };
 		7EB8EDD911C7DE6442A11CC3 /* Pods_CashbackAppiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 083DE08C87004BE721C8F8D6 /* Pods_CashbackAppiOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -80,11 +85,16 @@
 		17553B6C250C6DB800FF8D71 /* CashbackAppiOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CashbackAppiOS.entitlements; sourceTree = "<group>"; };
 		17553B6D250C6FA200FF8D71 /* CartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItem.swift; sourceTree = "<group>"; };
 		17553B6F250C732A00FF8D71 /* FirebaseTokenHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseTokenHelper.swift; sourceTree = "<group>"; };
-		17553B72250C740100FF8D71 /* ItemsGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsGridView.swift; sourceTree = "<group>"; };
+		17553B72250C740100FF8D71 /* HomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
 		17553B74250C743700FF8D71 /* OnBoardingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingPageView.swift; sourceTree = "<group>"; };
 		17553B76250C8EEB00FF8D71 /* DBReferenceNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBReferenceNames.swift; sourceTree = "<group>"; };
 		17553B78250C912700FF8D71 /* ItemsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewModel.swift; sourceTree = "<group>"; };
 		17553B7A250C915900FF8D71 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		17553B87250CA98700FF8D71 /* ItemsDisplayMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsDisplayMainView.swift; sourceTree = "<group>"; };
+		17553B89250CA9EE00FF8D71 /* ItemsScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsScroll.swift; sourceTree = "<group>"; };
+		17553B8B250CAA1000FF8D71 /* ItemCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCard.swift; sourceTree = "<group>"; };
+		17553B8E250CAA3D00FF8D71 /* DetailedItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedItemView.swift; sourceTree = "<group>"; };
+		17553B91250CAA7E00FF8D71 /* RoundedBG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBG.swift; sourceTree = "<group>"; };
 		BB9705A4A60FA50212CD37B7 /* Pods-CashbackAppiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CashbackAppiOS.release.xcconfig"; path = "Target Support Files/Pods-CashbackAppiOS/Pods-CashbackAppiOS.release.xcconfig"; sourceTree = "<group>"; };
 		ECFEA4C2398CA77C2507460A /* Pods-CashbackAppiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CashbackAppiOS.debug.xcconfig"; path = "Target Support Files/Pods-CashbackAppiOS/Pods-CashbackAppiOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -167,7 +177,9 @@
 		17553B34250C5E1800FF8D71 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				17553B71250C73E200FF8D71 /* Main */,
+				17553B72250C740100FF8D71 /* HomePageView.swift */,
+				17553B8D250CAA2E00FF8D71 /* DetailedItem */,
+				17553B86250CA96E00FF8D71 /* ItemsDisplay */,
 				17553B5D250C67C200FF8D71 /* Registration */,
 				17553B43250C651900FF8D71 /* Login */,
 			);
@@ -198,6 +210,7 @@
 				17553B57250C672100FF8D71 /* Extensions.swift */,
 				17553B68250C6BDD00FF8D71 /* GlobalVariables.swift */,
 				17553B74250C743700FF8D71 /* OnBoardingPageView.swift */,
+				17553B91250CAA7E00FF8D71 /* RoundedBG.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -251,12 +264,22 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		17553B71250C73E200FF8D71 /* Main */ = {
+		17553B86250CA96E00FF8D71 /* ItemsDisplay */ = {
 			isa = PBXGroup;
 			children = (
-				17553B72250C740100FF8D71 /* ItemsGridView.swift */,
+				17553B87250CA98700FF8D71 /* ItemsDisplayMainView.swift */,
+				17553B89250CA9EE00FF8D71 /* ItemsScroll.swift */,
+				17553B8B250CAA1000FF8D71 /* ItemCard.swift */,
 			);
-			path = Main;
+			path = ItemsDisplay;
+			sourceTree = "<group>";
+		};
+		17553B8D250CAA2E00FF8D71 /* DetailedItem */ = {
+			isa = PBXGroup;
+			children = (
+				17553B8E250CAA3D00FF8D71 /* DetailedItemView.swift */,
+			);
+			path = DetailedItem;
 			sourceTree = "<group>";
 		};
 		21744A87D0EDE6FBCF14CA44 /* Frameworks */ = {
@@ -400,13 +423,17 @@
 				17553B79250C912700FF8D71 /* ItemsViewModel.swift in Sources */,
 				17553B7B250C915900FF8D71 /* Item.swift in Sources */,
 				17553B77250C8EEB00FF8D71 /* DBReferenceNames.swift in Sources */,
+				17553B92250CAA7E00FF8D71 /* RoundedBG.swift in Sources */,
+				17553B8F250CAA3D00FF8D71 /* DetailedItemView.swift in Sources */,
 				17553B49250C65E500FF8D71 /* PhoneAuthHelper.swift in Sources */,
 				17553B3E250C624700FF8D71 /* DatabaseReadHelper.swift in Sources */,
 				17553B45250C653200FF8D71 /* PhoneVerificationView.swift in Sources */,
 				17553B6E250C6FA200FF8D71 /* CartItem.swift in Sources */,
 				17553B42250C62BF00FF8D71 /* SnapshotHelpers.swift in Sources */,
+				17553B88250CA98700FF8D71 /* ItemsDisplayMainView.swift in Sources */,
 				17553B55250C66D600FF8D71 /* UIResponder+Current.swift in Sources */,
 				17553B56250C66D600FF8D71 /* KeyboardHeightPublisher.swift in Sources */,
+				17553B8A250CA9EE00FF8D71 /* ItemsScroll.swift in Sources */,
 				17553B61250C687200FF8D71 /* Customer.swift in Sources */,
 				17553B5C250C677800FF8D71 /* Loader.swift in Sources */,
 				17553B47250C65A700FF8D71 /* CountryPickerView.swift in Sources */,
@@ -416,11 +443,12 @@
 				17553B70250C732A00FF8D71 /* FirebaseTokenHelper.swift in Sources */,
 				17553B39250C61D900FF8D71 /* DbReader.swift in Sources */,
 				17553B3C250C620900FF8D71 /* Helpers.swift in Sources */,
+				17553B8C250CAA1000FF8D71 /* ItemCard.swift in Sources */,
 				17553B5F250C67CC00FF8D71 /* UserRegistration.swift in Sources */,
 				17553B23250C5B2900FF8D71 /* ContentView.swift in Sources */,
 				17553B40250C626C00FF8D71 /* DBInstanceInitialize.swift in Sources */,
 				17553B5A250C675600FF8D71 /* OTPVerificationView.swift in Sources */,
-				17553B73250C740100FF8D71 /* ItemsGridView.swift in Sources */,
+				17553B73250C740100FF8D71 /* HomePageView.swift in Sources */,
 				17553B75250C743700FF8D71 /* OnBoardingPageView.swift in Sources */,
 				17553B6B250C6C6600FF8D71 /* DBWriteHelper.swift in Sources */,
 			);
