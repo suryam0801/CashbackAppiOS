@@ -77,4 +77,26 @@ class Helpers {
         return dict
     }
 
+    //MARK: View Model Helpers
+    static func makeItemsIntoGrid (itemList:[Item]) -> [Row] {
+        var itemGrid:[Row] = []
+        var counter = 0
+        var row:Row = Row()
+        
+        for item in itemList {
+            if counter % 2 == 0 {
+                row.id = counter
+                let tempCarry:[Item] = [item]
+                row.rows = tempCarry
+                print("APPENDING \(row)")
+            } else {
+                row.rows!.append(item)
+                guard row != nil else { return itemGrid }
+                itemGrid.append(row)
+                
+            }
+            counter+=1
+        }
+        return itemGrid
+    }
 }

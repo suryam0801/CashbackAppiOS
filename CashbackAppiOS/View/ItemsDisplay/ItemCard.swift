@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ItemCard : View {
     
-    var row : row
+    var item : Item
     @State var show  = false
     
     
@@ -19,18 +19,16 @@ struct ItemCard : View {
         VStack(spacing: 8){
             
             NavigationLink(destination: DetailedItemView(show: $show), isActive: $show) {
-                
-                Image(row.image).renderingMode(.original).resizable().frame(width: UIScreen.main.bounds.width / 2 - 25, height: 240)
+
+                Image("p21").renderingMode(.original).resizable().frame(width: UIScreen.main.bounds.width / 2 - 25, height: 240)
             }
-            
-           
-            
+
             HStack{
                 
                 VStack(alignment: .leading, spacing: 10){
                     
-                    Text(row.name)
-                    Text(row.price).fontWeight(.heavy)
+                    Text(item.name)
+                    Text("\(item.price)").fontWeight(.heavy)
                     
                 }
                 

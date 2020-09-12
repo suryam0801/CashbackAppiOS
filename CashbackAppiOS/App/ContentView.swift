@@ -18,7 +18,7 @@ struct ContentView: View {
         VStack{
             //checking if user is signed in or not
             if status {
-                ItemsGridView()
+                HomePageView()
             } else {
                 if onboardingFinished {
                     PhoneVerificationview()

@@ -9,3 +9,8 @@
 import Foundation
 
 var user:Customer? = Helpers.retrieveStoredUser()
+
+var sizes = ["XS","S","M","X","XL"]
+
+var types = ["Men","Women","Kids","All"]
+

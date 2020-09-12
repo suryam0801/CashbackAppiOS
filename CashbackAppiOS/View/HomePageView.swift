@@ -9,8 +9,6 @@
 import SwiftUI
 
 struct HomePageView: View {
-    @ObservedObject private var itemViewModel = ItemsViewModel()
-    
     var body: some View {
         NavigationView{
          
@@ -62,11 +60,5 @@ struct HomePageView: View {
             .navigationBarHidden(true)
             
         }
-    }
-}
-
-struct ItemsGridView_Previews: PreviewProvider {
-    static var previews: some View {
-        ItemsGridView()
     }
 }

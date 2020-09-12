@@ -128,33 +128,3 @@ struct DetailedItemView : View {
         }
     }
 }
-
-
-struct type : Identifiable{
-    
-    var id : Int
-    var rows : [row]
-}
-
-struct row : Identifiable {
-    
-    var id : Int
-    var name : String
-    var price : String
-    var image : String
-   
-}
-
-// i already made a sample data.....
-
-var sizes = ["XS","S","M","X","XL"]
-
-var types = ["Dress","Pants","Blazers","Jackets"]
-
-var datas = [
-
-    type(id: 0,rows: [row(id:0,name: "Fit And Flare", price: "$199", image: "p11"),row(id:1,name: "Empire Dress", price: "$136", image: "p12")]),
-
-    type(id: 2,rows: [row(id:0,name: "Summer Vibes", price: "$136", image: "p21"),row(id:1,name: "Flora Fun", price: "$150", image: "p22")]),
-
-]
