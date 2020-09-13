@@ -46,10 +46,16 @@ class DBWriteHelper {
 
     //MARK: Cart Data
     static func addToCart (cartItem:CartItem) {
-        dbInstance.db.reference(withPath: DBReferenceNames.USER_REF_NAME).child(customer!.id).child("cart").child(cartItem.itemId).setValue(Helpers.asDictionary(object: cartItem))
+        var tempCartItem = cartItem
+        if customer?.cart?[cartItem.itemId] != nil {
+            customer?.cart![cartItem.itemId]?.quantity += 1
+            tempCartItem = customer?.cart[cartItem.itemId] as! CartItem
+        }
+        
+        dbInstance.db.reference(withPath: DBReferenceNames.USER_REF_NAME).child(customer!.id).child("cart").child(cartItem.itemId).setValue(Helpers.asDictionary(object: tempCartItem))
 
         var userCart = customer?.cart ?? [String:CartItem]()
-        userCart[cartItem.itemId] = cartItem
+        userCart[cartItem.itemId] = tempCartItem
         Helpers.storeCustomerToDefaults(customer!)
     }
 
@@ -66,5 +72,12 @@ class DBWriteHelper {
         
         customer?.cart[cartItemId]?.quantity = newQuantity
         Helpers.storeCustomerToDefaults(customer!)
+    }
+    
+    //MARK: ORDERS DATA
+    static func writeOrders (orders:[Order]) {
+        for order in orders {
+            dbInstance.db.reference(withPath: DBReferenceNames.ORDERS_REF_NAME).child(order.id).setValue(Helpers.asDictionary(object: order))
+        }
     }
 }

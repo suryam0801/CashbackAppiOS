@@ -9,7 +9,7 @@
 import Foundation
 
 class Order : Codable {
-    internal init(id: String? = nil, customerId: String? = nil, transactionId: String? = nil, totalAmount: Double? = nil, timestamp: Int64? = nil, address: String? = nil, refundStatus: String? = nil, trackingId: String? = nil, cashback: Double? = nil, cashbackStatus: Bool? = nil, itemId: String? = nil, itemName: String? = nil, itemPrice: Double? = nil, itemColor: String? = nil, itemSize: String? = nil, itemQuantity: String? = nil, itemPhotos: [String]? = nil, storeId: String? = nil) {
+    internal init(id: String? = nil, customerId: String? = nil, transactionId: String? = nil, totalAmount: Double? = nil, timestamp: Int64? = nil, address: String? = nil, refundStatus: String? = nil, trackingId: String? = nil, cashback: Double? = nil, cashbackStatus: Bool? = nil, itemId: String? = nil, itemName: String? = nil, itemPrice: Double? = nil, itemColor: String? = nil, itemSize: String? = nil, itemQuantity: Double? = nil, itemPhotos: [String]? = nil, storeId: String? = nil) {
         self.id = id
         self.customerId = customerId
         self.transactionId = transactionId
@@ -47,7 +47,7 @@ class Order : Codable {
     var itemPrice:Double!
     var itemColor:String!
     var itemSize:String!
-    var itemQuantity:String!
+    var itemQuantity:Double!
     var itemPhotos:[String]!
     var storeId:String!
 }

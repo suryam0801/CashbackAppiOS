@@ -56,6 +56,8 @@
 		17C8BEEE250DE38100C89EB3 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C8BEED250DE38100C89EB3 /* CartView.swift */; };
 		17C8BEF0250DFD9000C89EB3 /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C8BEEF250DFD9000C89EB3 /* PaymentView.swift */; };
 		17C8BEF2250E53C000C89EB3 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C8BEF1250E53C000C89EB3 /* Order.swift */; };
+		17C8BEF7250E7A0F00C89EB3 /* PaymentSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C8BEF6250E7A0F00C89EB3 /* PaymentSuccessView.swift */; };
+		17C8BEF9250E7AA400C89EB3 /* PaymentFailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C8BEF8250E7AA400C89EB3 /* PaymentFailedView.swift */; };
 		7EB8EDD911C7DE6442A11CC3 /* Pods_CashbackAppiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 083DE08C87004BE721C8F8D6 /* Pods_CashbackAppiOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -113,6 +115,8 @@
 		17C8BEED250DE38100C89EB3 /* CartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
 		17C8BEEF250DFD9000C89EB3 /* PaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
 		17C8BEF1250E53C000C89EB3 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		17C8BEF6250E7A0F00C89EB3 /* PaymentSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentSuccessView.swift; sourceTree = "<group>"; };
+		17C8BEF8250E7AA400C89EB3 /* PaymentFailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentFailedView.swift; sourceTree = "<group>"; };
 		BB9705A4A60FA50212CD37B7 /* Pods-CashbackAppiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CashbackAppiOS.release.xcconfig"; path = "Target Support Files/Pods-CashbackAppiOS/Pods-CashbackAppiOS.release.xcconfig"; sourceTree = "<group>"; };
 		ECFEA4C2398CA77C2507460A /* Pods-CashbackAppiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CashbackAppiOS.debug.xcconfig"; path = "Target Support Files/Pods-CashbackAppiOS/Pods-CashbackAppiOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -196,12 +200,12 @@
 			isa = PBXGroup;
 			children = (
 				17553B72250C740100FF8D71 /* HomePageView.swift */,
+				17C8BEF3250E79E100C89EB3 /* Payment */,
 				17553B8D250CAA2E00FF8D71 /* DetailedItem */,
 				17553B86250CA96E00FF8D71 /* ItemsDisplay */,
 				17C8BEDE250CE99D00C89EB3 /* Cart */,
 				17553B5D250C67C200FF8D71 /* Registration */,
 				17553B43250C651900FF8D71 /* Login */,
-				17C8BEEF250DFD9000C89EB3 /* PaymentView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -315,6 +319,16 @@
 				17C8BEEB250DE0E700C89EB3 /* EndOfCartPriceDisplayView.swift */,
 			);
 			path = Cart;
+			sourceTree = "<group>";
+		};
+		17C8BEF3250E79E100C89EB3 /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				17C8BEEF250DFD9000C89EB3 /* PaymentView.swift */,
+				17C8BEF6250E7A0F00C89EB3 /* PaymentSuccessView.swift */,
+				17C8BEF8250E7AA400C89EB3 /* PaymentFailedView.swift */,
+			);
+			path = Payment;
 			sourceTree = "<group>";
 		};
 		21744A87D0EDE6FBCF14CA44 /* Frameworks */ = {
@@ -457,6 +471,7 @@
 				17553B63250C6A5A00FF8D71 /* UIColor.swift in Sources */,
 				17553B21250C5B2900FF8D71 /* SceneDelegate.swift in Sources */,
 				17553B79250C912700FF8D71 /* ItemsViewModel.swift in Sources */,
+				17C8BEF7250E7A0F00C89EB3 /* PaymentSuccessView.swift in Sources */,
 				17553B94250CAEA400FF8D71 /* Indicator.swift in Sources */,
 				17C8BEEA250D014000C89EB3 /* CartItemCard.swift in Sources */,
 				17553B7B250C915900FF8D71 /* Item.swift in Sources */,
@@ -484,6 +499,7 @@
 				17553B4C250C661E00FF8D71 /* CountryCodeDictionary.swift in Sources */,
 				17553B58250C672100FF8D71 /* Extensions.swift in Sources */,
 				17553B70250C732A00FF8D71 /* FirebaseGeneralHelpers.swift in Sources */,
+				17C8BEF9250E7AA400C89EB3 /* PaymentFailedView.swift in Sources */,
 				17553B39250C61D900FF8D71 /* DbReader.swift in Sources */,
 				17553B3C250C620900FF8D71 /* Helpers.swift in Sources */,
 				17553B8C250CAA1000FF8D71 /* ItemCard.swift in Sources */,

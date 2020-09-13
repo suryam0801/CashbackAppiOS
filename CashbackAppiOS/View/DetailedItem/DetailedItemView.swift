@@ -20,11 +20,11 @@ struct DetailedItemView : View {
     var body : some View{
         
         NavigationView {
-            
+
             if self.showCart {
                 NavigationLink(destination: CartView(show: self.$showCart), isActive: self.$showCart) {EmptyView()}
             }
-            
+
             VStack(spacing : 0){
                 
                 customNavBar

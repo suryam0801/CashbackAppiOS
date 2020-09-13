@@ -14,3 +14,6 @@ var sizes = ["XS","S","M","X","XL"]
 
 var types = ["All","Men","Women","Kids"]
 
+var transactionId:String?
+var tempCartItems:[CartItem]?
+var tempCashback:[Double]?
