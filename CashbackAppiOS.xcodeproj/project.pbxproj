@@ -49,10 +49,12 @@
 		17553B92250CAA7E00FF8D71 /* RoundedBG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17553B91250CAA7E00FF8D71 /* RoundedBG.swift */; };
 		17553B94250CAEA400FF8D71 /* Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17553B93250CAEA400FF8D71 /* Indicator.swift */; };
 		17553B96250CC8D100FF8D71 /* ScrollViewHeaderCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17553B95250CC8D100FF8D71 /* ScrollViewHeaderCategory.swift */; };
-		17C8BEE0250CE9A600C89EB3 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C8BEDF250CE9A600C89EB3 /* CartView.swift */; };
 		17C8BEE4250CE9D900C89EB3 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C8BEE3250CE9D900C89EB3 /* CartViewModel.swift */; };
 		17C8BEE8250CFE2200C89EB3 /* NavBarEndButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C8BEE7250CFE2200C89EB3 /* NavBarEndButtons.swift */; };
 		17C8BEEA250D014000C89EB3 /* CartItemCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C8BEE9250D014000C89EB3 /* CartItemCard.swift */; };
+		17C8BEEC250DE0E700C89EB3 /* EndOfCartPriceDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C8BEEB250DE0E700C89EB3 /* EndOfCartPriceDisplayView.swift */; };
+		17C8BEEE250DE38100C89EB3 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C8BEED250DE38100C89EB3 /* CartView.swift */; };
+		17C8BEF0250DFD9000C89EB3 /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C8BEEF250DFD9000C89EB3 /* PaymentView.swift */; };
 		7EB8EDD911C7DE6442A11CC3 /* Pods_CashbackAppiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 083DE08C87004BE721C8F8D6 /* Pods_CashbackAppiOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -103,10 +105,12 @@
 		17553B91250CAA7E00FF8D71 /* RoundedBG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBG.swift; sourceTree = "<group>"; };
 		17553B93250CAEA400FF8D71 /* Indicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Indicator.swift; sourceTree = "<group>"; };
 		17553B95250CC8D100FF8D71 /* ScrollViewHeaderCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewHeaderCategory.swift; sourceTree = "<group>"; };
-		17C8BEDF250CE9A600C89EB3 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
 		17C8BEE3250CE9D900C89EB3 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
 		17C8BEE7250CFE2200C89EB3 /* NavBarEndButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarEndButtons.swift; sourceTree = "<group>"; };
 		17C8BEE9250D014000C89EB3 /* CartItemCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemCard.swift; sourceTree = "<group>"; };
+		17C8BEEB250DE0E700C89EB3 /* EndOfCartPriceDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndOfCartPriceDisplayView.swift; sourceTree = "<group>"; };
+		17C8BEED250DE38100C89EB3 /* CartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
+		17C8BEEF250DFD9000C89EB3 /* PaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
 		BB9705A4A60FA50212CD37B7 /* Pods-CashbackAppiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CashbackAppiOS.release.xcconfig"; path = "Target Support Files/Pods-CashbackAppiOS/Pods-CashbackAppiOS.release.xcconfig"; sourceTree = "<group>"; };
 		ECFEA4C2398CA77C2507460A /* Pods-CashbackAppiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CashbackAppiOS.debug.xcconfig"; path = "Target Support Files/Pods-CashbackAppiOS/Pods-CashbackAppiOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -195,6 +199,7 @@
 				17C8BEDE250CE99D00C89EB3 /* Cart */,
 				17553B5D250C67C200FF8D71 /* Registration */,
 				17553B43250C651900FF8D71 /* Login */,
+				17C8BEEF250DFD9000C89EB3 /* PaymentView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -302,8 +307,9 @@
 		17C8BEDE250CE99D00C89EB3 /* Cart */ = {
 			isa = PBXGroup;
 			children = (
-				17C8BEDF250CE9A600C89EB3 /* CartView.swift */,
+				17C8BEED250DE38100C89EB3 /* CartView.swift */,
 				17C8BEE9250D014000C89EB3 /* CartItemCard.swift */,
+				17C8BEEB250DE0E700C89EB3 /* EndOfCartPriceDisplayView.swift */,
 			);
 			path = Cart;
 			sourceTree = "<group>";
@@ -442,6 +448,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17553B69250C6BDD00FF8D71 /* GlobalVariables.swift in Sources */,
+				17C8BEF0250DFD9000C89EB3 /* PaymentView.swift in Sources */,
 				17553B1F250C5B2900FF8D71 /* AppDelegate.swift in Sources */,
 				17553B66250C6AE400FF8D71 /* UserViewModel.swift in Sources */,
 				17553B63250C6A5A00FF8D71 /* UIColor.swift in Sources */,
@@ -458,12 +465,13 @@
 				17553B3E250C624700FF8D71 /* DatabaseReadHelper.swift in Sources */,
 				17553B45250C653200FF8D71 /* PhoneVerificationView.swift in Sources */,
 				17C8BEE8250CFE2200C89EB3 /* NavBarEndButtons.swift in Sources */,
-				17C8BEE0250CE9A600C89EB3 /* CartView.swift in Sources */,
 				17553B6E250C6FA200FF8D71 /* CartItem.swift in Sources */,
 				17553B42250C62BF00FF8D71 /* SnapshotHelpers.swift in Sources */,
 				17553B88250CA98700FF8D71 /* ItemsDisplayMainView.swift in Sources */,
+				17C8BEEC250DE0E700C89EB3 /* EndOfCartPriceDisplayView.swift in Sources */,
 				17553B55250C66D600FF8D71 /* UIResponder+Current.swift in Sources */,
 				17553B56250C66D600FF8D71 /* KeyboardHeightPublisher.swift in Sources */,
+				17C8BEEE250DE38100C89EB3 /* CartView.swift in Sources */,
 				17553B8A250CA9EE00FF8D71 /* ItemsScroll.swift in Sources */,
 				17553B61250C687200FF8D71 /* Customer.swift in Sources */,
 				17553B5C250C677800FF8D71 /* Loader.swift in Sources */,

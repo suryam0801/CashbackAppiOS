@@ -21,41 +21,23 @@ struct HomePageView: View {
             }
             
             VStack(spacing: 15){
-                
-                NavBar
-                
+                                
                 ItemsDisplayMainView()
                 
                 Spacer()
                 
-            }.navigationBarBackButtonHidden(true)
-                .navigationBarTitle("")
-                .navigationBarHidden(true)
+                }.navigationBarTitle("Cashback", displayMode: .inline).navigationBarItems(leading: navBarMenu, trailing: NavBarEndButtons(showCart: self.$showCart))
                 .edgesIgnoringSafeArea(.bottom)
         }.onAppear(){
             customer = Helpers.retrieveStoredCustomer()
         }
     }
     
-    var NavBar : some View {
-        ZStack{
+    var navBarMenu : some View {
+        Button(action: {
             
-            Text("Cashback").font(.title)
-            
-            HStack(spacing: 18){
-                
-                Button(action: {
-                    
-                }) {
-                    
-                    Image("Menu").renderingMode(.original)
-                }
-
-                Spacer()
-
-                NavBarEndButtons(showCart: self.$showCart)
-            }
-        }.background(Color.white)
-            .padding([.leading,.trailing,.top], 15)
+        }) {
+            Image("Menu").renderingMode(.original)
+        }
     }
 }

@@ -11,6 +11,9 @@ import SwiftUI
 struct CartItemCard: View {
     var cartItem : CartItem
     @State var quantity:Int = 0
+    @Binding var mrp:Int
+    @Binding var cashback:[Int]
+    
     var body: some View {
         VStack {
             HStack {
@@ -35,7 +38,9 @@ struct CartItemCard: View {
                                 .stroke(Color(UIColor.acceptColorGreen), lineWidth: 2))
                     
                     Spacer().frame(height: 10)
-                    Stepper("Qty: \(quantity < 0 ? 0 : quantity)", value: $quantity).font(.subheadline)
+                    Stepper(onIncrement: self.increment, onDecrement: self.decrement) {
+                        Text("Qty: \(self.quantity)").font(.subheadline)
+                    }
                     Spacer()
                 }
 
@@ -54,5 +59,35 @@ struct CartItemCard: View {
             }.padding(.bottom, 10)
             
         }.background(Color.white).onAppear(){self.quantity = self.cartItem.quantity}
+    }
+    
+    private func increment () {
+
+        func updateMRP () {
+            self.mrp += self.cartItem.price
+            self.cashback[0] += self.cartItem.price <= 500 ? 50 : 100
+            self.cashback[1] += self.cartItem.price <= 500 ? 150 : 250
+        }
+        
+        if self.quantity != 10 {
+            self.quantity += 1
+            updateMRP()
+            DBWriteHelper.updateItemQuantity(cartItemId: self.cartItem.itemId, newQuantity: self.quantity)
+        }
+    }
+    
+    private func decrement () {
+        
+        func updateMRP () {
+            self.mrp -= self.cartItem.price
+            self.cashback[0] -= self.cartItem.price <= 500 ? 50 : 100
+            self.cashback[1] -= self.cartItem.price <= 500 ? 150 : 250
+        }
+        
+        if self.quantity != 1 {
+            self.quantity -= 1
+            updateMRP()
+            DBWriteHelper.updateItemQuantity(cartItemId: self.cartItem.itemId, newQuantity: self.quantity)
+        }
     }
 }

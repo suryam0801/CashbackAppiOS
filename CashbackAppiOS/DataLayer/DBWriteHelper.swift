@@ -52,12 +52,19 @@ class DBWriteHelper {
         userCart[cartItem.itemId] = cartItem
         Helpers.storeCustomerToDefaults(customer!)
     }
-    
+
     static func removeFromCart (cartItem:CartItem) {
         dbInstance.db.reference(withPath: DBReferenceNames.USER_REF_NAME).child(customer!.id).child("cart").child(cartItem.itemId).removeValue()
 
         var userCart = customer?.cart ?? [String:CartItem]()
         userCart[cartItem.itemId] = nil
+        Helpers.storeCustomerToDefaults(customer!)
+    }
+    
+    static func updateItemQuantity (cartItemId:String, newQuantity:Int) {
+        dbInstance.db.reference(withPath: DBReferenceNames.USER_REF_NAME).child(customer!.id).child("cart").child(cartItemId).child("quantity").setValue(newQuantity)
+        
+        customer?.cart[cartItemId]?.quantity = newQuantity
         Helpers.storeCustomerToDefaults(customer!)
     }
 }

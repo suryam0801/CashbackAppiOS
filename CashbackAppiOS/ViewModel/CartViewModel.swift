@@ -17,8 +17,6 @@ class CartViewModel : ObservableObject {
         DBHelper!.fetchFromDatabase(dbInstance.db.reference(withPath: DBReferenceNames.USER_REF_NAME).child(customer!.id).child("cart")) { snapShotArray in
 
             self.inCartList = SnapshotHelpers.decodeArray(modelType: CartItem.self, array: snapShotArray)
-            
-            print(self.inCartList)
         }
     }
 

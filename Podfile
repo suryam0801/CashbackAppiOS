@@ -13,5 +13,6 @@ pod 'Firebase/Analytics'
 pod 'ConcentricOnboarding'
 pod 'CodableFirebase'
 pod 'Firebase/Messaging'
+pod 'razorpay-pod', '~> 1.1.7'
 
 end
