@@ -38,7 +38,6 @@ class RazorPayViewController: UIViewController, RazorpayPaymentCompletionProtoco
                     "amount": "100", //This is in currency subunits. 100 = 100 paise= INR 1.
                     "currency": "INR",//We support more that 92 international currencies.
                     "description": "purchase description",
-                    //"order_id": "order_DBJOWzybf0sJbb",
                     "image": "https://url-to-image.png",
                     "name": "business or product name",
                     "prefill": [

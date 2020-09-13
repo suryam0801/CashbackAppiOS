@@ -11,8 +11,8 @@ import SwiftUI
 struct EndOfCartPriceDisplayView: View {
     
     @Binding var cartItems:[CartItem]
-    @Binding var cashback:[Int]
-    @Binding var totalMRP:Int
+    @Binding var cashback:[Double]
+    @Binding var totalMRP:Double
     @State private var showPayment:Bool = false
     
     var body: some View {

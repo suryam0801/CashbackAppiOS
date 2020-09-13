@@ -10,9 +10,9 @@ import SwiftUI
 
 struct CartItemCard: View {
     var cartItem : CartItem
-    @State var quantity:Int = 0
-    @Binding var mrp:Int
-    @Binding var cashback:[Int]
+    @State var quantity:Double = 0
+    @Binding var mrp:Double
+    @Binding var cashback:[Double]
     
     var body: some View {
         VStack {

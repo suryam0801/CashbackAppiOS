@@ -14,7 +14,7 @@ struct DetailedItemView : View {
     var item:Item
     @State var size = "M"
     @State var selectedColor = ""
-    @State var quantity = 1
+    @State var quantity:Double = 1
     @State var showCart:Bool = false
     
     var body : some View{

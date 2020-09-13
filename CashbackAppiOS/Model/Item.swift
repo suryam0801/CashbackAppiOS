@@ -11,7 +11,7 @@ import Foundation
 struct Item: Codable, Identifiable {
     var id:String
     var name:String!
-    var price:Int!
+    var price:Double!
     var category:[String]!
     var storeIds:String!
     var stock:Int!

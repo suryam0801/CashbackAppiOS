@@ -12,8 +12,8 @@ struct CartView: View {
     @ObservedObject var cartList:CartViewModel = CartViewModel()
     @Binding var show : Bool
     
-    @State var totalMRP:Int = 0
-    @State var totalCashBack:[Int] = [0,0]
+    @State var totalMRP:Double = 0
+    @State var totalCashBack:[Double] = [0,0]
     
     var body: some View {
         VStack {

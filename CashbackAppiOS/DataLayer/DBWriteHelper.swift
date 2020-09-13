@@ -61,7 +61,7 @@ class DBWriteHelper {
         Helpers.storeCustomerToDefaults(customer!)
     }
     
-    static func updateItemQuantity (cartItemId:String, newQuantity:Int) {
+    static func updateItemQuantity (cartItemId:String, newQuantity:Double) {
         dbInstance.db.reference(withPath: DBReferenceNames.USER_REF_NAME).child(customer!.id).child("cart").child(cartItemId).child("quantity").setValue(newQuantity)
         
         customer?.cart[cartItemId]?.quantity = newQuantity
