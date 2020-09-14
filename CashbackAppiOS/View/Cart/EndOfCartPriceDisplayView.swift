@@ -27,13 +27,13 @@ struct EndOfCartPriceDisplayView: View {
                 HStack {
                     Text("Total MRP:").font(.subheadline)
                     Spacer()
-                    Text("\(totalMRP)₹").font(.subheadline)
+                    Text("\(totalMRP.removeZerosFromEnd())₹").font(.subheadline)
                 }
                 
                 HStack {
                     Text("Cashback:").font(.subheadline)
                     Spacer()
-                    Text("\(cashback[0])₹ - \(cashback[1])₹").font(.subheadline)
+                    Text("\(cashback[0].removeZerosFromEnd())₹ - \(cashback[1].removeZerosFromEnd())₹").font(.subheadline)
                 }
                 
                 HStack {
@@ -55,7 +55,7 @@ struct EndOfCartPriceDisplayView: View {
                 HStack {
                     Text("Amount Due: ").font(.headline).bold()
                     Spacer()
-                    Text("\(totalMRP)₹").font(.subheadline)
+                    Text("\(totalMRP.removeZerosFromEnd())₹").font(.subheadline)
                 }
             }
             

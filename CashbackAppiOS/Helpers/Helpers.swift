@@ -117,4 +117,22 @@ class Helpers {
         
         return randomCashback
     }
+    
+    //MARK: CART HELPER
+    static func quantityIncrement (quantity:inout Double, cartItemPrice:Double, currentMRP:inout Double, cashback:inout [Double]) {
+        if quantity != 10 {
+            quantity += 1
+            currentMRP += cartItemPrice
+            cashback[0] += cartItemPrice <= 500 ? 50 : 100
+            cashback[1] += cartItemPrice <= 500 ? 150 : 250
+        }
+    }
+    
+    static func quantityDecrement (quantity:inout Double, cartItemPrice:Double, currentMRP:inout Double, cashback:inout [Double]) {
+        if quantity != 1 {
+            quantity -= 1
+            currentMRP -= cartItemPrice
+            cashback[0] -= cartItemPrice <= 500 ? 50 : 100
+            cashback[1] -= cartItemPrice <= 500 ? 150 : 250        }
+    }
 }

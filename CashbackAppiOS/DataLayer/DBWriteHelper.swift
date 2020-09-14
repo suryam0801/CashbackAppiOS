@@ -59,17 +59,16 @@ class DBWriteHelper {
         Helpers.storeCustomerToDefaults(customer!)
     }
 
-    static func removeFromCart (cartItem:CartItem) {
-        dbInstance.db.reference(withPath: DBReferenceNames.USER_REF_NAME).child(customer!.id).child("cart").child(cartItem.itemId).removeValue()
+    static func removeFromCart (cartItemId:String) {
+        dbInstance.db.reference(withPath: DBReferenceNames.USER_REF_NAME).child(customer!.id).child("cart").child(cartItemId).removeValue()
 
         var userCart = customer?.cart ?? [String:CartItem]()
-        userCart[cartItem.itemId] = nil
+        userCart[cartItemId] = nil
         Helpers.storeCustomerToDefaults(customer!)
     }
     
     static func updateItemQuantity (cartItemId:String, newQuantity:Double) {
         dbInstance.db.reference(withPath: DBReferenceNames.USER_REF_NAME).child(customer!.id).child("cart").child(cartItemId).child("quantity").setValue(newQuantity)
-        
         customer?.cart[cartItemId]?.quantity = newQuantity
         Helpers.storeCustomerToDefaults(customer!)
     }
@@ -78,6 +77,8 @@ class DBWriteHelper {
     static func writeOrders (orders:[Order]) {
         for order in orders {
             dbInstance.db.reference(withPath: DBReferenceNames.ORDERS_REF_NAME).child(order.id).setValue(Helpers.asDictionary(object: order))
+            
+            removeFromCart(cartItemId: order.itemId)
         }
     }
 }
