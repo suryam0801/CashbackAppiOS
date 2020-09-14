@@ -20,7 +20,10 @@ struct OrdersView: View {
                         OrderCard(order: order)
                     }
                 }
+                Spacer()
             }
-        }.background(Color("Color")).onAppear(){self.ordersViewModel.fetchOrders()}
+        }.navigationBarTitle("Order History", displayMode:.inline)
+            .background(Color("Color"))
+            .onAppear(){self.ordersViewModel.fetchOrders()}
     }
 }

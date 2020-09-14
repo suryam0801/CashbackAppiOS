@@ -53,11 +53,8 @@ struct HomePageView: View {
                         
                         Spacer()
                         
-                    }.navigationBarTitle("Cashback", displayMode: .inline).navigationBarItems(leading: self.navBarMenu, trailing: NavBarEndButtons(showCart: self.$showCart))
-                        .edgesIgnoringSafeArea(.bottom)
-                }.frame(width: geometry.size.width, height: geometry.size.height)
-                    .offset(x: self.showMenu ? geometry.size.width/2 : 0)
-                    .disabled(self.showMenu ? true : false)
+                    }.gesture(drag).navigationBarTitle("Cashback", displayMode: .inline).navigationBarItems(leading: self.navBarMenu, trailing: NavBarEndButtons(showCart: self.$showCart))
+                }
                 
                 if self.showMenu {
                     MenuView(viewOrders: self.$viewOrders, viewCashbackHistory: self.$cashbackHistory, showSelf: self.$showMenu)
@@ -66,7 +63,7 @@ struct HomePageView: View {
                         .transition(.move(edge: .leading))
                 }
             }
-        }.gesture(drag).onAppear(){
+        }.onAppear(){
             customer = Helpers.retrieveStoredCustomer()
         }
     }
