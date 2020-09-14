@@ -148,12 +148,12 @@ struct DetailedItemView : View {
             Spacer()
             
             Button(action: {
-                
+
                 self.showCheckout.toggle()
                 self.cartItems.append(self.makeCartItem())
                 DBWriteHelper.addToCart(cartItem: self.cartItems[0])
                 self.showPayment.toggle()
-                
+
             }) {
                 
                 Text("Buy Now").padding()

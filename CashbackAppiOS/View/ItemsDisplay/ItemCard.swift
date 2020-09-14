@@ -25,7 +25,7 @@ struct ItemCard : View {
             HStack{
                 VStack(alignment: .leading, spacing: 10){
                     Text(item.name)
-                    Text("\(item.price.removeZerosFromEnd())").fontWeight(.heavy)
+                    Text("\(item.price.removeZerosFromEnd())₹").fontWeight(.heavy)
                 }
                 Spacer()
                 Button(action: {
