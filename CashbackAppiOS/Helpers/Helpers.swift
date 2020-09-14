@@ -133,4 +133,18 @@ class Helpers {
             cashback[0] -= cartItemPrice <= 500 ? 50 : 100
             cashback[1] -= cartItemPrice <= 500 ? 150 : 250        }
     }
+    
+    //MARK: TIME HELPERS
+    static func convertToDate (milisecond:Int64) -> String {
+        let dateVar = Date.init(timeIntervalSince1970: TimeInterval(milisecond)/1000)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd MMM, yyyy"
+        return dateFormatter.string(from: dateVar)
+    }
+
+    //MARK: TEXT HELPERS
+    static func copyToClipBoard(textToCopy: String) {
+        let pasteboard = UIPasteboard.general
+        pasteboard.string = textToCopy
+    }
 }

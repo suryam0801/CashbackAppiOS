@@ -17,7 +17,7 @@ struct OrdersView: View {
             } else {
                 ScrollView (.vertical, showsIndicators: false) {
                     ForEach (self.ordersViewModel.ordersList, id: \.id) { order in
-                        Text("\(order.id)")
+                        OrderCard(order: order)
                     }
                 }
             }

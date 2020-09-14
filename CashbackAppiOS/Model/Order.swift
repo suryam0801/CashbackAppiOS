@@ -17,7 +17,7 @@ class Order : Codable {
         self.timestamp = timestamp
         self.address = address
         self.refundStatus = refundStatus
-        self.trackingId = trackingId
+        self.trackingId = trackingId ?? ""
         self.cashback = cashback
         self.cashbackStatus = cashbackStatus
         self.itemId = itemId
@@ -38,7 +38,7 @@ class Order : Codable {
     var address:String!
     //Tracking Status
     var refundStatus:String! // requested/refunded
-    var trackingId:String!
+    var trackingId:String?
     var cashback:Double!
     var cashbackStatus:Bool! // true/false
     //Item Properties
