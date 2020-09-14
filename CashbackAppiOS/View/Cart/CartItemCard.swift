@@ -29,8 +29,9 @@ struct CartItemCard: View {
                     Text("\(cartItem.price.removeZerosFromEnd())₹").font(.subheadline).foregroundColor(Color.gray)
                     Spacer().frame(height: 10)
                     Text("Color: \(cartItem.color)").font(.subheadline)
+                    Text("Size: \(cartItem.size)").font(.subheadline)
                     Spacer().frame(height: 10)
-                    
+ 
                     Text(cartItem.price <= 500 ? "50 - 150₹ cashback!" : "100 - 250₹ cashback!")
                         .foregroundColor(Color(UIColor.acceptColorGreen)).font(.subheadline)
                         .padding(4)

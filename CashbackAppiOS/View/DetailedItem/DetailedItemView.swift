@@ -18,9 +18,11 @@ struct DetailedItemView : View {
     @State var cashback:[Double] = [0,0]
     @State var showCart:Bool = false
     
+    @State var showCheckout:Bool = false
     @State var showPayment:Bool = false
     @State var paymentRecieved:Bool = false
     @State var cartItems:[CartItem] = []
+    @State var totalBill:Double = 0
     
     var body : some View{
         
@@ -29,14 +31,7 @@ struct DetailedItemView : View {
             if self.showCart {
                 NavigationLink(destination: CartView(show: self.$showCart), isActive: self.$showCart) {EmptyView()}
             }
-            
-            if self.showPayment && !self.paymentRecieved {
-                NavigationLink(destination: RazorPayDisplay(showSelf: self.$paymentRecieved, cartItems: self.cartItems, cashback: self.cashback), isActive: self.$showPayment) {
-                    EmptyView()
-                }
-            }
-
-
+        
             VStack(spacing : 0){
                 
                 customNavBar
@@ -44,17 +39,27 @@ struct DetailedItemView : View {
                 Image("pic").resizable()
                 
                 VStack(alignment: .leading ,spacing: 15){
-                    itemDetailHeader
-                    Text("This item has a cashback value anywhere between \(self.cashback[0].removeZerosFromEnd()) to \(self.cashback[1].removeZerosFromEnd())").fixedSize(horizontal: false, vertical: true)
-                    sizePicker
-                    quantityPicker
-                    checkOutHelper
+                    
+                    if !self.showCheckout {
+                        itemDetailHeader
+                        Text("This item has a cashback value anywhere between \(self.cashback[0].removeZerosFromEnd()) to \(self.cashback[1].removeZerosFromEnd())").fixedSize(horizontal: false, vertical: true)
+                        sizePicker
+                        quantityPicker
+                        checkOutHelper
+                    } else {
+                        CartItemCard(cartItem: self.cartItems[0], mrp: self.$totalBill, cashback: self.$cashback)
+                    }
+                    
                 }.padding()
                     .background(RoundedBG().fill(Color.white))
                     .padding(.top, -50)
                 
+                if showCheckout {
+                    EndOfCartPriceDisplayView(cartItems: self.$cartItems, cashback: self.$cashback, totalMRP: self.$totalBill)
+                }
+                
             }
-        }.navigationBarTitle("").navigationBarHidden(true).onAppear(){self.cashbackInit()}
+        }.navigationBarTitle("").navigationBarHidden(true).onAppear(){self.onAppearHelper()}
     }
     
     var customNavBar : some View {
@@ -111,11 +116,21 @@ struct DetailedItemView : View {
     
     var quantityPicker: some View{
         VStack (alignment: .leading) {
-            Text("Select Quantity").font(.subheadline)
-            Stepper("\(self.quantity.removeZerosFromEnd())", value: self.$quantity, in: 1...10)
+            Stepper(onIncrement: self.increment, onDecrement: self.decrement) {
+                Text("Select Quantity").font(.subheadline)
+                Text("\(self.quantity.removeZerosFromEnd())")
+            }
         }
     }
     
+    private func increment () {
+        Helpers.quantityIncrement(quantity: &self.quantity, cartItemPrice: self.item.price, currentMRP: &self.totalBill, cashback: &self.cashback)
+    }
+    
+    private func decrement () {
+        Helpers.quantityDecrement(quantity: &self.quantity, cartItemPrice: self.item.price, currentMRP: &self.totalBill, cashback: &self.cashback)
+    }
+
     var checkOutHelper : some View  {
         HStack{
             
@@ -134,7 +149,9 @@ struct DetailedItemView : View {
             
             Button(action: {
                 
+                self.showCheckout.toggle()
                 self.cartItems.append(self.makeCartItem())
+                DBWriteHelper.addToCart(cartItem: self.cartItems[0])
                 self.showPayment.toggle()
                 
             }) {
@@ -153,7 +170,8 @@ struct DetailedItemView : View {
         return CartItem(itemId: self.item.id, name: self.item.name, price: self.item.price, photos: self.item.photos, storeIds: self.item.storeIds, color: self.selectedColor, size: self.size, quantity: self.quantity)
     }
     
-    func cashbackInit () {
+    func onAppearHelper () {
+        self.totalBill = self.item.price
         self.cashback[0] = self.item.price <= 500 ? 50 : 100
         self.cashback[1] = self.item.price <= 500 ? 150 : 250
     }
