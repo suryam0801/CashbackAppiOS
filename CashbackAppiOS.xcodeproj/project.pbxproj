@@ -54,6 +54,8 @@
 		175EBDE5250FBBB700D5686F /* CashbackHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175EBDE4250FBBB700D5686F /* CashbackHistoryView.swift */; };
 		175EBDE7250FBDC500D5686F /* OrdersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175EBDE6250FBDC500D5686F /* OrdersViewModel.swift */; };
 		175EBDE9250FC34E00D5686F /* OrderCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175EBDE8250FC34E00D5686F /* OrderCard.swift */; };
+		175EBDED250FD8B600D5686F /* CashabackCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175EBDEC250FD8B600D5686F /* CashabackCard.swift */; };
+		175EBDEF250FD8EB00D5686F /* CashbackPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175EBDEE250FD8EB00D5686F /* CashbackPickerView.swift */; };
 		17C8BEE4250CE9D900C89EB3 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C8BEE3250CE9D900C89EB3 /* CartViewModel.swift */; };
 		17C8BEE8250CFE2200C89EB3 /* NavBarEndButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C8BEE7250CFE2200C89EB3 /* NavBarEndButtons.swift */; };
 		17C8BEEA250D014000C89EB3 /* CartItemCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C8BEE9250D014000C89EB3 /* CartItemCard.swift */; };
@@ -118,6 +120,8 @@
 		175EBDE4250FBBB700D5686F /* CashbackHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashbackHistoryView.swift; sourceTree = "<group>"; };
 		175EBDE6250FBDC500D5686F /* OrdersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewModel.swift; sourceTree = "<group>"; };
 		175EBDE8250FC34E00D5686F /* OrderCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCard.swift; sourceTree = "<group>"; };
+		175EBDEC250FD8B600D5686F /* CashabackCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashabackCard.swift; sourceTree = "<group>"; };
+		175EBDEE250FD8EB00D5686F /* CashbackPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashbackPickerView.swift; sourceTree = "<group>"; };
 		17C8BEE3250CE9D900C89EB3 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
 		17C8BEE7250CFE2200C89EB3 /* NavBarEndButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarEndButtons.swift; sourceTree = "<group>"; };
 		17C8BEE9250D014000C89EB3 /* CartItemCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemCard.swift; sourceTree = "<group>"; };
@@ -215,6 +219,7 @@
 				175EBDDC250F9FDE00D5686F /* HamburgerMenu */,
 				17C8BEDE250CE99D00C89EB3 /* Cart */,
 				17C8BEF3250E79E100C89EB3 /* Payment */,
+				175EBDEB250FD87700D5686F /* CashbackPicker */,
 				175EBDEA250FCF3300D5686F /* Orders */,
 				175EBDE1250FBB9A00D5686F /* CashbackHistory */,
 				17553B5D250C67C200FF8D71 /* Registration */,
@@ -348,6 +353,15 @@
 				175EBDE8250FC34E00D5686F /* OrderCard.swift */,
 			);
 			path = Orders;
+			sourceTree = "<group>";
+		};
+		175EBDEB250FD87700D5686F /* CashbackPicker */ = {
+			isa = PBXGroup;
+			children = (
+				175EBDEC250FD8B600D5686F /* CashabackCard.swift */,
+				175EBDEE250FD8EB00D5686F /* CashbackPickerView.swift */,
+			);
+			path = CashbackPicker;
 			sourceTree = "<group>";
 		};
 		17C8BEDE250CE99D00C89EB3 /* Cart */ = {
@@ -552,8 +566,10 @@
 				17553B40250C626C00FF8D71 /* DBInstanceInitialize.swift in Sources */,
 				17553B5A250C675600FF8D71 /* OTPVerificationView.swift in Sources */,
 				17C8BEE4250CE9D900C89EB3 /* CartViewModel.swift in Sources */,
+				175EBDED250FD8B600D5686F /* CashabackCard.swift in Sources */,
 				17553B73250C740100FF8D71 /* HomePageView.swift in Sources */,
 				17553B75250C743700FF8D71 /* OnBoardingPageView.swift in Sources */,
+				175EBDEF250FD8EB00D5686F /* CashbackPickerView.swift in Sources */,
 				17553B6B250C6C6600FF8D71 /* DBWriteHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

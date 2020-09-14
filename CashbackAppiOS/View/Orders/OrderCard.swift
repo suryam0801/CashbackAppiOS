@@ -20,7 +20,7 @@ struct OrderCard: View {
                     Image("p11").resizable().frame(width: 100, height: 135)
                     Spacer()
                 }
-                
+
                 VStack (alignment: .leading) {
                     Group {
                         Text(order.itemName).bold().font(.headline)
@@ -62,7 +62,6 @@ struct OrderCard: View {
                 Spacer()
                 Image("doc.on.doc").renderingMode(.original).onTapGesture {Helpers.copyToClipBoard(textToCopy: self.order.transactionId)}
             }.padding(10).background(Color("Color")).cornerRadius(10)
-            
 
         }.padding(10).background(Color.white)
     }
