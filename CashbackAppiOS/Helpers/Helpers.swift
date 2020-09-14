@@ -99,7 +99,7 @@ class Helpers {
         return itemGrid
     }
     
-    static func makeOrderEntries (paymentId:String) -> Int {
+    static func makeOrderEntries (paymentId:String) {
         var orderList:[Order] = []
         
         let lowerCashback:Int = Int(tempCashback![0])
@@ -112,12 +112,10 @@ class Helpers {
             
             orderList.append(tempOrder)
         }
-        
+
         DBWriteHelper.writeOrders(orders: orderList)
-        
-        return randomCashback
     }
-    
+
     //MARK: CART HELPER
     static func quantityIncrement (quantity:inout Double, cartItemPrice:Double, currentMRP:inout Double, cashback:inout [Double]) {
         if quantity != 10 {

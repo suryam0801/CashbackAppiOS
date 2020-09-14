@@ -14,6 +14,7 @@ import FirebaseMessaging
 struct ContentView: View {
     @State var status = UserDefaults.standard.value(forKey: "status") as? Bool ?? false
     @State var onboardingFinished = false
+    
     var body: some View {
         VStack{
             //checking if user is signed in or not
@@ -26,6 +27,7 @@ struct ContentView: View {
                     self.onboarding
                 }
             }
+            
         }.onAppear {
             NotificationCenter.default.addObserver(forName: NSNotification.Name("statusChange"), object: nil, queue: .main) { (_) in
                 let status = UserDefaults.standard.value(forKey: "status") as? Bool ?? false

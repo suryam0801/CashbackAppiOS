@@ -38,7 +38,7 @@ struct CartItemCard: View {
                         .overlay(
                             RoundedRectangle(cornerRadius: 3)
                                 .stroke(Color(UIColor.acceptColorGreen), lineWidth: 2))
-                    
+
                     Spacer().frame(height: 10)
                     Stepper(onIncrement: self.increment, onDecrement: self.decrement) {
                         Text("Qty: \(self.quantity.removeZerosFromEnd())").font(.subheadline)

@@ -54,7 +54,7 @@ class RazorPayViewController: UIViewController, RazorpayPaymentCompletionProtoco
                 "email": "foo@bar.com"
             ],
             "theme": [
-                "color": "#F37254"
+                "color": "#0061FF"
             ]
         ]
         razorpay.open(options)
