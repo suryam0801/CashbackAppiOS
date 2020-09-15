@@ -18,4 +18,3 @@ var transactionId:String?
 var tempCartItems:[CartItem]?
 var tempCashback:[Double]?
 var givenCashback:Int? = 200
-var revealCashback:Int? = 100

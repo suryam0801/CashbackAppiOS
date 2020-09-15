@@ -10,7 +10,6 @@ import SwiftUI
 
 struct CashbackCard: View {
     @Binding var flipped:Bool // state variable used to update the card
-    @Binding var helperFlipped:Bool
     @Binding var userFlipped:Bool
     var cardName:String
 
@@ -29,13 +28,7 @@ struct CashbackCard: View {
             }
 
             if flipped {
-                if self.userFlipped == true {
-                    Text("\(givenCashback!)₹").font(.system(size: 50)).foregroundColor(Color.white).onAppear(){self.helperFlipped = false}
-                }
-                
-                if helperFlipped == true {
-                    Text("\(revealCashback!)₹").font(.system(size: 50)).foregroundColor(Color.white)
-                }
+                Text("\(givenCashback!)₹").font(.system(size: 50)).foregroundColor(Color.white)
             }
         }
     }

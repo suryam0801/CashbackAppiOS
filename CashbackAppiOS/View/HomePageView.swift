@@ -40,8 +40,7 @@ struct HomePageView: View {
                     }
                     
                     if self.viewOrders {
-                        NavigationLink(destination: CashbackPickerView(), isActive: self.$viewOrders) {EmptyView()}
-                        //NavigationLink(destination: OrdersView(), isActive: self.$viewOrders) {EmptyView()}
+                        NavigationLink(destination: OrdersView(), isActive: self.$viewOrders) {EmptyView()}
                     }
                     
                     if self.cashbackHistory {

@@ -12,10 +12,14 @@ struct OrderCard: View {
     
     var order:Order
     
+    @State var trackingIdCopied:Bool = false
+    @State var orderIdCopied:Bool = false
+    @State var transactionIdCopied:Bool = false
+    
     var body: some View {
         VStack (alignment: .leading, spacing: 0) {
             HStack {
-                
+
                 VStack {
                     Image("p11").resizable().frame(width: 100, height: 135)
                     Spacer()
@@ -36,32 +40,41 @@ struct OrderCard: View {
                     Text("Ordered on \(Helpers.convertToDate(milisecond: order.timestamp))").font(.subheadline)
                     Spacer()
                 }
-                
+
                 Spacer()
             }
-            
+
             Text("Tracking Id:").font(.subheadline)
             HStack {
                 Text("\(order.trackingId ?? "Yet to be shipped")")
                 Spacer()
                 if order.trackingId != nil && !order.trackingId!.isEmpty {
-                    Image("doc.on.doc").renderingMode(.original).onTapGesture {Helpers.copyToClipBoard(textToCopy: self.order.trackingId!)}
+                    Image("doc.on.doc").renderingMode(.original).onTapGesture {
+                        Helpers.copyToClipBoard(textToCopy: self.order.trackingId!)
+                        self.trackingIdCopied.toggle()
+                    }
                 }
-            }.padding(10).background(Color("Color")).cornerRadius(10)
+            }.padding(10).background(trackingIdCopied ? Color(UIColor.acceptColorGreen).opacity(0.3) : Color("Color")).cornerRadius(10)
             
             Text("Order Id").font(.subheadline)
             HStack {
                 Text("\(order.id)")
                 Spacer()
-                Image("doc.on.doc").renderingMode(.original).onTapGesture {Helpers.copyToClipBoard(textToCopy: self.order.id)}
-            }.padding(10).background(Color("Color")).cornerRadius(10)
-            
+                Image("doc.on.doc").renderingMode(.original).onTapGesture {
+                    Helpers.copyToClipBoard(textToCopy: self.order.id)
+                    self.orderIdCopied.toggle()
+                }
+            }.padding(10).background(orderIdCopied ? Color(UIColor.acceptColorGreen).opacity(0.3) : Color("Color")).cornerRadius(10)
+
             Text("Trasaction Id").font(.subheadline)
             HStack {
                 Text("\(order.transactionId)")
                 Spacer()
-                Image("doc.on.doc").renderingMode(.original).onTapGesture {Helpers.copyToClipBoard(textToCopy: self.order.transactionId)}
-            }.padding(10).background(Color("Color")).cornerRadius(10)
+                Image("doc.on.doc").renderingMode(.original).onTapGesture {
+                    Helpers.copyToClipBoard(textToCopy: self.order.transactionId)
+                    self.transactionIdCopied.toggle()
+                }
+            }.padding(10).background(transactionIdCopied ? Color(UIColor.acceptColorGreen).opacity(0.3) : Color("Color")).cornerRadius(10)
 
         }.padding(10).background(Color.white)
     }
