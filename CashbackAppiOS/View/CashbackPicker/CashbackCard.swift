@@ -10,8 +10,10 @@ import SwiftUI
 
 struct CashbackCard: View {
     @Binding var flipped:Bool // state variable used to update the card
+    @Binding var helperFlipped:Bool
+    @Binding var userFlipped:Bool
     var cardName:String
-    
+
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 20)
@@ -20,14 +22,20 @@ struct CashbackCard: View {
                 .rotation3DEffect(self.flipped ? Angle(degrees: 540): Angle(degrees: 0), axis: (x: CGFloat(0), y: CGFloat(10), z: CGFloat(0)))
                 .animation(.default) // implicitly applying animation
                 .onTapGesture {
-                    if userFlip == nil {
+                    if self.userFlipped == false {
                         self.flipped.toggle()
-                        userFlip = self.cardName
+                        self.userFlipped = true
                     }
             }
 
             if flipped {
-                Text((helperFlip != nil) ? "\(givenCashback!)" : "\(revealCashback!)").font(.system(size: 50)).foregroundColor(Color.white)
+                if self.userFlipped == true {
+                    Text("\(givenCashback!)₹").font(.system(size: 50)).foregroundColor(Color.white).onAppear(){self.helperFlipped = false}
+                }
+                
+                if helperFlipped == true {
+                    Text("\(revealCashback!)₹").font(.system(size: 50)).foregroundColor(Color.white)
+                }
             }
         }
     }

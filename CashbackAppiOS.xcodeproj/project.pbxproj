@@ -56,6 +56,7 @@
 		175EBDE9250FC34E00D5686F /* OrderCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175EBDE8250FC34E00D5686F /* OrderCard.swift */; };
 		175EBDED250FD8B600D5686F /* CashbackCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175EBDEC250FD8B600D5686F /* CashbackCard.swift */; };
 		175EBDEF250FD8EB00D5686F /* CashbackPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175EBDEE250FD8EB00D5686F /* CashbackPickerView.swift */; };
+		175EBDF125108A1200D5686F /* WinnerCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175EBDF025108A1200D5686F /* WinnerCard.swift */; };
 		17C8BEE4250CE9D900C89EB3 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C8BEE3250CE9D900C89EB3 /* CartViewModel.swift */; };
 		17C8BEE8250CFE2200C89EB3 /* NavBarEndButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C8BEE7250CFE2200C89EB3 /* NavBarEndButtons.swift */; };
 		17C8BEEA250D014000C89EB3 /* CartItemCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C8BEE9250D014000C89EB3 /* CartItemCard.swift */; };
@@ -122,6 +123,7 @@
 		175EBDE8250FC34E00D5686F /* OrderCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCard.swift; sourceTree = "<group>"; };
 		175EBDEC250FD8B600D5686F /* CashbackCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashbackCard.swift; sourceTree = "<group>"; };
 		175EBDEE250FD8EB00D5686F /* CashbackPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashbackPickerView.swift; sourceTree = "<group>"; };
+		175EBDF025108A1200D5686F /* WinnerCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerCard.swift; sourceTree = "<group>"; };
 		17C8BEE3250CE9D900C89EB3 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
 		17C8BEE7250CFE2200C89EB3 /* NavBarEndButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarEndButtons.swift; sourceTree = "<group>"; };
 		17C8BEE9250D014000C89EB3 /* CartItemCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemCard.swift; sourceTree = "<group>"; };
@@ -360,6 +362,7 @@
 			children = (
 				175EBDEC250FD8B600D5686F /* CashbackCard.swift */,
 				175EBDEE250FD8EB00D5686F /* CashbackPickerView.swift */,
+				175EBDF025108A1200D5686F /* WinnerCard.swift */,
 			);
 			path = CashbackPicker;
 			sourceTree = "<group>";
@@ -544,6 +547,7 @@
 				17C8BEE8250CFE2200C89EB3 /* NavBarEndButtons.swift in Sources */,
 				17553B6E250C6FA200FF8D71 /* CartItem.swift in Sources */,
 				17553B42250C62BF00FF8D71 /* SnapshotHelpers.swift in Sources */,
+				175EBDF125108A1200D5686F /* WinnerCard.swift in Sources */,
 				17553B88250CA98700FF8D71 /* ItemsDisplayMainView.swift in Sources */,
 				17C8BEEC250DE0E700C89EB3 /* EndOfCartPriceDisplayView.swift in Sources */,
 				17553B55250C66D600FF8D71 /* UIResponder+Current.swift in Sources */,
