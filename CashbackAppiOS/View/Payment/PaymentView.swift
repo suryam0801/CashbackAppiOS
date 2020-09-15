@@ -11,7 +11,6 @@ import Razorpay
 
 struct RazorPayDisplay : UIViewControllerRepresentable {
     
-    @Binding var showSelf:Bool
     var cartItems:[CartItem]
     var cashback:[Double]
     
@@ -22,9 +21,6 @@ struct RazorPayDisplay : UIViewControllerRepresentable {
     }
     
     func updateUIViewController(_ uiViewController: RazorPayViewController, context: Context) {
-        if transactionId != nil {
-            self.showSelf = true
-        }
     }
 }
 
@@ -44,7 +40,7 @@ class RazorPayViewController: UIViewController, RazorpayPaymentCompletionProtoco
     
     internal func showPaymentForm(){
         let options: [String:Any] = [
-            "amount": "100", //This is in currency subunits. 100 = 100 paise= INR 1.
+            "amount": "\(tempCartTotal! * 100)", //This is in currency subunits. 100 = 100 paise= INR 1.
             "currency": "INR",//We support more that 92 international currencies.
             "description": "purchase description",
             "image": "https://url-to-image.png",
@@ -61,7 +57,6 @@ class RazorPayViewController: UIViewController, RazorpayPaymentCompletionProtoco
     }
     
     public func onPaymentError(_ code: Int32, description str: String){
-        transactionId = "payment_failed"
         let alertController = UIAlertController(title: "FAILURE", message: str, preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alertController.addAction(cancelAction)

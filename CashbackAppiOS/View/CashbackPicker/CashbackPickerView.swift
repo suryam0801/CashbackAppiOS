@@ -16,7 +16,11 @@ struct CashbackPickerView: View {
     @State var userFlip:Bool = false
 
     var body: some View {
-        VStack {
+        VStack (alignment: .center, spacing: 10) {
+
+            Text("Pick Your Cashback!").font(.largeTitle)
+            Text("You'll get more than \(tempCashback![0].removeZerosFromEnd())")
+
             fourCardView
 //            if userFlip == false {
 //                fourCardView
@@ -27,7 +31,7 @@ struct CashbackPickerView: View {
 //            }
         }
     }
-    
+
     var fourCardView : some View {
         VStack {
             HStack () {

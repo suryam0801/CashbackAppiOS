@@ -60,13 +60,14 @@ struct EndOfCartPriceDisplayView: View {
             }
             
             if self.showPayment && !self.paymentRecieved {
-                NavigationLink(destination: RazorPayDisplay(showSelf: self.$paymentRecieved, cartItems: self.cartItems, cashback: self.cashback), isActive: self.$showPayment) {
+                NavigationLink(destination: RazorPayDisplay(cartItems: self.cartItems, cashback: self.cashback), isActive: self.$showPayment) {
                     EmptyView()
                 }
             }
 
             Button(action: {
                 self.paymentRecieved = false
+                tempCartTotal = self.totalMRP
                 self.showPayment.toggle()
             }) {
                 HStack {

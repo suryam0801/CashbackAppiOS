@@ -15,6 +15,8 @@ struct CartView: View {
     @State var totalMRP:Double = 0
     @State var totalCashBack:[Double] = [0,0]
     
+    @State var showCashbackPicker:Bool = false
+    
     var body: some View {
         VStack {
             if cartList.inCartList.isEmpty {
@@ -26,15 +28,27 @@ struct CartView: View {
                     }
                     
                     EndOfCartPriceDisplayView(cartItems: self.$cartList.inCartList, cashback: self.$totalCashBack, totalMRP: self.$totalMRP)
-            
+                    
                 }.onAppear(){self.calculateTotalMRP()}.padding(.top, 10)
             }
-        }.background(Color("Color"))
+        }.sheet(isPresented: self.$showCashbackPicker, content: {
+            CashbackPickerView()
+        }).background(Color("Color"))
             .navigationBarTitle("My Cart", displayMode: .inline)
-            .onAppear(){self.cartList.fetchItems()}
+            .onAppear(){self.onAppearHelper()}
             .onDisappear(){self.cartList.cleanup()}
     }
-
+    
+    func onAppearHelper() {
+        if transactionId == nil {
+            self.cartList.fetchItems()
+        } else {
+            self.cartList.inCartList.removeAll()
+            self.showCashbackPicker = true
+            transactionId = nil
+        }
+    }
+    
     func calculateTotalMRP () {
         for item in self.cartList.inCartList {
             self.totalMRP += (item.price * item.quantity)

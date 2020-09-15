@@ -17,4 +17,5 @@ var types = ["All","Men","Women","Kids"]
 var transactionId:String?
 var tempCartItems:[CartItem]?
 var tempCashback:[Double]?
-var givenCashback:Int? = 200
+var givenCashback:Int?
+var tempCartTotal:Double?
