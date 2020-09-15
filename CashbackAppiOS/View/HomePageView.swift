@@ -46,14 +46,19 @@ struct HomePageView: View {
                     if self.cashbackHistory {
                         NavigationLink(destination: CashbackHistoryView(), isActive: self.$cashbackHistory) {EmptyView()}
                     }
-                    
+
                     VStack(spacing: 15){
                         
                         ItemsDisplayMainView()
                         
                         Spacer()
                         
-                    }.gesture(drag).navigationBarTitle("Cashback", displayMode: .inline).navigationBarItems(leading: self.navBarMenu, trailing: NavBarEndButtons(showCart: self.$showCart))
+                    }.offset(x: self.showMenu ? geometry.size.width/2 : 0)
+                        .disabled(self.showMenu ? true : false)
+                        .navigationBarTitle("Cashback", displayMode: .inline)
+                        .edgesIgnoringSafeArea(.bottom)
+                        .navigationBarItems(leading: self.navBarMenu, trailing: NavBarEndButtons(showCart: self.$showCart))
+                        .gesture(drag)
                 }
                 
                 if self.showMenu {

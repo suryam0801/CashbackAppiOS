@@ -18,6 +18,14 @@ class OrdersViewModel : ObservableObject {
             self.ordersList = SnapshotHelpers.decodeArray(modelType: Order.self, array: snapShotArray)
         }
     }
+    
+    func fetchOrdersForCashback () {
+        DBHelper = DatabaseReadHelper()
+        DBHelper!.fetchFromDatabase(dbInstance.db.reference(withPath: DBReferenceNames.ORDERS_REF_NAME).queryOrdered(byChild: "customerId").queryEqual(toValue: customer!.id)) { snapShotArray in
+            var tempOrdersList = SnapshotHelpers.decodeArray(modelType: Order.self, array: snapShotArray)
+            self.ordersList = Helpers.groupingCashbackByTransactions(ordersList: tempOrdersList)
+        }
+    }
 
     func cleanup () {
         DBHelper?.removeReader()

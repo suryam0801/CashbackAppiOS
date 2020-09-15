@@ -56,27 +56,6 @@ class Helpers {
         UIApplication.shared.endEditing()
     }
     
-    //MARK: Loose Helpers
-    static func returnFlag(country:String) -> String {
-        let base = 127397
-        var usv = String.UnicodeScalarView()
-        for i in country.utf16 {
-            usv.append(UnicodeScalar(base + Int(i))!)
-        }
-        return String(usv)
-    }
-
-    static func asDictionary (object: Any) -> [String:Any] {
-        
-        let mirror = Mirror(reflecting: object)
-        let dict = Dictionary(uniqueKeysWithValues: mirror.children.lazy.map({ (label:String?, value:Any) -> (String, Any)? in
-            guard let label = label else { return nil }
-            let val = value
-            return (label, val)
-        }).compactMap { $0 })
-        return dict
-    }
-    
     //MARK: View Model Helpers
     static func makeItemsIntoGrid (itemList:[Item]) -> [Row] {
         var itemGrid:[Row] = []
@@ -116,6 +95,22 @@ class Helpers {
 
         DBWriteHelper.writeOrders(orders: orderList)
     }
+    
+    static func groupingCashbackByTransactions (ordersList:[Order]) -> [Order] {
+        var transactionIds:[String] = []
+        var tempOrderList:[Order] = []
+        
+        for order in ordersList {
+            print(transactionIds)
+            print(order.transactionId)
+            if !transactionIds.contains(order.transactionId) {
+                tempOrderList.append(order)
+                transactionIds.append(order.transactionId)
+            }
+        }
+        
+        return tempOrderList
+    }
 
     //MARK: CART HELPER
     static func quantityIncrement (quantity:inout Double, cartItemPrice:Double, currentMRP:inout Double, cashback:inout [Double]) {
@@ -148,4 +143,26 @@ class Helpers {
         let pasteboard = UIPasteboard.general
         pasteboard.string = textToCopy
     }
+    
+    //MARK: Loose Helpers
+    static func returnFlag(country:String) -> String {
+        let base = 127397
+        var usv = String.UnicodeScalarView()
+        for i in country.utf16 {
+            usv.append(UnicodeScalar(base + Int(i))!)
+        }
+        return String(usv)
+    }
+
+    static func asDictionary (object: Any) -> [String:Any] {
+        
+        let mirror = Mirror(reflecting: object)
+        let dict = Dictionary(uniqueKeysWithValues: mirror.children.lazy.map({ (label:String?, value:Any) -> (String, Any)? in
+            guard let label = label else { return nil }
+            let val = value
+            return (label, val)
+        }).compactMap { $0 })
+        return dict
+    }
+    
 }
