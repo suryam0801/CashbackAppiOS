@@ -17,3 +17,8 @@ var types = ["All","Men","Women","Kids"]
 var transactionId:String?
 var tempCartItems:[CartItem]?
 var tempCashback:[Double]?
+var givenCashback:Int? = 50
+var revealCashback:Int? = 100
+
+var helperFlip:Bool?
+var userFlip:String?
