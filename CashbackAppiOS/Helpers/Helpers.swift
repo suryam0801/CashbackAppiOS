@@ -111,6 +111,16 @@ class Helpers {
         
         return tempOrderList
     }
+    
+    static func totalCashbackAmount (orderList:[Order]) -> Double {
+        var cashbackAmount:Double = 0
+        
+        for order in orderList {
+            cashbackAmount += order.cashback
+        }
+        
+        return cashbackAmount
+    }
 
     //MARK: CART HELPER
     static func quantityIncrement (quantity:inout Double, cartItemPrice:Double, currentMRP:inout Double, cashback:inout [Double]) {

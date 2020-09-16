@@ -11,18 +11,33 @@ import SwiftUI
 struct CashbackHistoryView: View {
     
     @ObservedObject private var cashbackHistoryViewModel = OrdersViewModel()
-    @State private var previousTransactionId:String = "wef"
     
     var body: some View {
-        VStack {
+        VStack (spacing: 0) {
             if self.cashbackHistoryViewModel.ordersList.isEmpty {
                 Indicator()
             } else {
-                ForEach (self.cashbackHistoryViewModel.ordersList, id: \.transactionId) { order in
-                    Text("\(order.cashback)").onAppear(){self.previousTransactionId = order.transactionId}
+                
+                ScrollView {
+                    
+                    Spacer().frame(height: 10)
+                    
+                    HStack {
+                        VStack (alignment: .leading) {
+                            Text("Total Earned\(Helpers.totalCashbackAmount(orderList: self.cashbackHistoryViewModel.ordersList).removeZerosFromEnd())₹").font(.largeTitle).foregroundColor(Color.white)
+                        }.padding(10)
+                        Spacer()
+                    }.background(Color(UIColor.acceptColorGreen)).cornerRadius(4).padding([.leading, .trailing], 10)
+
+                    Spacer().frame(height: 10)
+                    
+                    ForEach (self.cashbackHistoryViewModel.ordersList, id: \.id) { order in
+                        CashbackHistoryCard(order: order)
+                    }
                 }
             }
-        }.onAppear(){
+            Spacer()
+        }.navigationBarTitle("Cashback History", displayMode: .inline).onAppear(){
             self.cashbackHistoryViewModel.fetchOrdersForCashback()
         }.onDisappear() {
             self.cashbackHistoryViewModel.cleanup()

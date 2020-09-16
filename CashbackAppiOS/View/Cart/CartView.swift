@@ -11,12 +11,12 @@ import SwiftUI
 struct CartView: View {
     @ObservedObject var cartList:CartViewModel = CartViewModel()
     @Binding var show : Bool
-    
+
     @State var totalMRP:Double = 0
     @State var totalCashBack:[Double] = [0,0]
-    
+
     @State var showCashbackPicker:Bool = false
-    
+
     var body: some View {
         VStack {
             if cartList.inCartList.isEmpty {
@@ -36,7 +36,7 @@ struct CartView: View {
         }).background(Color("Color"))
             .navigationBarTitle("My Cart", displayMode: .inline)
             .onAppear(){self.onAppearHelper()}
-            .onDisappear(){self.cartList.cleanup()}
+            .onDisappear(){self.onDisappearHelper()}
     }
     
     func onAppearHelper() {
@@ -49,6 +49,12 @@ struct CartView: View {
         }
     }
     
+    func onDisappearHelper () {
+        self.cartList.cleanup()
+        self.totalMRP = 0
+        self.totalCashBack = [0,0]
+    }
+
     func calculateTotalMRP () {
         for item in self.cartList.inCartList {
             self.totalMRP += (item.price * item.quantity)
