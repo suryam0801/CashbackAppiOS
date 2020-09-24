@@ -34,19 +34,31 @@ class Helpers {
     }
     
     static func cashbackArraySetter (cashback: inout [Double], price: Double) {
-        cashback[0] = price <= 500 ? 50 : 100
-        cashback[1] = price <= 500 ? 150 : 250
+        cashback[0] = price <= 500 ? 50 : 150
+        cashback[1] = price <= 500 ? 100 : 200
+    }
+    
+    static func returnCashbackLowerEnd (price:Double) -> Int {
+        let amountToReturn = price <= 500 ? 50 : 100
+        return amountToReturn
+    }
+    
+    static func returnCashbackUpperEnd (price:Double) -> Int {
+        let amountToReturn = price <= 500 ? 100 : 200
+        return amountToReturn
     }
     
     //MARK: User Helpers
-    static func storeCustomerToDefaults (_ userObj: Customer) {
+    static func storeCustomerToDefaults (_ customerObj: Customer) {
         let encoder = JSONEncoder()
-        if let encoded = try? encoder.encode(userObj) {
+        if let encoded = try? encoder.encode(customerObj) {
             let defaults = UserDefaults.standard
             defaults.set(encoded, forKey: "savedUser")
         }
         
-        customer = userObj
+        customer = customerObj
+        
+        print(customer?.cart)
     }
 
     static func retrieveStoredCustomer () -> Customer? {
@@ -91,7 +103,6 @@ class Helpers {
                 row.rows!.append(item)
                 guard row != nil else { return itemGrid }
                 itemGrid.append(row)
-                
             }
             counter+=1
         }
@@ -147,8 +158,8 @@ class Helpers {
         if quantity != 10 {
             quantity += 1
             currentMRP += cartItemPrice
-            cashback[0] += cartItemPrice <= 500 ? 50 : 100
-            cashback[1] += cartItemPrice <= 500 ? 150 : 250
+            cashback[0] += Double(returnCashbackLowerEnd(price: cartItemPrice))
+            cashback[1] += Double(returnCashbackUpperEnd(price: cartItemPrice))
         }
     }
     
@@ -156,8 +167,9 @@ class Helpers {
         if quantity != 1 {
             quantity -= 1
             currentMRP -= cartItemPrice
-            cashback[0] -= cartItemPrice <= 500 ? 50 : 100
-            cashback[1] -= cartItemPrice <= 500 ? 150 : 250        }
+            cashback[0] -= Double(returnCashbackLowerEnd(price: cartItemPrice))
+            cashback[1] -= Double(returnCashbackUpperEnd(price: cartItemPrice))
+        }
     }
     
     //MARK: TIME HELPERS

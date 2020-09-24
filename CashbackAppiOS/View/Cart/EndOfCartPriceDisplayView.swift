@@ -14,7 +14,6 @@ struct EndOfCartPriceDisplayView: View {
     @Binding var cashback:[Double]
     @Binding var totalMRP:Double
     @State private var showPayment:Bool = false
-    @State private var paymentRecieved:Bool = false
     
     var body: some View {
         VStack (alignment: .leading, spacing: 10) {
@@ -35,21 +34,21 @@ struct EndOfCartPriceDisplayView: View {
                     Spacer()
                     Text("\(cashback[0].removeZerosFromEnd())₹ - \(cashback[1].removeZerosFromEnd())₹").font(.subheadline)
                 }
-                
+
                 HStack {
                     Text("Platform Handling Fee:").font(.subheadline)
                     Spacer()
                     Text("99₹").strikethrough().font(.subheadline)
                     Text("FREE").foregroundColor(Color(UIColor.acceptColorGreen)).font(.subheadline)
                 }
-                
+
                 HStack {
                     Text("Delivery Fee:").font(.subheadline)
                     Spacer()
                     Text("30₹").strikethrough().font(.subheadline)
                     Text("FREE").foregroundColor(Color(UIColor.acceptColorGreen)).font(.subheadline)
                 }
-                
+
                 Divider()
                 
                 HStack {
@@ -58,15 +57,14 @@ struct EndOfCartPriceDisplayView: View {
                     Text("\(totalMRP.removeZerosFromEnd())₹").font(.subheadline)
                 }
             }
-            
-            if self.showPayment && !self.paymentRecieved {
+
+            if self.showPayment {
                 NavigationLink(destination: RazorPayDisplay(cartItems: self.cartItems, cashback: self.cashback), isActive: self.$showPayment) {
                     EmptyView()
                 }
             }
 
             Button(action: {
-                self.paymentRecieved = false
                 tempCartTotal = self.totalMRP
                 self.showPayment.toggle()
             }) {

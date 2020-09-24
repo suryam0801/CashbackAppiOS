@@ -20,7 +20,6 @@ struct DetailedItemView : View {
     
     @State var showCheckout:Bool = false
     @State var showPayment:Bool = false
-    @State var paymentRecieved:Bool = false
     @State var cartItems:[CartItem] = []
     @State var totalBill:Double = 0
     

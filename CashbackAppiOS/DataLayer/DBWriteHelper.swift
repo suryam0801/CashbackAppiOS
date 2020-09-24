@@ -56,14 +56,14 @@ class DBWriteHelper {
 
         var userCart = customer?.cart ?? [String:CartItem]()
         userCart[cartItem.itemId] = tempCartItem
+        customer?.cart = userCart
         Helpers.storeCustomerToDefaults(customer!)
     }
 
     static func removeFromCart (cartItemId:String) {
         dbInstance.db.reference(withPath: DBReferenceNames.USER_REF_NAME).child(customer!.id).child("cart").child(cartItemId).removeValue()
 
-        var userCart = customer?.cart ?? [String:CartItem]()
-        userCart[cartItemId] = nil
+        customer?.cart[cartItemId] = nil
         Helpers.storeCustomerToDefaults(customer!)
     }
     
