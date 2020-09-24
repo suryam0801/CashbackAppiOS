@@ -31,9 +31,7 @@ struct CartView: View {
                     
                 }.onAppear(){self.calculateTotalMRP()}.padding(.top, 10)
             }
-        }.sheet(isPresented: self.$showCashbackPicker, content: {
-            CashbackPickerView()
-        }).background(Color("Color"))
+        }.background(Color("Color"))
             .navigationBarTitle("My Cart", displayMode: .inline)
             .onAppear(){self.onAppearHelper()}
             .onDisappear(){self.onDisappearHelper()}

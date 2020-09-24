@@ -14,6 +14,8 @@ struct ItemsScroll : View {
     @Binding var selectedCategory:String
     @ObservedObject private var itemViewModel = ItemsViewModel()
     
+    @State var showCashbackPicker:Bool = false
+    
     var body : some View{
         
         VStack{
@@ -37,10 +39,21 @@ struct ItemsScroll : View {
                     }
                 }
             }
-        }.onAppear(){
-            self.itemViewModel.fetchItems()
+        }.sheet(isPresented: self.$showCashbackPicker, content: {
+            CashbackPickerView()
+        }).onAppear(){
+            self.onAppearHelper()
         }.onDisappear(){
             self.itemViewModel.cleanup()
+        }
+    }
+    
+    func onAppearHelper() {
+        if transactionId == nil {
+            self.itemViewModel.fetchItems()
+        } else {
+            self.showCashbackPicker = true
+            transactionId = nil
         }
     }
     
