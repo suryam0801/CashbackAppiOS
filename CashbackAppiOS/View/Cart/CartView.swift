@@ -58,14 +58,7 @@ struct CartView: View {
     func calculateTotalMRP () {
         for item in self.cartList.inCartList {
             self.totalMRP += (item.price * item.quantity)
-            
-            if item.price <= 500 {
-                self.totalCashBack[0] += (50 * item.quantity)
-                self.totalCashBack[1] += (150 * item.quantity)
-            } else {
-                self.totalCashBack[0] += (100 * item.quantity)
-                self.totalCashBack[1] += (200 * item.quantity)
-            }
+            Helpers.totalCashbackCalculator(cashback: &self.totalCashBack, price: item.price, itemQuantity: item.quantity)
         }
     }
 }

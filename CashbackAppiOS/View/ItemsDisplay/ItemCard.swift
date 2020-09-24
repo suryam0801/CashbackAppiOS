@@ -19,8 +19,8 @@ struct ItemCard : View {
         VStack(spacing: 8){
             
             NavigationLink(destination: DetailedItemView(show: self.$show, item: self.item), isActive: $show) {
-                Image("p21").renderingMode(.original).resizable().frame(width: UIScreen.main.bounds.width / 2 - 25, height: 240)
-            }
+                ItemImageDisplay(url: self.item.photos[0], width: UIScreen.main.bounds.width / 2 - 25, height: 240)
+            }.buttonStyle(PlainButtonStyle())
 
             HStack{
                 VStack(alignment: .leading, spacing: 10){

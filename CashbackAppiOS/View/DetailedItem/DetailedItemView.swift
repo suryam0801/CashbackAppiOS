@@ -36,28 +36,28 @@ struct DetailedItemView : View {
                 
                 customNavBar
                 
-                Image("pic").resizable()
-                
-                VStack(alignment: .leading ,spacing: 15){
-                    
-                    if !self.showCheckout {
-                        itemDetailHeader
-                        Text("This item has a cashback value anywhere between \(self.cashback[0].removeZerosFromEnd()) to \(self.cashback[1].removeZerosFromEnd())").fixedSize(horizontal: false, vertical: true)
-                        sizePicker
-                        quantityPicker
-                        checkOutHelper
-                    } else {
-                        CartItemCard(cartItem: self.cartItems[0], mrp: self.$totalBill, cashback: self.$cashback)
-                    }
-                    
-                }.padding()
-                    .background(RoundedBG().fill(Color.white))
-                    .padding(.top, -50)
+                ItemImageDisplay(url: self.item.photos[0], width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height/2)
                 
                 if showCheckout {
                     EndOfCartPriceDisplayView(cartItems: self.$cartItems, cashback: self.$cashback, totalMRP: self.$totalBill)
+                } else {
+                    VStack(alignment: .leading ,spacing: 15){
+                        
+                        if !self.showCheckout {
+                            itemDetailHeader
+                            Text("This item has a cashback value anywhere between \(self.cashback[0].removeZerosFromEnd()) to \(self.cashback[1].removeZerosFromEnd())").fixedSize(horizontal: false, vertical: true)
+                            sizePicker
+                            quantityPicker
+                            checkOutHelper
+                        } else {
+                            CartItemCard(cartItem: self.cartItems[0], mrp: self.$totalBill, cashback: self.$cashback)
+                        }
+                        
+                    }.padding()
+                        .background(RoundedBG().fill(Color.white))
+                        .padding(.top, -70)
+                    
                 }
-                
             }
         }.navigationBarTitle("").navigationBarHidden(true).onAppear(){self.onAppearHelper()}
     }
@@ -117,7 +117,7 @@ struct DetailedItemView : View {
     var quantityPicker: some View{
         VStack (alignment: .leading) {
             Stepper(onIncrement: self.increment, onDecrement: self.decrement) {
-                Text("Select Quantity").font(.subheadline)
+                Text("Select Quantity: ").font(.subheadline)
                 Text("\(self.quantity.removeZerosFromEnd())")
             }
         }
@@ -169,10 +169,9 @@ struct DetailedItemView : View {
     func makeCartItem () -> CartItem {
         return CartItem(itemId: self.item.id, name: self.item.name, price: self.item.price, photos: self.item.photos, storeIds: self.item.storeIds, color: self.selectedColor, size: self.size, quantity: self.quantity)
     }
-    
+ 
     func onAppearHelper () {
         self.totalBill = self.item.price
-        self.cashback[0] = self.item.price <= 500 ? 50 : 100
-        self.cashback[1] = self.item.price <= 500 ? 150 : 250
+        Helpers.cashbackArraySetter(cashback: &cashback, price: self.item.price)
     }
 }

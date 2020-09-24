@@ -21,7 +21,7 @@ struct OrderCard: View {
             HStack {
 
                 VStack {
-                    Image("p11").resizable().frame(width: 100, height: 135)
+                    ItemImageDisplay(url: order.itemPhotos[0], width: 100, height: 135)
                     Spacer()
                 }
 

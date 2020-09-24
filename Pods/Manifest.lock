@@ -98,6 +98,11 @@ PODS:
   - PromisesObjC (1.2.10)
   - Protobuf (3.13.0)
   - razorpay-pod (1.1.7)
+  - SDWebImage (5.9.1):
+    - SDWebImage/Core (= 5.9.1)
+  - SDWebImage/Core (5.9.1)
+  - SDWebImageSwiftUI (1.5.0):
+    - SDWebImage (~> 5.7)
 
 DEPENDENCIES:
   - CodableFirebase
@@ -107,6 +112,7 @@ DEPENDENCIES:
   - Firebase/Database
   - Firebase/Messaging
   - razorpay-pod (~> 1.1.7)
+  - SDWebImageSwiftUI
 
 SPEC REPOS:
   trunk:
@@ -130,6 +136,8 @@ SPEC REPOS:
     - PromisesObjC
     - Protobuf
     - razorpay-pod
+    - SDWebImage
+    - SDWebImageSwiftUI
 
 SPEC CHECKSUMS:
   CodableFirebase: 0bf201991eeec35eb9fcd987d271ea463cf34a80
@@ -152,7 +160,9 @@ SPEC CHECKSUMS:
   PromisesObjC: b14b1c6b68e306650688599de8a45e49fae81151
   Protobuf: 3dac39b34a08151c6d949560efe3f86134a3f748
   razorpay-pod: 6ee0c8c7afad8eead9524d5eb516bc35ac1604ef
+  SDWebImage: a990c053fff71e388a10f3357edb0be17929c9c5
+  SDWebImageSwiftUI: 43687ffe232ddd33fe0659498b7ca9884fdd6b35
 
-PODFILE CHECKSUM: a1ab88d9121d5655d526523e1039c8222a9084fe
+PODFILE CHECKSUM: 81e9c1870276ab6e3445c6c6cfac7a21838115c6
 
 COCOAPODS: 1.9.3

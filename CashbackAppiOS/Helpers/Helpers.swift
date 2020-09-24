@@ -18,6 +18,26 @@ enum ChildReturnStatus {
 
 class Helpers {
     
+    //MARK: Cashback Helpers
+    static func cashbackDisplayText (price:Double) -> String {
+        return price <= 500 ? "50 - 150₹ cashback!" : "100 - 250₹ cashback!"
+    }
+    
+    static func totalCashbackCalculator (cashback:inout [Double], price:Double, itemQuantity:Double) {
+        if price <= 500 {
+            cashback[0] += (50 * itemQuantity)
+            cashback[1] += (150 * itemQuantity)
+        } else {
+            cashback[0] += (100 * itemQuantity)
+            cashback[1] += (200 * itemQuantity)
+        }
+    }
+    
+    static func cashbackArraySetter (cashback: inout [Double], price: Double) {
+        cashback[0] = price <= 500 ? 50 : 100
+        cashback[1] = price <= 500 ? 150 : 250
+    }
+    
     //MARK: User Helpers
     static func storeCustomerToDefaults (_ userObj: Customer) {
         let encoder = JSONEncoder()
