@@ -18,7 +18,7 @@ struct ItemsDisplayMainView : View {
             
             ScrollViewHeaderCategory(selected: self.$selected)
                         
-            ItemsScroll()
+            ItemsScroll(selectedCategory: self.$selected)
             
         }.padding()
         .background(Color("Color"))

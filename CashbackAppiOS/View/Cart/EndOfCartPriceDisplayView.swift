@@ -14,6 +14,7 @@ struct EndOfCartPriceDisplayView: View {
     @Binding var cashback:[Double]
     @Binding var totalMRP:Double
     @State private var showPayment:Bool = false
+    @State private var paymentRecieved:Bool = false
     
     var body: some View {
         VStack (alignment: .leading, spacing: 10) {
@@ -58,13 +59,14 @@ struct EndOfCartPriceDisplayView: View {
                 }
             }
 
-            if self.showPayment {
+            if self.showPayment && !self.paymentRecieved {
                 NavigationLink(destination: RazorPayDisplay(cartItems: self.cartItems, cashback: self.cashback), isActive: self.$showPayment) {
                     EmptyView()
                 }
             }
 
             Button(action: {
+                self.paymentRecieved = false
                 tempCartTotal = self.totalMRP
                 self.showPayment.toggle()
             }) {

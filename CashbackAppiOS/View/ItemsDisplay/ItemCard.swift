@@ -13,29 +13,23 @@ struct ItemCard : View {
     var item : Item
     @State var show  = false
     
-    
     var body : some View{
         
-        VStack(spacing: 8){
-            
-            NavigationLink(destination: DetailedItemView(show: self.$show, item: self.item), isActive: $show) {
-                ItemImageDisplay(url: self.item.photos[0], width: UIScreen.main.bounds.width / 2 - 25, height: 240)
-            }.buttonStyle(PlainButtonStyle())
+        HStack {
+            VStack(spacing: 8){
+                
+                NavigationLink(destination: DetailedItemView(show: self.$show, item: self.item), isActive: $show) {
+                    ItemImageDisplay(url: self.item.photos[0], width: UIScreen.main.bounds.width / 2 - 25, height: 240)
+                }.buttonStyle(PlainButtonStyle())
 
-            HStack{
-                VStack(alignment: .leading, spacing: 10){
-                    Text(item.name)
-                    Text("\(item.price.removeZerosFromEnd())₹").fontWeight(.heavy)
+                HStack{
+                    VStack(alignment: .leading, spacing: 10){
+                        Text(item.name)
+                        Text("\(item.price.removeZerosFromEnd())₹").fontWeight(.heavy)
+                    }
                 }
-                Spacer()
-                Button(action: {
-                    
-                }) {
-                    
-                    Image("option").renderingMode(.original)
-                    
-                }.padding(.trailing, 15)
             }
+            Spacer()
         }
     }
 }

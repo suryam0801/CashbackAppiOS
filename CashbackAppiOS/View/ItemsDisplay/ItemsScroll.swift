@@ -11,6 +11,7 @@ import SwiftUI
 struct ItemsScroll : View {
     
     @State var show = false
+    @Binding var selectedCategory:String
     @ObservedObject private var itemViewModel = ItemsViewModel()
     
     var body : some View{
@@ -27,7 +28,9 @@ struct ItemsScroll : View {
                         ForEach(self.itemViewModel.itemGrid){i in
                             HStack{
                                 ForEach(i!.rows!){j in
-                                    ItemCard(item: j)
+                                    if j.category.contains(self.selectedCategory) {
+                                        ItemCard(item: j)
+                                    } 
                                 }
                             }
                         }

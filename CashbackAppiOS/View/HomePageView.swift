@@ -48,11 +48,11 @@ struct HomePageView: View {
                     }
 
                     VStack(spacing: 15){
-                        
+
                         ItemsDisplayMainView()
-                        
+
                         Spacer()
-                        
+
                     }.offset(x: self.showMenu ? geometry.size.width/2 : 0)
                         .disabled(self.showMenu ? true : false)
                         .navigationBarTitle("Cashback", displayMode: .inline)
@@ -60,7 +60,7 @@ struct HomePageView: View {
                         .navigationBarItems(leading: self.navBarMenu, trailing: NavBarEndButtons(showCart: self.$showCart))
                         .gesture(drag)
                 }
-                
+
                 if self.showMenu {
                     MenuView(viewOrders: self.$viewOrders, viewCashbackHistory: self.$cashbackHistory, showSelf: self.$showMenu)
                         .gesture(drag)

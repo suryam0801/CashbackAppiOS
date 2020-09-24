@@ -18,7 +18,6 @@ struct ScrollViewHeaderCategory: View {
                 HStack{
                     
                     Button(action: {
-                        
                         self.selected = i
                         
                     }) {

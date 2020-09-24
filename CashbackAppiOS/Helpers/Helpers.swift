@@ -57,8 +57,6 @@ class Helpers {
         }
         
         customer = customerObj
-        
-        print(customer?.cart)
     }
 
     static func retrieveStoredCustomer () -> Customer? {
