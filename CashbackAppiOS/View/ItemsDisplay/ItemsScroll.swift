@@ -37,11 +37,11 @@ struct ItemsScroll : View {
                             }
                         }
                     }
-                }
+                }.sheet(isPresented: self.$showCashbackPicker, content: {
+                    CashbackPickerView()
+                })
             }
-        }.sheet(isPresented: self.$showCashbackPicker, content: {
-            CashbackPickerView()
-        }).onAppear(){
+        }.onAppear(){
             self.onAppearHelper()
         }.onDisappear(){
             self.itemViewModel.cleanup()
