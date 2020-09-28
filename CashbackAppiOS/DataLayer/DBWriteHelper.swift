@@ -75,6 +75,7 @@ class DBWriteHelper {
     
     //MARK: ORDERS DATA
     static func writeOrders (orders:[Order]) {
+        
         for order in orders {
             dbInstance.db.reference(withPath: DBReferenceNames.ORDERS_REF_NAME).child(order.id).setValue(Helpers.asDictionary(object: order))
             

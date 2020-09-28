@@ -48,9 +48,9 @@ struct PrePurchaseView: View {
             
             TextField("Enter Promo Code", text: self.$promoCodeEntry)
                 .padding()
-                .background(Color(UIColor.textFieldLightGrey))
+                .background(retrievedPromoCodes!.keys.contains(self.promoCodeEntry.lowercased()) ? Color(UIColor.acceptColorGreen).opacity(0.5) : Color(UIColor.textFieldLightGrey))
                 .clipShape(RoundedRectangle(cornerRadius: 10))
-            
+
             Spacer()
             
             if !self.showAddressChooser {
@@ -79,6 +79,7 @@ struct PrePurchaseView: View {
             }
             
             Button(action: {
+                promoCode = self.promoCodeEntry
                 tempCartTotal = self.totalMRP
                 self.showPayment.toggle()
             }) {

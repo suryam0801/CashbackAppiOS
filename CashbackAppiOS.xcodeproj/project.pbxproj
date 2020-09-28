@@ -11,6 +11,7 @@
 		173FA16F2521AFA900F8E306 /* PrePurchaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173FA16E2521AFA900F8E306 /* PrePurchaseView.swift */; };
 		173FA1712521B30B00F8E306 /* BillSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173FA1702521B30B00F8E306 /* BillSummaryView.swift */; };
 		173FA1732521B7DB00F8E306 /* AddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173FA1722521B7DB00F8E306 /* AddressView.swift */; };
+		173FA17525223C2900F8E306 /* PromoCodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173FA17425223C2900F8E306 /* PromoCodeViewModel.swift */; };
 		17553B1F250C5B2900FF8D71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17553B1E250C5B2900FF8D71 /* AppDelegate.swift */; };
 		17553B21250C5B2900FF8D71 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17553B20250C5B2900FF8D71 /* SceneDelegate.swift */; };
 		17553B23250C5B2900FF8D71 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17553B22250C5B2900FF8D71 /* ContentView.swift */; };
@@ -80,6 +81,7 @@
 		173FA16E2521AFA900F8E306 /* PrePurchaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrePurchaseView.swift; sourceTree = "<group>"; };
 		173FA1702521B30B00F8E306 /* BillSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillSummaryView.swift; sourceTree = "<group>"; };
 		173FA1722521B7DB00F8E306 /* AddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressView.swift; sourceTree = "<group>"; };
+		173FA17425223C2900F8E306 /* PromoCodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromoCodeViewModel.swift; sourceTree = "<group>"; };
 		17553B1B250C5B2900FF8D71 /* CashbackAppiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CashbackAppiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17553B1E250C5B2900FF8D71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17553B20250C5B2900FF8D71 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -334,6 +336,7 @@
 				17C8BEE3250CE9D900C89EB3 /* CartViewModel.swift */,
 				175EBDE6250FBDC500D5686F /* OrdersViewModel.swift */,
 				176702102521A5B900508396 /* CashbackAmountViewModel.swift */,
+				173FA17425223C2900F8E306 /* PromoCodeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -597,6 +600,7 @@
 				17553B40250C626C00FF8D71 /* DBInstanceInitialize.swift in Sources */,
 				17553B5A250C675600FF8D71 /* OTPVerificationView.swift in Sources */,
 				17C8BEE4250CE9D900C89EB3 /* CartViewModel.swift in Sources */,
+				173FA17525223C2900F8E306 /* PromoCodeViewModel.swift in Sources */,
 				175EBDED250FD8B600D5686F /* CashbackCard.swift in Sources */,
 				17553B73250C740100FF8D71 /* HomePageView.swift in Sources */,
 				17553B75250C743700FF8D71 /* OnBoardingPageView.swift in Sources */,

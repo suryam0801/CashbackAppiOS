@@ -70,6 +70,7 @@ struct HomePageView: View {
             }
         }.onAppear(){
             customer = Helpers.retrieveStoredCustomer()
+            PromoCodeViewModel().fetchPromoCodes()
         }
     }
     

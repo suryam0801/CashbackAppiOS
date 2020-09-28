@@ -23,3 +23,5 @@ var tempCartTotal:Double?
 var emptyItem:Item = Item(id: "", name: "", price: 0, category: nil, storeIds: nil, stock: nil, photos: [""], color: nil, sizes: nil)
 
 var cashbackAmount:CashbackAmount?
+var retrievedPromoCodes:[String:Bool]?
+var promoCode:String?

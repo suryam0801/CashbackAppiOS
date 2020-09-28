@@ -9,13 +9,14 @@
 import Foundation
 
 class Order : Codable {
-    internal init(id: String? = nil, customerId: String? = nil, transactionId: String? = nil, totalAmount: Double? = nil, timestamp: Int64? = nil, address: String? = nil, refundStatus: String? = nil, trackingId: String? = nil, cashback: Double? = nil, cashbackStatus: Bool? = nil, itemId: String? = nil, itemName: String? = nil, itemPrice: Double? = nil, itemColor: String? = nil, itemSize: String? = nil, itemQuantity: Double? = nil, itemPhotos: [String]? = nil, storeId: String? = nil) {
+    internal init(id: String? = nil, customerId: String? = nil, transactionId: String? = nil, totalAmount: Double? = nil, timestamp: Int64? = nil, address: String? = nil, promocodeApplied: String? = nil, refundStatus: String? = nil, trackingId: String? = nil, cashback: Double? = nil, cashbackStatus: Bool? = nil, itemId: String? = nil, itemName: String? = nil, itemPrice: Double? = nil, itemColor: String? = nil, itemSize: String? = nil, itemQuantity: Double? = nil, itemPhotos: [String]? = nil, storeId: String? = nil) {
         self.id = id!
         self.customerId = customerId
         self.transactionId = transactionId
         self.totalAmount = totalAmount
         self.timestamp = timestamp
         self.address = address
+        self.promocodeApplied = promocodeApplied
         self.refundStatus = refundStatus
         self.trackingId = trackingId ?? ""
         self.cashback = cashback
@@ -36,6 +37,7 @@ class Order : Codable {
     var totalAmount:Double!
     var timestamp:Int64!
     var address:String!
+    var promocodeApplied:String!
     //Tracking Status
     var refundStatus:String! // requested/refunded
     var trackingId:String?

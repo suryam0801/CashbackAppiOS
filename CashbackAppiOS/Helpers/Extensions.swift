@@ -76,3 +76,9 @@ extension Double {
         return String(formatter.string(from: number) ?? "")
     }
 }
+
+extension Array where Element == String {
+    func containsIgnoringCase(_ element: Element) -> Bool {
+        contains { $0.caseInsensitiveCompare(element) == .orderedSame }
+    }
+}

@@ -11,7 +11,7 @@ import CodableFirebase
 
 class CashbackAmountViewModel {
     
-    func fetchAmount (_ completion: @escaping ((_ userExists:Bool)->())) {
+    func fetchAmount (_ completion: @escaping ((_ cashbackRetrieved:Bool)->())) {
         
         let DBHelper = DatabaseReadHelper()
         

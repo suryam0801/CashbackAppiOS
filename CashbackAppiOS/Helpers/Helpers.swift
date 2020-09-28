@@ -115,20 +115,21 @@ class Helpers {
         
         let randomCashback = Int.random(in: lowerCashback..<upperCashback)
         givenCashback = randomCashback
+        let usedPromoCode = (promoCode != nil ? promoCode! : "")
         
         for item in tempCartItems! {
-            let tempOrder = Order(id: FirebasePushKeyHelper.getPushKey(), customerId: customer?.id, transactionId: paymentId, totalAmount: item.quantity * item.price, timestamp: Date().millisecondsSince1970, address: customer!.address, refundStatus: nil, trackingId: nil, cashback: Double(randomCashback), cashbackStatus: false, itemId: item.itemId, itemName: item.name, itemPrice: item.price, itemColor: item.color, itemSize: item.size, itemQuantity: item.quantity, itemPhotos: item.photos, storeId: item.storeIds)
-            
+            let tempOrder = Order(id: FirebasePushKeyHelper.getPushKey(), customerId: customer?.id, transactionId: paymentId, totalAmount: item.quantity * item.price, timestamp: Date().millisecondsSince1970, address: customer?.address, promocodeApplied: usedPromoCode, refundStatus: nil, trackingId: nil, cashback: Double(randomCashback), cashbackStatus: false, itemId: item.itemId, itemName: item.name, itemPrice: item.price, itemColor: item.color, itemSize: item.size, itemQuantity: item.quantity, itemPhotos: item.photos, storeId: item.storeIds)
+
             orderList.append(tempOrder)
         }
 
         DBWriteHelper.writeOrders(orders: orderList)
     }
-    
+
     static func groupingCashbackByTransactions (ordersList:[Order]) -> [Order] {
         var transactionIds:[String] = []
         var tempOrderList:[Order] = []
-        
+
         for order in ordersList {
             print(transactionIds)
             print(order.transactionId)

@@ -20,7 +20,7 @@ struct CashbackPickerView: View {
             if userFlip == false {
                 Text("Pick Your Cashback!").font(.largeTitle)
                 Text("You'll get more than \(tempCashback![0].removeZerosFromEnd())")
-                
+
                 fourCardView
             } else {
                 Spacer()
