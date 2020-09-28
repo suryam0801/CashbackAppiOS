@@ -23,7 +23,7 @@ struct CashbackPickerView: View {
                 
                 fourCardView
             } else {
-                Text("CONGRATS! Your cashback reflect in your account within 24 hours!").font(.title)
+                Text("CONGRATS! Your cashback will reflect in your account within 24 hours!").font(.title)
                 WinnerCard()
                 Spacer()
             }

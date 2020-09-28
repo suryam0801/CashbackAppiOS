@@ -39,8 +39,8 @@ class DBWriteHelper {
         Helpers.storeCustomerToDefaults(customer!)
     }
     
-    static func updateCustomer () {
-        dbInstance.db.reference(withPath: DBReferenceNames.USER_REF_NAME).child(customer!.id).setValue(Helpers.asDictionary(object: customer!))
+    static func updateAddresses () {
+        dbInstance.db.reference(withPath: DBReferenceNames.USER_REF_NAME).child(customer!.id).child("address").setValue(customer!.address)
         Helpers.storeCustomerToDefaults(customer!)
     }
 

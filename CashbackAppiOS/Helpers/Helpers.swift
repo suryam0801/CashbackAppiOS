@@ -117,7 +117,7 @@ class Helpers {
         givenCashback = randomCashback
         
         for item in tempCartItems! {
-            let tempOrder = Order(id: FirebasePushKeyHelper.getPushKey(), customerId: customer?.id, transactionId: paymentId, totalAmount: item.quantity * item.price, timestamp: Date().millisecondsSince1970, address: "", refundStatus: nil, trackingId: nil, cashback: Double(randomCashback), cashbackStatus: false, itemId: item.itemId, itemName: item.name, itemPrice: item.price, itemColor: item.color, itemSize: item.size, itemQuantity: item.quantity, itemPhotos: item.photos, storeId: item.storeIds)
+            let tempOrder = Order(id: FirebasePushKeyHelper.getPushKey(), customerId: customer?.id, transactionId: paymentId, totalAmount: item.quantity * item.price, timestamp: Date().millisecondsSince1970, address: customer!.address, refundStatus: nil, trackingId: nil, cashback: Double(randomCashback), cashbackStatus: false, itemId: item.itemId, itemName: item.name, itemPrice: item.price, itemColor: item.color, itemSize: item.size, itemQuantity: item.quantity, itemPhotos: item.photos, storeId: item.storeIds)
             
             orderList.append(tempOrder)
         }

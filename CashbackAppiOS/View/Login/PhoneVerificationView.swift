@@ -46,8 +46,6 @@ struct PhoneVerificationview: View {
                             .background(Color(UIColor.textFieldLightGrey))
                             .clipShape(RoundedRectangle(cornerRadius: 10))
                         
-                        
-                        
                         TextField("Number", text: self.$userNumber)
                             .keyboardType(.numberPad)
                             .padding()

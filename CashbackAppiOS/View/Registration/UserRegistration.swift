@@ -83,7 +83,7 @@ struct UserRegistration: View {
         
         var user:Customer?
         
-        user = Customer(id: PhoneAuthHelper.getUserId(), name: self.userName, phnNumber: self.countryCode + "" + self.phoneNumber, addresses: nil, deviceToken: FirebaseTokenHelper.getToken(), upi: "", version: 0, cart: nil)
+        user = Customer(id: PhoneAuthHelper.getUserId(), name: self.userName, phnNumber: self.countryCode + "" + self.phoneNumber, address: nil, deviceToken: FirebaseTokenHelper.getToken(), upi: "", version: 0, cart: nil)
 
         //TODO: ADD FIREBASE AUTH
         DBWriteHelper.createNewCustomer(userObj: user!) { createdUser in

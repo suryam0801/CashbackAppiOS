@@ -12,7 +12,7 @@ struct Customer : Codable {
     var id:String!
     let name:String!
     var phnNumber:String!
-    let addresses:[String]!
+    var address:String!
     var deviceToken:String!
     var upi:String!
     var version:Int!

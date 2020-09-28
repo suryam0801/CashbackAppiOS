@@ -15,7 +15,6 @@ struct CartView: View {
     @State var totalMRP:Double = 0
     @State var totalCashBack:[Double] = [0,0]
 
-    @State var showCashbackPicker:Bool = false
 
     var body: some View {
         VStack {
@@ -38,19 +37,13 @@ struct CartView: View {
     }
     
     func onAppearHelper() {
-        if transactionId == nil {
-            self.cartList.fetchItems()
-        } else {
-            self.cartList.inCartList.removeAll()
-            self.showCashbackPicker = true
-            transactionId = nil
-        }
+        self.totalMRP = 0
+        self.totalCashBack = [0,0]
+        self.cartList.fetchItems()
     }
     
     func onDisappearHelper () {
         self.cartList.cleanup()
-        self.totalMRP = 0
-        self.totalCashBack = [0,0]
     }
 
     func calculateTotalMRP () {
