@@ -10,12 +10,11 @@ import SwiftUI
 
 struct ItemsScroll : View {
 
-    @State var show = false
     @Binding var selectedCategory:String
     @ObservedObject private var itemViewModel = ItemsViewModel()
 
-    @State var showCashbackPicker:Bool = false
     @State var cashbackRetrived:Bool = false
+    
     var body : some View{
 
         VStack{
@@ -25,7 +24,7 @@ struct ItemsScroll : View {
                 ScrollView(.vertical, showsIndicators: false) {
 
                     VStack(spacing: 12){
-                        
+
                         if self.cashbackRetrived {
                             cashbackBanner
                         }
@@ -40,9 +39,7 @@ struct ItemsScroll : View {
                             }
                         }
                     }
-                }.sheet(isPresented: self.$showCashbackPicker, content: {
-                    CashbackPickerView()
-                })
+                }
             }
         }.onAppear(){
             self.onAppearHelper()
@@ -52,13 +49,7 @@ struct ItemsScroll : View {
     }
 
     func onAppearHelper() {
-        if transactionId == nil {
-            self.itemViewModel.fetchItems()
-        } else {
-            self.showCashbackPicker = true
-            transactionId = nil
-        }
-        
+        self.itemViewModel.fetchItems()
         CashbackAmountViewModel().fetchAmount { (retrieved) in
             if retrieved {
                 self.cashbackRetrived = true

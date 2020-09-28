@@ -23,8 +23,10 @@ struct CashbackPickerView: View {
                 
                 fourCardView
             } else {
-                Text("CONGRATS! Your cashback will reflect in your account within 24 hours!").font(.title)
+                Spacer()
+                Text("CONGRATS! You have won: ").font(.title)
                 WinnerCard()
+                Text("Screenshot and post this on your instagram story to win another 50₹ (make sure to tag @revenoshopping)").font(.headline)
                 Spacer()
             }
         }.onAppear(){transactionId = nil}

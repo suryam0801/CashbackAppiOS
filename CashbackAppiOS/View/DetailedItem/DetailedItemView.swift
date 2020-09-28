@@ -10,7 +10,6 @@ import SwiftUI
 
 struct DetailedItemView : View {
     
-    @Binding var show : Bool
     var item:Item
     @State var size = "M"
     @State var selectedColor = ""
@@ -25,65 +24,37 @@ struct DetailedItemView : View {
     
     var body : some View{
         
-        NavigationView {
-
+        VStack(spacing : 0){
+            
             if self.showCart {
                 NavigationLink(destination: CartView(show: self.$showCart), isActive: self.$showCart) {EmptyView()}
             }
-        
-            VStack(spacing : 0){
-                
-                customNavBar
-                
-                ItemImageDisplay(url: self.item.photos[0], width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height/2)
-                
-                if showCheckout {
-                    EndOfCartPriceDisplayView(cartItems: self.$cartItems, cashback: self.$cashback, totalMRP: self.$totalBill)
-                } else {
-                    VStack(alignment: .leading ,spacing: 15){
-                        
-                        if !self.showCheckout {
-                            itemDetailHeader
-                            Text("This item has a cashback value anywhere between \(self.cashback[0].removeZerosFromEnd()) to \(self.cashback[1].removeZerosFromEnd())").fixedSize(horizontal: false, vertical: true)
-                            sizePicker
-                            quantityPicker
-                            checkOutHelper
-                        } else {
-                            CartItemCard(cartItem: self.cartItems[0], mrp: self.$totalBill, cashback: self.$cashback)
-                        }
-                        
-                    }.padding()
-                        .background(RoundedBG().fill(Color.white))
-                        .padding(.top, -70)
+            
+            ItemImageDisplay(url: self.item.photos[0], width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height/2)
+            
+            if showCheckout {
+                EndOfCartPriceDisplayView(cartItems: self.$cartItems, cashback: self.$cashback, totalMRP: self.$totalBill)
+            } else {
+                VStack(alignment: .leading ,spacing: 15){
                     
-                }
+                    if !self.showCheckout {
+                        itemDetailHeader
+                        Text("This item has a cashback value anywhere between \(self.cashback[0].removeZerosFromEnd()) to \(self.cashback[1].removeZerosFromEnd())").fixedSize(horizontal: false, vertical: true)
+                        sizePicker
+                        quantityPicker
+                        checkOutHelper
+                    } else {
+                        CartItemCard(cartItem: self.cartItems[0], mrp: self.$totalBill, cashback: self.$cashback)
+                    }
+                    
+                }.padding()
+                    .background(RoundedBG().fill(Color.white))
+                    .padding(.top, -70)
+                
             }
-        }.navigationBarTitle("").navigationBarHidden(true).onAppear(){self.onAppearHelper()}
+        }.navigationBarTitle(item.name).navigationBarItems(trailing: NavBarEndButtons(showCart: self.$showCart)).onAppear(){self.onAppearHelper()}
     }
-    
-    var customNavBar : some View {
-        HStack(spacing: 18){
-            
-            Button(action: {
-                
-                self.show.toggle()
-                
-            }) {
-                
-                Image("Back").renderingMode(.original)
-            }
-            
-            Spacer()
-            
-            NavBarEndButtons(showCart: self.$showCart)
-            
-        }.navigationBarTitle("")
-            .navigationBarHidden(true)
-            .navigationBarBackButtonHidden(true)
-            .padding(15)
-        
-    }
-    
+
     var itemDetailHeader : some View {
         HStack{
             VStack(alignment: .leading, spacing: 8){
@@ -129,14 +100,14 @@ struct DetailedItemView : View {
     private func decrement () {
         Helpers.quantityDecrement(quantity: &self.quantity, cartItemPrice: self.item.price, currentMRP: &self.totalBill, cashback: &self.cashback)
     }
-
+    
     var checkOutHelper : some View  {
         HStack{
             
             Button(action: {
                 
                 let cartItem:CartItem = self.makeCartItem()
-
+                
                 DBWriteHelper.addToCart(cartItem: cartItem)
             }) {
                 
@@ -147,12 +118,12 @@ struct DetailedItemView : View {
             Spacer()
             
             Button(action: {
-
+                
                 self.showCheckout.toggle()
                 self.cartItems.append(self.makeCartItem())
                 DBWriteHelper.addToCart(cartItem: self.cartItems[0])
                 self.showPayment.toggle()
-
+                
             }) {
                 
                 Text("Buy Now").padding()
@@ -168,7 +139,7 @@ struct DetailedItemView : View {
     func makeCartItem () -> CartItem {
         return CartItem(itemId: self.item.id, name: self.item.name, price: self.item.price, photos: self.item.photos, storeIds: self.item.storeIds, color: self.selectedColor, size: self.size, quantity: self.quantity)
     }
- 
+    
     func onAppearHelper () {
         self.totalBill = self.item.price
         Helpers.cashbackArraySetter(cashback: &cashback, price: self.item.price)

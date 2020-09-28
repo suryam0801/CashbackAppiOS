@@ -11,12 +11,12 @@ import SwiftUI
 struct WinnerCard: View {
     
     var body: some View {
-        ZStack {
+        ZStack (alignment: .center) {
             RoundedRectangle(cornerRadius: 20)
                 .foregroundColor(Color(UIColor.acceptColorGreen)) // change the card color when flipped
                 .padding()
-            Text("\(givenCashback!)₹").font(.system(size: 50)).foregroundColor(Color.white)
-        }
+            Text("\(givenCashback!)₹").font(.system(size: 50)).foregroundColor(Color.white).padding()
+        }.frame(height: 350)
     }
     
 }
