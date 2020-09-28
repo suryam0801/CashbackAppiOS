@@ -69,15 +69,15 @@ struct PrePurchaseView: View {
                     .background(Color(UIColor.textFieldLightGrey))
                     .clipShape(RoundedRectangle(cornerRadius: 10))
             }
-            
+
             Spacer()
-            
+
             BillSummaryView(cartItems: self.$cartItems, cashback: self.$cashback, totalMRP: self.$totalMRP)
-            
+
             NavigationLink(destination: RazorPayDisplay(cartItems: self.cartItems, cashback: self.cashback), isActive: self.$showPayment) {
                 EmptyView()
             }
-            
+
             Button(action: {
                 promoCode = self.promoCodeEntry
                 tempCartTotal = self.totalMRP
