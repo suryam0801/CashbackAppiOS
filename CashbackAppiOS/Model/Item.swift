@@ -14,7 +14,7 @@ struct Item: Codable, Identifiable {
     var price:Double!
     var category:[String]!
     var storeIds:String!
-    var stock:Int!
+    var stock:[String:Int]!
     var photos:[String]!
     var color:[String]!
     var sizes:[String]!

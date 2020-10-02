@@ -11,7 +11,11 @@ import SwiftUI
 struct DetailedItemView : View {
     
     var item:Item
-    @State var size = "M"
+    
+    @State var sizes:[String] = [String]()
+    @State var size = ""
+    @State var selectedSizeSoldOut:Bool = false
+    
     @State var selectedColor = ""
     @State var quantity:Double = 1
     @State var cashback:[Double] = [0,0]
@@ -69,14 +73,24 @@ struct DetailedItemView : View {
     
     var sizePicker : some View {
         VStack (alignment: .leading) {
-            Text("Size").font(.subheadline)
+            HStack {
+                Text("Size").font(.subheadline)
+                if self.selectedSizeSoldOut {
+                    Text("(Sorry this size is sold out)").font(.subheadline).foregroundColor(Color(UIColor.rejectButtonRed))
+                }
+            }
             HStack{
                 ForEach(sizes,id: \.self){i in
                     Button(action: {
+                        if self.item.stock[i] == 0 {
+                            self.selectedSizeSoldOut = true
+                        } else {
+                            self.selectedSizeSoldOut = false
+                        }
                         self.size = i
                     }) {
                         
-                        Text(i).padding(10).border(Color.black, width: self.size == i ? 1.5 : 0)
+                        Text(i).padding(10).border(self.selectedSizeSoldOut ? Color.red : Color.black, width: self.size == i ? 1.5 : 0)
                         
                     }.foregroundColor(.black)
                 }
@@ -105,29 +119,23 @@ struct DetailedItemView : View {
         HStack{
             
             Button(action: {
-                
+                guard self.selectedSizeSoldOut == false else {return}
                 let cartItem:CartItem = self.makeCartItem()
-                
                 DBWriteHelper.addToCart(cartItem: cartItem)
             }) {
-                
                 Text("Add To Cart").padding().border(Color.black, width: 1.4)
-                
             }.foregroundColor(.black)
-            
+
             Spacer()
-            
+
             Button(action: {
-                
+                guard self.selectedSizeSoldOut == false else {return}
                 self.showCheckout.toggle()
                 self.cartItems.append(self.makeCartItem())
                 DBWriteHelper.addToCart(cartItem: self.cartItems[0])
                 self.showPayment.toggle()
-                
             }) {
-                
                 Text("Buy Now").padding()
-                
             }.foregroundColor(.white)
                 .background(Color.black)
                 .cornerRadius(10)
@@ -141,6 +149,8 @@ struct DetailedItemView : View {
     }
     
     func onAppearHelper () {
+        self.sizes = self.item.sizes
+        self.size = self.sizes[0]
         self.totalBill = self.item.price
         Helpers.cashbackArraySetter(cashback: &cashback, price: self.item.price)
     }
