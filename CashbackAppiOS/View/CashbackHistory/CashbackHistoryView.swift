@@ -13,8 +13,14 @@ struct CashbackHistoryView: View {
     @ObservedObject private var cashbackHistoryViewModel = OrdersViewModel()
     
     var body: some View {
-        VStack (spacing: 0) {
+        VStack (alignment: .center, spacing: 0) {
             if self.cashbackHistoryViewModel.ordersList.isEmpty {
+                Spacer()
+                Text("No Cashback Yet. Make your first purchase and get access to amazing cashbacks!")
+                    .font(.system(size: 30))
+                    .lineLimit(nil)
+                    .padding()
+                Spacer()
                 Indicator()
             } else {
                 

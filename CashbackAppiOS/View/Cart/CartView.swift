@@ -18,7 +18,12 @@ struct CartView: View {
 
     var body: some View {
         VStack {
-            if cartList.inCartList.isEmpty {
+            
+            if customer?.cart == nil {
+                Spacer()
+                Text("Your Cart is Empty. Continue shopping :)").font(.system(size: 30))
+                Spacer()
+            } else if cartList.inCartList.isEmpty {
                 Indicator()
             } else {
                 ScrollView (.vertical, showsIndicators: false) {

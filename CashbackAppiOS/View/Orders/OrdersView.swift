@@ -13,6 +13,9 @@ struct OrdersView: View {
     var body: some View {
         VStack {
             if self.ordersViewModel.ordersList.isEmpty {
+                Spacer()
+                Text("No Orders Yet").font(.system(size: 30))
+                Spacer()
                 Indicator()
             } else {
                 ScrollView (.vertical, showsIndicators: false) {

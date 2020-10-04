@@ -74,6 +74,7 @@
 		17DFC1DE25299697005A1A3F /* SharePopupHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DFC1DD25299697005A1A3F /* SharePopupHelper.swift */; };
 		17DFC1E02529A15F005A1A3F /* SingleItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DFC1DF2529A15F005A1A3F /* SingleItemViewModel.swift */; };
 		17DFC1E22529A1E5005A1A3F /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DFC1E12529A1E5005A1A3F /* HomePageView.swift */; };
+		17DFC1E42529AC68005A1A3F /* OpenInstagram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DFC1E32529AC68005A1A3F /* OpenInstagram.swift */; };
 		7EB8EDD911C7DE6442A11CC3 /* Pods_CashbackAppiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 083DE08C87004BE721C8F8D6 /* Pods_CashbackAppiOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -149,6 +150,7 @@
 		17DFC1DD25299697005A1A3F /* SharePopupHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharePopupHelper.swift; sourceTree = "<group>"; };
 		17DFC1DF2529A15F005A1A3F /* SingleItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleItemViewModel.swift; sourceTree = "<group>"; };
 		17DFC1E12529A1E5005A1A3F /* HomePageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
+		17DFC1E32529AC68005A1A3F /* OpenInstagram.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenInstagram.swift; sourceTree = "<group>"; };
 		BB9705A4A60FA50212CD37B7 /* Pods-CashbackAppiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CashbackAppiOS.release.xcconfig"; path = "Target Support Files/Pods-CashbackAppiOS/Pods-CashbackAppiOS.release.xcconfig"; sourceTree = "<group>"; };
 		ECFEA4C2398CA77C2507460A /* Pods-CashbackAppiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CashbackAppiOS.debug.xcconfig"; path = "Target Support Files/Pods-CashbackAppiOS/Pods-CashbackAppiOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -287,6 +289,7 @@
 				17C8BEE7250CFE2200C89EB3 /* NavBarEndButtons.swift */,
 				17A93905251C656000A70FD6 /* ImageLoader.swift */,
 				17DFC1DD25299697005A1A3F /* SharePopupHelper.swift */,
+				17DFC1E32529AC68005A1A3F /* OpenInstagram.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -590,6 +593,7 @@
 				17C8BEEE250DE38100C89EB3 /* CartView.swift in Sources */,
 				173FA16F2521AFA900F8E306 /* PrePurchaseView.swift in Sources */,
 				17553B8A250CA9EE00FF8D71 /* ItemsScroll.swift in Sources */,
+				17DFC1E42529AC68005A1A3F /* OpenInstagram.swift in Sources */,
 				17553B61250C687200FF8D71 /* Customer.swift in Sources */,
 				17553B5C250C677800FF8D71 /* Loader.swift in Sources */,
 				17553B47250C65A700FF8D71 /* CountryPickerView.swift in Sources */,

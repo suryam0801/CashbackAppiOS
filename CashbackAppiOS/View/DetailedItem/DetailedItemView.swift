@@ -43,7 +43,7 @@ struct DetailedItemView : View {
 
                     if !self.showCheckout {
                         itemDetailHeader
-                        Text("This item has a cashback value anywhere between \(self.cashback[0].removeZerosFromEnd()) to \(self.cashback[1].removeZerosFromEnd())").fixedSize(horizontal: false, vertical: true)
+                        Text("Cashback value anywhere between \(self.cashback[0].removeZerosFromEnd()) to \(self.cashback[1].removeZerosFromEnd())").fixedSize(horizontal: false, vertical: true)
                         sizePicker
                         quantityPicker
                         checkOutHelper

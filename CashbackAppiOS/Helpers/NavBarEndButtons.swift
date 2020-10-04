@@ -15,11 +15,10 @@ struct NavBarEndButtons: View {
     var body: some View {
         HStack (spacing: 18) {
             Button(action: {
-                
+                OpenInstagram.openInsta()
             }) {
-                
-                Image("noti").renderingMode(.original)
-            }
+                Image("instagram").resizable().frame(width: 25, height: 25)
+            }.buttonStyle(PlainButtonStyle())
             
             Button(action: {
                 self.showCart.toggle()
