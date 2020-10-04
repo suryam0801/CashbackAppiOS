@@ -25,19 +25,21 @@ struct PhoneVerificationview: View {
     var body: some View {
         NavigationView {
             ZStack {
-                VStack(spacing: 0){
+                VStack(spacing: 0) {
                     
-                    Text("Circle").font(.custom("Roboto-Black", size: 70)).foregroundColor(Color(UIColor.titleColorDarkBlue))
+                    Text("Reveno").font(.system(size: 70)).bold().foregroundColor(Color(UIColor.titleColorDarkBlue))
                     
-                    Text("Redefining Communication and Connection").font(Font.system(size:13)).foregroundColor(.gray)
+                    Text("The shopping app that pays you back").font(Font.system(size:13)).foregroundColor(.gray)
                     
                     Text("Verify Your Number").font(Font.system(size:25).weight(.bold)).fontWeight(.heavy).padding(.top, 70)
                     
-                    Text("Please Enter Your Number To Verify Your Account")
+                    Image("Google_pay_Phone_pe").resizable().frame(width: 100, height: 50)
+                    
+                    Text("Please enter the number that matches your google pay or PhonePe so we can send your cashback")
                         .font(Font.system(size:13))
                         .foregroundColor(.gray)
                         .padding(.top, 12)
-                    
+
                     HStack{
                         
                         Text(self.countryCode).frame(width: 45)
@@ -74,7 +76,7 @@ struct PhoneVerificationview: View {
                     NavigationLink(destination: OTPVerificationView(countryCode: self.countryCode, phoneNumber: self.userNumber, authenticationID: self.$userID), isActive: self.$OTPSend) {EmptyView()}.hidden()
                     
                     Spacer()
-                }.keyboardAdaptive(specificOffSet: 0)
+                }.keyboardAdaptive(specificOffSet: 0).onTapGesture { Helpers.endEditing() }
                 if self.toggleLoader {
                     GeometryReader { geo in
                         Loader()

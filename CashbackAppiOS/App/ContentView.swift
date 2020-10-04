@@ -24,7 +24,8 @@ struct ContentView: View {
                 if onboardingFinished {
                     PhoneVerificationview()
                 } else {
-                    self.onboarding
+                    PhoneVerificationview()
+                    //self.onboarding
                 }
             }
             
