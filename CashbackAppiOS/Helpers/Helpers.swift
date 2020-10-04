@@ -22,7 +22,7 @@ class Helpers {
     static func cashbackDisplayText (price:Double) -> String {
         return price <= 500 ? "50 - 150₹ cashback!" : "100 - 250₹ cashback!"
     }
-    
+
     static func totalCashbackCalculator (cashback:inout [Double], price:Double, itemQuantity:Double) {
         if price <= 500 {
             cashback[0] += (50 * itemQuantity)
@@ -204,6 +204,12 @@ class Helpers {
             return (label, val)
         }).compactMap { $0 })
         return dict
+    }
+    
+    static func getIdFromShareLink (shrelink:String) -> String{
+        let prefix:String = "https://onfio.app.link/reveno/?"
+        let id = shrelink.dropFirst(prefix.count)
+        return String(id)
     }
     
 }

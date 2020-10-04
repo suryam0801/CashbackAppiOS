@@ -21,3 +21,5 @@ var tempCartTotal:Double?
 var cashbackAmount:CashbackAmount?
 var retrievedPromoCodes:[String:Bool]?
 var promoCode:String?
+
+var sharedItemId:String?

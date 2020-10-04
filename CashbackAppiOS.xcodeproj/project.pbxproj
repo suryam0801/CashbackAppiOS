@@ -42,7 +42,6 @@
 		17553B6B250C6C6600FF8D71 /* DBWriteHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17553B6A250C6C6600FF8D71 /* DBWriteHelper.swift */; };
 		17553B6E250C6FA200FF8D71 /* CartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17553B6D250C6FA200FF8D71 /* CartItem.swift */; };
 		17553B70250C732A00FF8D71 /* FirebaseGeneralHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17553B6F250C732A00FF8D71 /* FirebaseGeneralHelpers.swift */; };
-		17553B73250C740100FF8D71 /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17553B72250C740100FF8D71 /* HomePageView.swift */; };
 		17553B75250C743700FF8D71 /* OnBoardingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17553B74250C743700FF8D71 /* OnBoardingPageView.swift */; };
 		17553B77250C8EEB00FF8D71 /* DBReferenceNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17553B76250C8EEB00FF8D71 /* DBReferenceNames.swift */; };
 		17553B79250C912700FF8D71 /* ItemsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17553B78250C912700FF8D71 /* ItemsViewModel.swift */; };
@@ -73,6 +72,8 @@
 		17C8BEF0250DFD9000C89EB3 /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C8BEEF250DFD9000C89EB3 /* PaymentView.swift */; };
 		17C8BEF2250E53C000C89EB3 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C8BEF1250E53C000C89EB3 /* Order.swift */; };
 		17DFC1DE25299697005A1A3F /* SharePopupHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DFC1DD25299697005A1A3F /* SharePopupHelper.swift */; };
+		17DFC1E02529A15F005A1A3F /* SingleItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DFC1DF2529A15F005A1A3F /* SingleItemViewModel.swift */; };
+		17DFC1E22529A1E5005A1A3F /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DFC1E12529A1E5005A1A3F /* HomePageView.swift */; };
 		7EB8EDD911C7DE6442A11CC3 /* Pods_CashbackAppiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 083DE08C87004BE721C8F8D6 /* Pods_CashbackAppiOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -116,7 +117,6 @@
 		17553B6C250C6DB800FF8D71 /* CashbackAppiOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CashbackAppiOS.entitlements; sourceTree = "<group>"; };
 		17553B6D250C6FA200FF8D71 /* CartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItem.swift; sourceTree = "<group>"; };
 		17553B6F250C732A00FF8D71 /* FirebaseGeneralHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseGeneralHelpers.swift; sourceTree = "<group>"; };
-		17553B72250C740100FF8D71 /* HomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
 		17553B74250C743700FF8D71 /* OnBoardingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingPageView.swift; sourceTree = "<group>"; };
 		17553B76250C8EEB00FF8D71 /* DBReferenceNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBReferenceNames.swift; sourceTree = "<group>"; };
 		17553B78250C912700FF8D71 /* ItemsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewModel.swift; sourceTree = "<group>"; };
@@ -147,6 +147,8 @@
 		17C8BEEF250DFD9000C89EB3 /* PaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
 		17C8BEF1250E53C000C89EB3 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		17DFC1DD25299697005A1A3F /* SharePopupHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharePopupHelper.swift; sourceTree = "<group>"; };
+		17DFC1DF2529A15F005A1A3F /* SingleItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleItemViewModel.swift; sourceTree = "<group>"; };
+		17DFC1E12529A1E5005A1A3F /* HomePageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
 		BB9705A4A60FA50212CD37B7 /* Pods-CashbackAppiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CashbackAppiOS.release.xcconfig"; path = "Target Support Files/Pods-CashbackAppiOS/Pods-CashbackAppiOS.release.xcconfig"; sourceTree = "<group>"; };
 		ECFEA4C2398CA77C2507460A /* Pods-CashbackAppiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CashbackAppiOS.debug.xcconfig"; path = "Target Support Files/Pods-CashbackAppiOS/Pods-CashbackAppiOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -240,7 +242,7 @@
 		17553B34250C5E1800FF8D71 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				17553B72250C740100FF8D71 /* HomePageView.swift */,
+				17DFC1E12529A1E5005A1A3F /* HomePageView.swift */,
 				17553B8D250CAA2E00FF8D71 /* DetailedItem */,
 				17553B86250CA96E00FF8D71 /* ItemsDisplay */,
 				175EBDDC250F9FDE00D5686F /* HamburgerMenu */,
@@ -336,6 +338,7 @@
 			children = (
 				17553B65250C6AE400FF8D71 /* UserViewModel.swift */,
 				17553B78250C912700FF8D71 /* ItemsViewModel.swift */,
+				17DFC1DF2529A15F005A1A3F /* SingleItemViewModel.swift */,
 				17C8BEE3250CE9D900C89EB3 /* CartViewModel.swift */,
 				175EBDE6250FBDC500D5686F /* OrdersViewModel.swift */,
 				176702102521A5B900508396 /* CashbackAmountViewModel.swift */,
@@ -590,6 +593,7 @@
 				17553B61250C687200FF8D71 /* Customer.swift in Sources */,
 				17553B5C250C677800FF8D71 /* Loader.swift in Sources */,
 				17553B47250C65A700FF8D71 /* CountryPickerView.swift in Sources */,
+				17DFC1E02529A15F005A1A3F /* SingleItemViewModel.swift in Sources */,
 				17553B54250C66D600FF8D71 /* KeyboardAdaptive.swift in Sources */,
 				17553B4C250C661E00FF8D71 /* CountryCodeDictionary.swift in Sources */,
 				17553B58250C672100FF8D71 /* Extensions.swift in Sources */,
@@ -606,10 +610,10 @@
 				17C8BEE4250CE9D900C89EB3 /* CartViewModel.swift in Sources */,
 				173FA17525223C2900F8E306 /* PromoCodeViewModel.swift in Sources */,
 				175EBDED250FD8B600D5686F /* CashbackCard.swift in Sources */,
-				17553B73250C740100FF8D71 /* HomePageView.swift in Sources */,
 				17553B75250C743700FF8D71 /* OnBoardingPageView.swift in Sources */,
 				175EBDEF250FD8EB00D5686F /* CashbackPickerView.swift in Sources */,
 				176702112521A5B900508396 /* CashbackAmountViewModel.swift in Sources */,
+				17DFC1E22529A1E5005A1A3F /* HomePageView.swift in Sources */,
 				17553B6B250C6C6600FF8D71 /* DBWriteHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

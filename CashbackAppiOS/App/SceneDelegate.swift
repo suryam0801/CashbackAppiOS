@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftUI
+import Branch
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -58,7 +59,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
+    
+    func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
+        let link = userActivity.webpageURL!.absoluteString
+        sharedItemId = Helpers.getIdFromShareLink(shrelink: link)
+        
+        let contentView = ContentView()
+        // Use a UIHostingController as window root view controller.
+        if let windowScene = scene as? UIWindowScene {
+            let window = UIWindow(windowScene: windowScene)
+            window.rootViewController = UIHostingController(rootView: contentView)
+            self.window = window
+            window.makeKeyAndVisible()
+        }
+    }
 
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        BranchScene.shared().scene(scene, openURLContexts: URLContexts)
+    }
 
 }
 

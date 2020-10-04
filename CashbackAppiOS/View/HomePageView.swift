@@ -15,6 +15,9 @@ struct HomePageView: View {
     @State var viewOrders = false
     @State var cashbackHistory = false
     
+    @State var showDetailedView = false
+    @State var sharedItem:Item?
+    
     var body: some View {
         
         let drag = DragGesture().onEnded {
@@ -46,6 +49,10 @@ struct HomePageView: View {
                     if self.cashbackHistory {
                         NavigationLink(destination: CashbackHistoryView(), isActive: self.$cashbackHistory) {EmptyView()}
                     }
+                    
+                    if self.showDetailedView {
+                        NavigationLink(destination: DetailedItemView(item: self.sharedItem!), isActive: self.$showDetailedView) {EmptyView()}
+                    }
 
                     VStack(spacing: 15){
 
@@ -71,6 +78,14 @@ struct HomePageView: View {
         }.onAppear(){
             customer = Helpers.retrieveStoredCustomer()
             PromoCodeViewModel().fetchPromoCodes()
+                        
+            if sharedItemId != nil {
+                SingleItemViewModel().fetchItem(sharedItemId!) { (item) in
+                    self.sharedItem = item
+                    sharedItemId = nil
+                    self.showDetailedView.toggle()
+                }
+            }
         }
     }
     

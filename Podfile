@@ -2,6 +2,8 @@
 # platform :ios, '9.0'
 
 target 'CashbackAppiOS' do
+
+  pod "Branch"
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
@@ -15,5 +17,6 @@ pod 'CodableFirebase'
 pod 'Firebase/Messaging'
 pod 'razorpay-pod', '~> 1.1.7'
 pod 'SDWebImageSwiftUI'
+pod 'Branch'
 
 end

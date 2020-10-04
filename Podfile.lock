@@ -1,4 +1,5 @@
 PODS:
+  - Branch (0.35.0)
   - CodableFirebase (0.2.1)
   - ConcentricOnboarding (0.0.4)
   - Firebase/Analytics (6.32.0):
@@ -105,6 +106,7 @@ PODS:
     - SDWebImage (~> 5.7)
 
 DEPENDENCIES:
+  - Branch
   - CodableFirebase
   - ConcentricOnboarding
   - Firebase/Analytics
@@ -116,6 +118,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - Branch
     - CodableFirebase
     - ConcentricOnboarding
     - Firebase
@@ -140,6 +143,7 @@ SPEC REPOS:
     - SDWebImageSwiftUI
 
 SPEC CHECKSUMS:
+  Branch: 9a37f707974a128c37829033c49018b79c7e7a2d
   CodableFirebase: 0bf201991eeec35eb9fcd987d271ea463cf34a80
   ConcentricOnboarding: 28867af6773a6ff775e52d1de7f56386b5fb2f6b
   Firebase: afa030f17f5421810f379a42b0e5d3302d27eb26
@@ -163,6 +167,6 @@ SPEC CHECKSUMS:
   SDWebImage: a990c053fff71e388a10f3357edb0be17929c9c5
   SDWebImageSwiftUI: 43687ffe232ddd33fe0659498b7ca9884fdd6b35
 
-PODFILE CHECKSUM: 81e9c1870276ab6e3445c6c6cfac7a21838115c6
+PODFILE CHECKSUM: 0c307a26f93b27320b0ddf858b2d43df50cf9885
 
 COCOAPODS: 1.9.3
