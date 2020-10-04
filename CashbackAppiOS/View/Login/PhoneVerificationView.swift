@@ -11,7 +11,7 @@ import SwiftUI
 struct PhoneVerificationview: View {
     
     @State private var userNumber = ""
-    @State private var countryCode = "+1"
+    @State private var countryCode = "+91"
     @State private var userID = ""
     @State private var OTPSend = false
     @State var showCountryCodePicker = false
@@ -20,14 +20,14 @@ struct PhoneVerificationview: View {
     @State private var phoneVerificationTitle = "Please wait while we verify your Ph"
     @State private var otpVerificationMessage = ""
     @State private var toggleLoader = false
-    
+
     //User Interface
     var body: some View {
         NavigationView {
             ZStack {
                 VStack(spacing: 0) {
                     
-                    Text("Reveno").font(.system(size: 70)).bold().foregroundColor(Color(UIColor.titleColorDarkBlue))
+                    Text("Reveno").font(.system(size: 70)).bold().foregroundColor(Color(UIColor.titleColorDarkBlue)).padding(.top, 50)
                     
                     Text("The shopping app that pays you back").font(Font.system(size:13)).foregroundColor(.gray)
                     
@@ -41,19 +41,17 @@ struct PhoneVerificationview: View {
                         .padding(.top, 12)
 
                     HStack{
-                        
-                        Text(self.countryCode).frame(width: 45)
+                        Text(self.countryCode).frame(width: 35)
                             .padding()
                             .onTapGesture {self.showCountryCodePicker.toggle()}
                             .background(Color(UIColor.textFieldLightGrey))
                             .clipShape(RoundedRectangle(cornerRadius: 10))
-                        
+
                         TextField("Number", text: self.$userNumber)
                             .keyboardType(.numberPad)
                             .padding()
                             .background(Color(UIColor.textFieldLightGrey))
                             .clipShape(RoundedRectangle(cornerRadius: 10))
-                        
                     } .padding(15).padding(.top, 5)
                     
                     Button (action: {
@@ -82,7 +80,7 @@ struct PhoneVerificationview: View {
                         Loader()
                     }.background(Color.black.opacity(0.45)).edgesIgnoringSafeArea(.all)
                 }
-            }
+            }.navigationBarTitle("").navigationBarHidden(true)
             
         }.sheet(isPresented: self.$showCountryCodePicker) {
             CountryPickerView(selectedCountryCode: self.$countryCode, countryPickerViewDismisser: self.$showCountryCodePicker)

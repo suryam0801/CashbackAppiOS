@@ -24,11 +24,18 @@ struct PageView: View {
         
         return
             VStack(alignment: .center, spacing: 50) {
-                Text(title)
-                    .font(Font.system(size: 40, weight: .bold, design: .rounded))
-                    .foregroundColor(textColor)
-                    .frame(width: textWidth)
-                    .multilineTextAlignment(.center)
+                VStack (spacing: 0) {
+                    Text("Welcome To")
+                        .font(Font.system(size: 40, weight: .bold, design: .rounded))
+                        .foregroundColor(textColor)
+                        .frame(width: textWidth)
+                        .multilineTextAlignment(.center)
+                    Text(title)
+                        .font(Font.system(size: 40, weight: .bold, design: .rounded))
+                        .foregroundColor(textColor)
+                        .frame(width: textWidth)
+                        .multilineTextAlignment(.center)
+                }
                 Image(imageName)
                     .resizable()
                     .aspectRatio(aspect, contentMode: .fill)
@@ -50,32 +57,32 @@ struct PageView: View {
 }
 
 struct OnBoardingData {
-    static let title = "Welcome To Circle"
+    static let title = "Reveno"
     
     static let headers = [
-        "Clutter Free Chats",
-        "Quick Polls",
-        "Connect with your Community"
+        "Instant Cashback",
+        "Amazing Prizes",
+        "Exclusive Designs"
     ]
-    
+
     static let contentStrings = [
-        "Block out the clutter of your group chats and keep it organized",
-        "Get the opinon of your Circle by creating easy and interactive polls",
-        "Discover, Join, and Participate in Circles in your locality!"
+        "Get instant, guaranteed cashbacks for every purchase!",
+        "Enter our giveway and win prizes every week!",
+        "Get access to the best hot designs that change every week!"
     ]
-    
+
     static let imageNames = [
-        "avatar1",
-        "avatar2",
-        "avatar3"
+        "cashback",
+        "prize",
+        "exclusive"
     ]
-    
+
     static let colors = [
         "FCE38A",
         "95E1D3",
         "EAFFD0"
         ].map{ Color(hex: $0) }
-    
+
     static let textColors = [
         "4A4A4A",
         "4A4A4A",
@@ -88,11 +95,11 @@ extension Color {
         let scanner = Scanner(string: hex)
         var rgbValue: UInt64 = 0
         scanner.scanHexInt64(&rgbValue)
-        
+
         let r = (rgbValue & 0xff0000) >> 16
         let g = (rgbValue & 0xff00) >> 8
         let b = rgbValue & 0xff
-        
+
         self.init(red: Double(r) / 0xff, green: Double(g) / 0xff, blue: Double(b) / 0xff)
     }
 }
