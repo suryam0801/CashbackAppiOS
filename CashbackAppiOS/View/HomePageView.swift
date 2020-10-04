@@ -78,7 +78,7 @@ struct HomePageView: View {
         }.onAppear(){
             customer = Helpers.retrieveStoredCustomer()
             PromoCodeViewModel().fetchPromoCodes()
-                        
+
             if sharedItemId != nil {
                 SingleItemViewModel().fetchItem(sharedItemId!) { (item) in
                     self.sharedItem = item
@@ -88,7 +88,7 @@ struct HomePageView: View {
             }
         }
     }
-    
+
     var navBarMenu : some View {
         Button(action: {
             self.showMenu.toggle()

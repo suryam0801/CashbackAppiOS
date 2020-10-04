@@ -24,7 +24,7 @@ struct CashbackHistoryView: View {
                     
                     HStack {
                         VStack (alignment: .leading) {
-                            Text("Total Earned\(Helpers.totalCashbackAmount(orderList: self.cashbackHistoryViewModel.ordersList).removeZerosFromEnd())₹").font(.largeTitle).foregroundColor(Color.white)
+                            Text("Total Earned: \(Helpers.totalCashbackAmount(orderList: self.cashbackHistoryViewModel.ordersList).removeZerosFromEnd())₹").font(.largeTitle).foregroundColor(Color.white)
                         }.padding(10)
                         Spacer()
                     }.background(Color(UIColor.acceptColorGreen)).cornerRadius(4).padding([.leading, .trailing], 10)

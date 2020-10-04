@@ -25,17 +25,15 @@ struct CartView: View {
                     ForEach (self.cartList.inCartList, id: \.itemId) { cartItem in
                         CartItemCard(cartItem: cartItem, mrp: self.$totalMRP, cashback: self.$totalCashBack)
                     }
-                    
-                    EndOfCartPriceDisplayView(cartItems: self.$cartList.inCartList, cashback: self.$totalCashBack, totalMRP: self.$totalMRP)
-                    
                 }.onAppear(){self.calculateTotalMRP()}.padding(.top, 10)
             }
+            EndOfCartPriceDisplayView(cartItems: self.$cartList.inCartList, cashback: self.$totalCashBack, totalMRP: self.$totalMRP)
         }.background(Color("Color"))
             .navigationBarTitle("My Cart", displayMode: .inline)
             .onAppear(){self.onAppearHelper()}
             .onDisappear(){self.onDisappearHelper()}
     }
-    
+
     func onAppearHelper() {
         self.totalMRP = 0
         self.totalCashBack = [0,0]
