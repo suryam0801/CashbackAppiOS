@@ -43,7 +43,16 @@ struct DetailedItemView : View {
 
                     if !self.showCheckout {
                         itemDetailHeader
-                        Text("Cashback value anywhere between \(self.cashback[0].removeZerosFromEnd()) to \(self.cashback[1].removeZerosFromEnd())").fixedSize(horizontal: false, vertical: true)
+                        
+                        Text("\(self.cashback[0].removeZerosFromEnd()) to \(self.cashback[1].removeZerosFromEnd())₹ Cashback!!!")
+                            .font(.system(size: 20))
+                            .bold()
+                            .padding()
+                            .background(Color(UIColor.acceptColorGreen))
+                            .cornerRadius(10)
+                            .foregroundColor(Color.white)
+                            .fixedSize(horizontal: false, vertical: true)
+                        
                         sizePicker
                         quantityPicker
                         checkOutHelper
@@ -64,7 +73,7 @@ struct DetailedItemView : View {
             VStack(alignment: .leading, spacing: 8){
 
                 Text(self.item.name).font(.largeTitle)
-                Text("\(self.item.price.removeZerosFromEnd())").fontWeight(.heavy)
+                Text("\(self.item.price.removeZerosFromEnd())₹").fontWeight(.heavy)
             }
             Spacer()
 
