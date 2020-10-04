@@ -60,15 +60,18 @@ struct DetailedItemView : View {
     }
 
     var itemDetailHeader : some View {
-        HStack{
+        HStack (alignment: .center) {
             VStack(alignment: .leading, spacing: 8){
 
                 Text(self.item.name).font(.largeTitle)
                 Text("\(self.item.price.removeZerosFromEnd())").fontWeight(.heavy)
             }
             Spacer()
-        }
 
+            Image("share").resizable().frame(width: 25, height: 30).onTapGesture {
+                SharePopup.sharePopup(id: self.item.id, name: self.item.name)
+            }
+        }
     }
 
     var sizePicker : some View {
