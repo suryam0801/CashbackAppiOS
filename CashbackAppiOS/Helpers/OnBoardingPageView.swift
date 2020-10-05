@@ -61,30 +61,25 @@ struct OnBoardingData {
     
     static let headers = [
         "Instant Cashback",
-        "Amazing Prizes",
         "Exclusive Designs"
     ]
 
     static let contentStrings = [
         "Get instant, guaranteed cashbacks for every purchase!",
-        "Enter our giveway and win prizes every week!",
         "Get access to the best hot designs that change every week!"
     ]
 
     static let imageNames = [
         "cashback",
-        "prize",
         "exclusive"
     ]
 
     static let colors = [
         "FCE38A",
-        "95E1D3",
         "EAFFD0"
         ].map{ Color(hex: $0) }
 
     static let textColors = [
-        "4A4A4A",
         "4A4A4A",
         "4A4A4A"
         ].map{ Color(hex: $0) }

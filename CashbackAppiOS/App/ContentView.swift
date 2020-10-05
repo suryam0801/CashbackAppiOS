@@ -44,7 +44,7 @@ struct ContentView: View {
     }
     
     var onboarding : some View {
-        let pages = (0...2).map { i in
+        let pages = (0...1).map { i in
             AnyView(PageView(title: OnBoardingData.title, imageName: OnBoardingData.imageNames[i], header: OnBoardingData.headers[i], content: OnBoardingData.contentStrings[i], textColor: OnBoardingData.textColors[i]))
         }
         
