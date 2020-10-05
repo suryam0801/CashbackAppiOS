@@ -64,6 +64,7 @@
 		175EBDF52510D4B100D5686F /* CashbackHistoryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175EBDF42510D4B100D5686F /* CashbackHistoryCard.swift */; };
 		176702112521A5B900508396 /* CashbackAmountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176702102521A5B900508396 /* CashbackAmountViewModel.swift */; };
 		17A93906251C656000A70FD6 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A93905251C656000A70FD6 /* ImageLoader.swift */; };
+		17C0A859252AEA4A003B327E /* SkipChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C0A858252AEA4A003B327E /* SkipChecker.swift */; };
 		17C8BEE4250CE9D900C89EB3 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C8BEE3250CE9D900C89EB3 /* CartViewModel.swift */; };
 		17C8BEE8250CFE2200C89EB3 /* NavBarEndButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C8BEE7250CFE2200C89EB3 /* NavBarEndButtons.swift */; };
 		17C8BEEA250D014000C89EB3 /* CartItemCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C8BEE9250D014000C89EB3 /* CartItemCard.swift */; };
@@ -85,7 +86,7 @@
 		173FA1702521B30B00F8E306 /* BillSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillSummaryView.swift; sourceTree = "<group>"; };
 		173FA1722521B7DB00F8E306 /* AddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressView.swift; sourceTree = "<group>"; };
 		173FA17425223C2900F8E306 /* PromoCodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromoCodeViewModel.swift; sourceTree = "<group>"; };
-		17553B1B250C5B2900FF8D71 /* CashbackAppiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CashbackAppiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		17553B1B250C5B2900FF8D71 /* Reveno.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reveno.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17553B1E250C5B2900FF8D71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17553B20250C5B2900FF8D71 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		17553B22250C5B2900FF8D71 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -140,6 +141,7 @@
 		175EBDF42510D4B100D5686F /* CashbackHistoryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashbackHistoryCard.swift; sourceTree = "<group>"; };
 		176702102521A5B900508396 /* CashbackAmountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashbackAmountViewModel.swift; sourceTree = "<group>"; };
 		17A93905251C656000A70FD6 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		17C0A858252AEA4A003B327E /* SkipChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkipChecker.swift; sourceTree = "<group>"; };
 		17C8BEE3250CE9D900C89EB3 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
 		17C8BEE7250CFE2200C89EB3 /* NavBarEndButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarEndButtons.swift; sourceTree = "<group>"; };
 		17C8BEE9250D014000C89EB3 /* CartItemCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemCard.swift; sourceTree = "<group>"; };
@@ -191,7 +193,7 @@
 		17553B1C250C5B2900FF8D71 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				17553B1B250C5B2900FF8D71 /* CashbackAppiOS.app */,
+				17553B1B250C5B2900FF8D71 /* Reveno.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -290,6 +292,7 @@
 				17A93905251C656000A70FD6 /* ImageLoader.swift */,
 				17DFC1DD25299697005A1A3F /* SharePopupHelper.swift */,
 				17DFC1E32529AC68005A1A3F /* OpenInstagram.swift */,
+				17C0A858252AEA4A003B327E /* SkipChecker.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -458,7 +461,7 @@
 			);
 			name = CashbackAppiOS;
 			productName = CashbackAppiOS;
-			productReference = 17553B1B250C5B2900FF8D71 /* CashbackAppiOS.app */;
+			productReference = 17553B1B250C5B2900FF8D71 /* Reveno.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -591,6 +594,7 @@
 				173FA16C2521A81C00F8E306 /* CashbackAmountModel.swift in Sources */,
 				17553B56250C66D600FF8D71 /* KeyboardHeightPublisher.swift in Sources */,
 				17C8BEEE250DE38100C89EB3 /* CartView.swift in Sources */,
+				17C0A859252AEA4A003B327E /* SkipChecker.swift in Sources */,
 				173FA16F2521AFA900F8E306 /* PrePurchaseView.swift in Sources */,
 				17553B8A250CA9EE00FF8D71 /* ItemsScroll.swift in Sources */,
 				17DFC1E42529AC68005A1A3F /* OpenInstagram.swift in Sources */,
@@ -766,9 +770,9 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = circle.circleapp.CashbackAppiOS;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Reveno;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -788,9 +792,9 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = circle.circleapp.CashbackAppiOS;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Reveno;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

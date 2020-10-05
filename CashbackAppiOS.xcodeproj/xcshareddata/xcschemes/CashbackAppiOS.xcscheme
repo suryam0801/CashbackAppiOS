@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "17553B1A250C5B2900FF8D71"
-               BuildableName = "CashbackAppiOS.app"
+               BuildableName = "Reveno.app"
                BlueprintName = "CashbackAppiOS"
                ReferencedContainer = "container:CashbackAppiOS.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "17553B1A250C5B2900FF8D71"
-            BuildableName = "CashbackAppiOS.app"
+            BuildableName = "Reveno.app"
             BlueprintName = "CashbackAppiOS"
             ReferencedContainer = "container:CashbackAppiOS.xcodeproj">
          </BuildableReference>
@@ -69,7 +69,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "17553B1A250C5B2900FF8D71"
-            BuildableName = "CashbackAppiOS.app"
+            BuildableName = "Reveno.app"
             BlueprintName = "CashbackAppiOS"
             ReferencedContainer = "container:CashbackAppiOS.xcodeproj">
          </BuildableReference>

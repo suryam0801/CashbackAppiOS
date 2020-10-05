@@ -21,6 +21,10 @@ struct NavBarEndButtons: View {
             }.buttonStyle(PlainButtonStyle())
             
             Button(action: {
+                guard SkipChecker().skip == false else {
+                    SkipChecker().makeUserLogin()
+                    return
+                }
                 self.showCart.toggle()
             }) {
                 

@@ -132,7 +132,7 @@ extension AppDelegate : MessagingDelegate {
             //update userObject each time app is opened
             UserViewModel().fetchUser(customer!.id) {_ in
                 customer!.deviceToken = fcmToken
-                DBWriteHelper.updateToken(newToken: fcmToken)
+                DBWriteHelper().updateToken(newToken: fcmToken)
             }
         }
     }

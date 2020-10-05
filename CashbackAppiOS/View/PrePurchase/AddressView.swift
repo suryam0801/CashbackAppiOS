@@ -32,7 +32,7 @@ struct AddressView: View {
                 self.address = self.street + ", " + self.city + ", " + self.state + ", " + self.apartmentOrHouseNumber + ", " +  self.zipcode + ", "
 
                 customer?.address = self.address
-                DBWriteHelper.updateAddresses()
+                DBWriteHelper().updateAddresses()
                 self.showAddressPicker.toggle()
                 
             }) {

@@ -52,7 +52,7 @@ struct CartItemCard: View {
             Divider().padding([.top,.leading,.trailing], 10)
             
             Button (action: {
-                DBWriteHelper.removeFromCart(cartItemId: self.cartItem.itemId)
+                DBWriteHelper().removeFromCart(cartItemId: self.cartItem.itemId)
             }) {
                 HStack{
                     Image("trash").resizable().frame(width: 13, height: 15).foregroundColor(Color(UIColor.rejectButtonRed))
@@ -65,11 +65,11 @@ struct CartItemCard: View {
     
     private func increment () {
         Helpers.quantityIncrement(quantity: &self.quantity, cartItemPrice: self.cartItem.price, currentMRP: &self.mrp, cashback: &self.cashback)
-        DBWriteHelper.updateItemQuantity(cartItemId: self.cartItem.itemId, newQuantity: self.quantity)
+        DBWriteHelper().updateItemQuantity(cartItemId: self.cartItem.itemId, newQuantity: self.quantity)
     }
 
     private func decrement () {
         Helpers.quantityDecrement(quantity: &self.quantity, cartItemPrice: self.cartItem.price, currentMRP: &self.mrp, cashback: &self.cashback)
-        DBWriteHelper.updateItemQuantity(cartItemId: self.cartItem.itemId, newQuantity: self.quantity)
+        DBWriteHelper().updateItemQuantity(cartItemId: self.cartItem.itemId, newQuantity: self.quantity)
     }
 }

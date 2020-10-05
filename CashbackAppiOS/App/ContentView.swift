@@ -13,6 +13,7 @@ import FirebaseMessaging
 
 struct ContentView: View {
     @State var status = UserDefaults.standard.value(forKey: "status") as? Bool ?? false
+    @State var skip = UserDefaults.standard.value(forKey: "skip") as? Bool ?? false
     @State var onboardingFinished = false
     
     var body: some View {
@@ -20,18 +21,24 @@ struct ContentView: View {
             //checking if user is signed in or not
             if status {
                 HomePageView()
+            } else if skip {
+                HomePageView()
             } else {
-                if onboardingFinished {
+                if onboardingFinished && !skip {
                     PhoneVerificationview()
                 } else {
                     self.onboarding
                 }
             }
-            
         }.onAppear {
             NotificationCenter.default.addObserver(forName: NSNotification.Name("statusChange"), object: nil, queue: .main) { (_) in
                 let status = UserDefaults.standard.value(forKey: "status") as? Bool ?? false
                 self.status = status
+            }
+            
+            NotificationCenter.default.addObserver(forName: NSNotification.Name("skipChange"), object: nil, queue: .main) { (_) in
+                let skip = UserDefaults.standard.value(forKey: "skip") as? Bool ?? false
+                self.skip = skip
             }
         }
     }

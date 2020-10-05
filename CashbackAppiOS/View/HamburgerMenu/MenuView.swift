@@ -40,6 +40,10 @@ struct MenuView: View {
                     .foregroundColor(.gray)
                     .font(.headline)
             }.onTapGesture {
+                guard SkipChecker().skip == false else {
+                    SkipChecker().makeUserLogin()
+                    return
+                }
                 self.showSelf.toggle()
                 self.viewOrders.toggle()
             }
@@ -52,6 +56,10 @@ struct MenuView: View {
                     .foregroundColor(.gray)
                     .font(.headline)
             }.onTapGesture {
+                guard SkipChecker().skip == false else {
+                    SkipChecker().makeUserLogin()
+                    return
+                }
                 self.showSelf.toggle()
                 self.viewCashbackHistory.toggle()
             }

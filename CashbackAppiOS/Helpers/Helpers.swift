@@ -123,7 +123,7 @@ class Helpers {
             orderList.append(tempOrder)
         }
 
-        DBWriteHelper.writeOrders(orders: orderList)
+        DBWriteHelper().writeOrders(orders: orderList)
     }
 
     static func groupingCashbackByTransactions (ordersList:[Order]) -> [Order] {

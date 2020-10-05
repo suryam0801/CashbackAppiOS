@@ -86,7 +86,7 @@ struct UserRegistration: View {
         user = Customer(id: PhoneAuthHelper.getUserId(), name: self.userName, phnNumber: self.countryCode + "" + self.phoneNumber, address: nil, deviceToken: FirebaseTokenHelper.getToken(), upi: "", version: 0, cart: nil)
 
         //TODO: ADD FIREBASE AUTH
-        DBWriteHelper.createNewCustomer(userObj: user!) { createdUser in
+        DBWriteHelper().createNewCustomer(userObj: user!) { createdUser in
             if createdUser {
                 UserDefaults.standard.set(true, forKey: "status")
                 NotificationCenter.default.post(name: NSNotification.Name("statusChange"), object: nil)

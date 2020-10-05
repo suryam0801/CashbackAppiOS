@@ -71,6 +71,16 @@ struct PhoneVerificationview: View {
                         .padding(.top, 5)
                         .cornerRadius(10)
                     
+                    HStack {
+                        Spacer()
+                        Button (action: {
+                            UserDefaults.standard.set(true, forKey: "skip")
+                            NotificationCenter.default.post(name: NSNotification.Name("skipChange"), object: nil)
+                        }) {
+                            Text("Skip Registration").font(.subheadline).foregroundColor(.gray)
+                        }
+                    }
+                    
                     NavigationLink(destination: OTPVerificationView(countryCode: self.countryCode, phoneNumber: self.userNumber, authenticationID: self.$userID), isActive: self.$OTPSend) {EmptyView()}.hidden()
                     
                     Spacer()

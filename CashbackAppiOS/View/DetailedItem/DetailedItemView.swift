@@ -133,7 +133,7 @@ struct DetailedItemView : View {
             Button(action: {
                 guard self.selectedSizeSoldOut == false else {return}
                 let cartItem:CartItem = self.makeCartItem()
-                DBWriteHelper.addToCart(cartItem: cartItem)
+                DBWriteHelper().addToCart(cartItem: cartItem)
             }) {
                 Text("Add To Cart").padding().border(Color.black, width: 1.4)
             }.foregroundColor(.black)
@@ -144,7 +144,7 @@ struct DetailedItemView : View {
                 guard self.selectedSizeSoldOut == false else {return}
                 self.showCheckout.toggle()
                 self.cartItems.append(self.makeCartItem())
-                DBWriteHelper.addToCart(cartItem: self.cartItems[0])
+                DBWriteHelper().addToCart(cartItem: self.cartItems[0])
                 self.showPayment.toggle()
             }) {
                 Text("Buy Now").padding()
