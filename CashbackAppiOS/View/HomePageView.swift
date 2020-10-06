@@ -35,25 +35,8 @@ struct HomePageView: View {
         
         return GeometryReader { geometry in
             
-            ZStack (alignment: .leading) {
-                NavigationView{
-                    
-                    if self.showCart {
-                        NavigationLink(destination: CartView(show: self.$showCart), isActive: self.$showCart) {EmptyView()}
-                    }
-                    
-                    if self.viewOrders {
-                        NavigationLink(destination: OrdersView(), isActive: self.$viewOrders) {EmptyView()}
-                    }
-                    
-                    if self.cashbackHistory {
-                        NavigationLink(destination: CashbackHistoryView(), isActive: self.$cashbackHistory) {EmptyView()}
-                    }
-                    
-                    if self.showDetailedView {
-                        NavigationLink(destination: DetailedItemView(item: self.sharedItem!), isActive: self.$showDetailedView) {EmptyView()}
-                    }
-
+            NavigationView {
+                ZStack (alignment: .leading) {
                     VStack(spacing: 15){
 
                         ItemsDisplayMainView()
@@ -64,17 +47,19 @@ struct HomePageView: View {
                         .disabled(self.showMenu ? true : false)
                         .navigationBarTitle("Cashback", displayMode: .inline)
                         .edgesIgnoringSafeArea(.bottom)
-                        .navigationBarItems(leading: self.navBarMenu, trailing: NavBarEndButtons(showCart: self.$showCart))
+                        .navigationBarItems(leading: self.navBarMenu, trailing: NavBarEndButtons())
                         .gesture(drag)
-                }
 
-                if self.showMenu {
-                    MenuView(viewOrders: self.$viewOrders, viewCashbackHistory: self.$cashbackHistory, showSelf: self.$showMenu)
-                        .gesture(drag)
-                        .frame(width: geometry.size.width/2)
-                        .transition(.move(edge: .leading))
+                    if self.showMenu {
+                        MenuView(showSelf: self.$showMenu)
+                            .gesture(drag)
+                            .frame(width: geometry.size.width/2)
+                            .transition(.move(edge: .leading))
+                    }
                 }
             }
+            
+            
         }.onAppear(){
             customer = Helpers.retrieveStoredCustomer()
             PromoCodeViewModel().fetchPromoCodes()

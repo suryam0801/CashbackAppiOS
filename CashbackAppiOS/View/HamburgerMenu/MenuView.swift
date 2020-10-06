@@ -9,9 +9,6 @@
 import SwiftUI
 
 struct MenuView: View {
-    
-    @Binding var viewOrders:Bool
-    @Binding var viewCashbackHistory:Bool
     @Binding var showSelf:Bool
     
     var body: some View {
@@ -32,38 +29,29 @@ struct MenuView: View {
                 }
                 Spacer()
             }.padding(.top, 100)
-            HStack {
-                Image(systemName: "envelope")
-                    .foregroundColor(.gray)
-                    .imageScale(.large)
-                Text("My Orders")
-                    .foregroundColor(.gray)
-                    .font(.headline)
-            }.onTapGesture {
-                guard SkipChecker().skip == false else {
-                    SkipChecker().makeUserLogin()
-                    return
-                }
-                self.showSelf.toggle()
-                self.viewOrders.toggle()
-            }
-            .padding(.top, 30)
-            HStack {
-                Image(systemName: "gear")
-                    .foregroundColor(.gray)
-                    .imageScale(.large)
-                Text("Earnings List")
-                    .foregroundColor(.gray)
-                    .font(.headline)
-            }.onTapGesture {
-                guard SkipChecker().skip == false else {
-                    SkipChecker().makeUserLogin()
-                    return
-                }
-                self.showSelf.toggle()
-                self.viewCashbackHistory.toggle()
-            }
-            .padding(.top, 30)
+            
+            NavigationLink(destination: OrdersView()) {
+                HStack {
+                    Image(systemName: "envelope")
+                        .foregroundColor(.gray)
+                        .imageScale(.large)
+                    Text("My Orders")
+                        .foregroundColor(.gray)
+                        .font(.headline)
+                }.padding(.top, 30)
+            }.buttonStyle(PlainButtonStyle())
+
+            
+            NavigationLink(destination: CashbackHistoryView()) {
+                HStack {
+                    Image(systemName: "gear")
+                        .foregroundColor(.gray)
+                        .imageScale(.large)
+                    Text("Earnings List")
+                        .foregroundColor(.gray)
+                        .font(.headline)
+                }.padding(.top, 30)
+            }.buttonStyle(PlainButtonStyle())
             
             Spacer()
         }

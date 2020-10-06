@@ -44,6 +44,10 @@ struct CashbackHistoryView: View {
             }
             Spacer()
         }.navigationBarTitle("Cashback History", displayMode: .inline).onAppear(){
+            guard SkipChecker().skip == false else {
+                SkipChecker().makeUserLogin()
+                return
+            }
             self.cashbackHistoryViewModel.fetchOrdersForCashback()
         }.onDisappear() {
             self.cashbackHistoryViewModel.cleanup()

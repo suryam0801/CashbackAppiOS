@@ -76,11 +76,10 @@
 		17DFC1E02529A15F005A1A3F /* SingleItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DFC1DF2529A15F005A1A3F /* SingleItemViewModel.swift */; };
 		17DFC1E22529A1E5005A1A3F /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DFC1E12529A1E5005A1A3F /* HomePageView.swift */; };
 		17DFC1E42529AC68005A1A3F /* OpenInstagram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DFC1E32529AC68005A1A3F /* OpenInstagram.swift */; };
-		7EB8EDD911C7DE6442A11CC3 /* Pods_CashbackAppiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 083DE08C87004BE721C8F8D6 /* Pods_CashbackAppiOS.framework */; };
+		CA72E078E147CED3D9CFC7FA /* Pods_CashbackAppiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DE72B54A603ED92751E3B67 /* Pods_CashbackAppiOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		083DE08C87004BE721C8F8D6 /* Pods_CashbackAppiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CashbackAppiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		173FA16B2521A81C00F8E306 /* CashbackAmountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashbackAmountModel.swift; sourceTree = "<group>"; };
 		173FA16E2521AFA900F8E306 /* PrePurchaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrePurchaseView.swift; sourceTree = "<group>"; };
 		173FA1702521B30B00F8E306 /* BillSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillSummaryView.swift; sourceTree = "<group>"; };
@@ -153,8 +152,9 @@
 		17DFC1DF2529A15F005A1A3F /* SingleItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleItemViewModel.swift; sourceTree = "<group>"; };
 		17DFC1E12529A1E5005A1A3F /* HomePageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
 		17DFC1E32529AC68005A1A3F /* OpenInstagram.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenInstagram.swift; sourceTree = "<group>"; };
-		BB9705A4A60FA50212CD37B7 /* Pods-CashbackAppiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CashbackAppiOS.release.xcconfig"; path = "Target Support Files/Pods-CashbackAppiOS/Pods-CashbackAppiOS.release.xcconfig"; sourceTree = "<group>"; };
-		ECFEA4C2398CA77C2507460A /* Pods-CashbackAppiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CashbackAppiOS.debug.xcconfig"; path = "Target Support Files/Pods-CashbackAppiOS/Pods-CashbackAppiOS.debug.xcconfig"; sourceTree = "<group>"; };
+		621428AB7C48AADAEAAB33DC /* Pods-CashbackAppiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CashbackAppiOS.release.xcconfig"; path = "Target Support Files/Pods-CashbackAppiOS/Pods-CashbackAppiOS.release.xcconfig"; sourceTree = "<group>"; };
+		8DE72B54A603ED92751E3B67 /* Pods_CashbackAppiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CashbackAppiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		95AD868D8D9CF3117EAC8DBB /* Pods-CashbackAppiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CashbackAppiOS.debug.xcconfig"; path = "Target Support Files/Pods-CashbackAppiOS/Pods-CashbackAppiOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,7 +162,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7EB8EDD911C7DE6442A11CC3 /* Pods_CashbackAppiOS.framework in Frameworks */,
+				CA72E078E147CED3D9CFC7FA /* Pods_CashbackAppiOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,7 +186,7 @@
 				17553B1D250C5B2900FF8D71 /* CashbackAppiOS */,
 				17553B1C250C5B2900FF8D71 /* Products */,
 				319FE35DA9A5ADA80C139D65 /* Pods */,
-				21744A87D0EDE6FBCF14CA44 /* Frameworks */,
+				82B1553745958947A4A327EA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -425,21 +425,21 @@
 			path = Payment;
 			sourceTree = "<group>";
 		};
-		21744A87D0EDE6FBCF14CA44 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				083DE08C87004BE721C8F8D6 /* Pods_CashbackAppiOS.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		319FE35DA9A5ADA80C139D65 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				ECFEA4C2398CA77C2507460A /* Pods-CashbackAppiOS.debug.xcconfig */,
-				BB9705A4A60FA50212CD37B7 /* Pods-CashbackAppiOS.release.xcconfig */,
+				95AD868D8D9CF3117EAC8DBB /* Pods-CashbackAppiOS.debug.xcconfig */,
+				621428AB7C48AADAEAAB33DC /* Pods-CashbackAppiOS.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		82B1553745958947A4A327EA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8DE72B54A603ED92751E3B67 /* Pods_CashbackAppiOS.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -449,11 +449,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 17553B2F250C5B2B00FF8D71 /* Build configuration list for PBXNativeTarget "CashbackAppiOS" */;
 			buildPhases = (
-				F0E34CEA7A2BA9EFDF899023 /* [CP] Check Pods Manifest.lock */,
+				2BA1D5C15060F94F20F96080 /* [CP] Check Pods Manifest.lock */,
 				17553B17250C5B2900FF8D71 /* Sources */,
 				17553B18250C5B2900FF8D71 /* Frameworks */,
 				17553B19250C5B2900FF8D71 /* Resources */,
-				91F50AC3CDC40571D754D22E /* [CP] Embed Pods Frameworks */,
+				A6A6E6370F9AFBAE592F72AF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -471,7 +471,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1160;
-				LastUpgradeCheck = 1160;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = SuryaManivannan;
 				TargetAttributes = {
 					17553B1A250C5B2900FF8D71 = {
@@ -512,24 +512,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		91F50AC3CDC40571D754D22E /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CashbackAppiOS/Pods-CashbackAppiOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CashbackAppiOS/Pods-CashbackAppiOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CashbackAppiOS/Pods-CashbackAppiOS-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F0E34CEA7A2BA9EFDF899023 /* [CP] Check Pods Manifest.lock */ = {
+		2BA1D5C15060F94F20F96080 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -549,6 +532,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A6A6E6370F9AFBAE592F72AF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CashbackAppiOS/Pods-CashbackAppiOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CashbackAppiOS/Pods-CashbackAppiOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CashbackAppiOS/Pods-CashbackAppiOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -666,6 +666,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -690,7 +691,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -726,6 +727,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -744,7 +746,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -756,11 +758,12 @@
 		};
 		17553B30250C5B2B00FF8D71 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ECFEA4C2398CA77C2507460A /* Pods-CashbackAppiOS.debug.xcconfig */;
+			baseConfigurationReference = 95AD868D8D9CF3117EAC8DBB /* Pods-CashbackAppiOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = CashbackAppiOS/CashbackAppiOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"CashbackAppiOS/Preview Content\"";
 				DEVELOPMENT_TEAM = 478XDR2NPK;
 				ENABLE_PREVIEWS = YES;
@@ -769,6 +772,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = circle.circleapp.CashbackAppiOS;
 				PRODUCT_NAME = Reveno;
 				SWIFT_VERSION = 5.0;
@@ -778,11 +782,12 @@
 		};
 		17553B31250C5B2B00FF8D71 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BB9705A4A60FA50212CD37B7 /* Pods-CashbackAppiOS.release.xcconfig */;
+			baseConfigurationReference = 621428AB7C48AADAEAAB33DC /* Pods-CashbackAppiOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = CashbackAppiOS/CashbackAppiOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"CashbackAppiOS/Preview Content\"";
 				DEVELOPMENT_TEAM = 478XDR2NPK;
 				ENABLE_PREVIEWS = YES;
@@ -791,6 +796,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = circle.circleapp.CashbackAppiOS;
 				PRODUCT_NAME = Reveno;
 				SWIFT_VERSION = 5.0;

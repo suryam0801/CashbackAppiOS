@@ -10,7 +10,6 @@ import SwiftUI
 
 struct CartView: View {
     @ObservedObject var cartList:CartViewModel = CartViewModel()
-    @Binding var show : Bool
 
     @State var totalMRP:Double = 0
     @State var totalCashBack:[Double] = [0,0]
@@ -40,6 +39,12 @@ struct CartView: View {
     }
 
     func onAppearHelper() {
+        
+        guard SkipChecker().skip == false else {
+            SkipChecker().makeUserLogin()
+            return
+        }
+
         self.totalMRP = 0
         self.totalCashBack = [0,0]
         self.cartList.fetchItems()

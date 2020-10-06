@@ -31,7 +31,7 @@ struct DetailedItemView : View {
         VStack(spacing : 0){
 
             if self.showCart {
-                NavigationLink(destination: CartView(show: self.$showCart), isActive: self.$showCart) {EmptyView()}
+                NavigationLink(destination: CartView(), isActive: self.$showCart) {EmptyView()}
             }
 
             ItemImageDisplay(url: self.item.photos[0], width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height/2)
@@ -65,7 +65,7 @@ struct DetailedItemView : View {
                     .padding(.top, -70)
 
             }
-        }.navigationBarTitle(item.name).navigationBarItems(trailing: NavBarEndButtons(showCart: self.$showCart)).onAppear(){self.onAppearHelper()}
+        }.navigationBarTitle(item.name).navigationBarItems(trailing: NavBarEndButtons()).onAppear(){self.onAppearHelper()}
     }
 
     var itemDetailHeader : some View {

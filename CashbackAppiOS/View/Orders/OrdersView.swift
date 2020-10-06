@@ -26,7 +26,13 @@ struct OrdersView: View {
                 Spacer()
             }
         }.navigationBarTitle("Order History", displayMode:.inline)
-            .background(Color("Color"))
-            .onAppear(){self.ordersViewModel.fetchOrders()}
+        .background(Color("Color"))
+        .onAppear(){
+            guard SkipChecker().skip == false else {
+                SkipChecker().makeUserLogin()
+                return
+            }
+            self.ordersViewModel.fetchOrders()
+        }
     }
 }

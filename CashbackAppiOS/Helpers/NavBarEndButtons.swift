@@ -8,9 +8,7 @@
 
 import SwiftUI
 
-struct NavBarEndButtons: View {
-    @Binding var showCart:Bool
-    
+struct NavBarEndButtons: View {    
     
     var body: some View {
         HStack (spacing: 18) {
@@ -20,16 +18,11 @@ struct NavBarEndButtons: View {
                 Image("instagram").resizable().frame(width: 25, height: 25)
             }.buttonStyle(PlainButtonStyle())
             
-            Button(action: {
-                guard SkipChecker().skip == false else {
-                    SkipChecker().makeUserLogin()
-                    return
-                }
-                self.showCart.toggle()
-            }) {
-                
+            
+            
+            NavigationLink(destination: CartView()) {
                 Image("shop").renderingMode(.original)
-            }
+            }.buttonStyle(PlainButtonStyle())
             
         }
     }

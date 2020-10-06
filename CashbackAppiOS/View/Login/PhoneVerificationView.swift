@@ -27,18 +27,27 @@ struct PhoneVerificationview: View {
             ZStack {
                 VStack(spacing: 0) {
                     
+                    HStack {
+                        Spacer()
+                        Button (action: {
+                            UserDefaults.standard.set(true, forKey: "skip")
+                            NotificationCenter.default.post(name: NSNotification.Name("skipChange"), object: nil)
+                        }) {
+                            Text("Skip").font(.subheadline).foregroundColor(.gray)
+                        }
+                    }.padding()
+                    
                     Text("Reveno").font(.system(size: 70)).bold().foregroundColor(Color(UIColor.titleColorDarkBlue)).padding(.top, 50)
                     
                     Text("The shopping app that pays you back").font(Font.system(size:13)).foregroundColor(.gray)
                     
                     Text("Verify Your Number").font(Font.system(size:25).weight(.bold)).fontWeight(.heavy).padding(.top, 70)
                     
-                    Image("Google_pay_Phone_pe").resizable().frame(width: 100, height: 50)
-                    
-                    Text("Please enter the number that matches your google pay or PhonePe so we can send your cashback")
+                    Text("Please enter the same as your UPI PHONENUMBER so we can send your cashback")
+                        .bold()
                         .font(Font.system(size:13))
                         .foregroundColor(.gray)
-                        .padding(.top, 12)
+                        .padding()
 
                     HStack{
                         Text(self.countryCode).frame(width: 35)
@@ -52,8 +61,8 @@ struct PhoneVerificationview: View {
                             .padding()
                             .background(Color(UIColor.textFieldLightGrey))
                             .clipShape(RoundedRectangle(cornerRadius: 10))
-                    } .padding(15).padding(.top, 5)
-                    
+                    } .padding([.leading, .trailing, .bottom], 15)
+
                     Button (action: {
                         if self.numberValidityCheck(number: self.userNumber) {
                             self.toggleLoader.toggle()
@@ -70,19 +79,9 @@ struct PhoneVerificationview: View {
                         .background(Color(UIColor.supportTextBlue))
                         .padding(.top, 5)
                         .cornerRadius(10)
-                    
-                    HStack {
-                        Spacer()
-                        Button (action: {
-                            UserDefaults.standard.set(true, forKey: "skip")
-                            NotificationCenter.default.post(name: NSNotification.Name("skipChange"), object: nil)
-                        }) {
-                            Text("Skip Registration").font(.subheadline).foregroundColor(.gray)
-                        }
-                    }
-                    
+
                     NavigationLink(destination: OTPVerificationView(countryCode: self.countryCode, phoneNumber: self.userNumber, authenticationID: self.$userID), isActive: self.$OTPSend) {EmptyView()}.hidden()
-                    
+
                     Spacer()
                 }.keyboardAdaptive(specificOffSet: 0).onTapGesture { Helpers.endEditing() }
                 if self.toggleLoader {
@@ -91,14 +90,14 @@ struct PhoneVerificationview: View {
                     }.background(Color.black.opacity(0.45)).edgesIgnoringSafeArea(.all)
                 }
             }.navigationBarTitle("").navigationBarHidden(true)
-            
+
         }.sheet(isPresented: self.$showCountryCodePicker) {
             CountryPickerView(selectedCountryCode: self.$countryCode, countryPickerViewDismisser: self.$showCountryCodePicker)
         }.alert(isPresented: $showsLoadingAlert) {
             Alert(title: Text(self.phoneVerificationTitle), message: Text(self.otpVerificationMessage), dismissButton: .default(Text("Dismiss")))
         }
     }
-    
+
     func phoneVerification() {
         PhoneAuthHelper.phoneNumberVerification(self.countryCode, self.userNumber) { verified, ID in
             if verified == true {

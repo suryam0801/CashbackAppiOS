@@ -31,7 +31,7 @@ struct ItemsScroll : View {
 
                         ForEach(self.itemViewModel.itemGrid){i in
                             HStack{
-                                ForEach(i!.rows!){j in
+                                ForEach(i.rows!){j in
                                     if j.category.contains(self.selectedCategory) {
                                         ItemCard(item: j)
                                     }
