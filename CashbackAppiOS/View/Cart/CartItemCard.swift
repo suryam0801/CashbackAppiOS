@@ -13,17 +13,17 @@ struct CartItemCard: View {
     @State var quantity:Double = 1
     @Binding var mrp:Double
     @Binding var cashback:[Double]
-    
+
     var body: some View {
         VStack {
             HStack {
                 Spacer().frame(width: 10)
                 
                 VStack {
-                    Image("p11").resizable().frame(width: 130, height: 165)
+                    ItemImageDisplay(url: self.cartItem.photos[0], width: 130, height: 165)
                     Spacer()
                 }
-                
+
                 VStack (alignment: .leading) {
                     Text(cartItem.name).bold().font(.headline)
                     Text("\(cartItem.price.removeZerosFromEnd())₹").font(.subheadline).foregroundColor(Color.gray)

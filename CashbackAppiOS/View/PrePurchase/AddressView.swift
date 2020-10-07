@@ -27,14 +27,13 @@ struct AddressView: View {
             TextField("Street", text: self.$street).modifier(TextEditBackground())
             TextField("Zipcode", text: self.$zipcode).modifier(TextEditBackground())
             TextField("Apartment/House Number", text: self.$apartmentOrHouseNumber).modifier(TextEditBackground())
-            
+
             Button (action: {
-                self.address = self.street + ", " + self.city + ", " + self.state + ", " + self.apartmentOrHouseNumber + ", " +  self.zipcode + ", "
+                self.address = self.street + "; " + self.city + "; " + self.state + "; " + self.apartmentOrHouseNumber + "; " +  self.zipcode
 
                 customer?.address = self.address
                 DBWriteHelper().updateAddresses()
                 self.showAddressPicker.toggle()
-                
             }) {
                 Text("Done").frame(width: UIScreen.main.bounds.width - 30,height: 50)
             }.foregroundColor(.white)

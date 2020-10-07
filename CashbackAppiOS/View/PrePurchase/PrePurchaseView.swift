@@ -21,7 +21,7 @@ struct PrePurchaseView: View {
     @State private var address:String = ""
     
     @Binding var showSelf:Bool
-
+    
     var body: some View {
         VStack {
             if !showCashbackPicker {
@@ -35,7 +35,7 @@ struct PrePurchaseView: View {
             self.onAppearHelper()
         }.padding()
     }
-
+    
     var CheckoutView : some View {
         VStack {
             
@@ -50,34 +50,39 @@ struct PrePurchaseView: View {
                 .padding()
                 .background(retrievedPromoCodes!.keys.contains(self.promoCodeEntry.lowercased()) ? Color(UIColor.acceptColorGreen).opacity(0.5) : Color(UIColor.textFieldLightGrey))
                 .clipShape(RoundedRectangle(cornerRadius: 10))
-
+            
             Spacer()
             
             if !self.showAddressChooser {
                 HStack {
                     VStack (alignment: .leading) {
-                        Text("Shipping Address")
-                            .font(Font.system(size:13))
-                            .foregroundColor(.gray)
-                            .padding(.top, 12)
-                        
-                        Text("\(customer?.address ?? "")").lineLimit(nil)
+                        HStack {
+                            Text("Shipping Address")
+                                .font(Font.system(size:13))
+                                .foregroundColor(.gray)
+                                .padding(.top, 12)
+                            Image("pencil").onTapGesture(count: 1, perform: {
+                                self.showAddressChooser = true
+                            })
+                        }
+                        VStack {
+                            Text("\(customer?.address ?? "")").lineLimit(nil)
+                        }
                     }
-                    
                     Spacer()
                 }.padding()
-                    .background(Color(UIColor.textFieldLightGrey))
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                .background(Color(UIColor.textFieldLightGrey))
+                .clipShape(RoundedRectangle(cornerRadius: 10))
             }
 
             Spacer()
 
             BillSummaryView(cartItems: self.$cartItems, cashback: self.$cashback, totalMRP: self.$totalMRP)
-
+            
             NavigationLink(destination: RazorPayDisplay(cartItems: self.cartItems, cashback: self.cashback), isActive: self.$showPayment) {
                 EmptyView()
             }
-
+            
             Button(action: {
                 promoCode = self.promoCodeEntry
                 tempCartTotal = self.totalMRP
@@ -91,14 +96,12 @@ struct PrePurchaseView: View {
             }
         }
     }
-    
+
     func onAppearHelper () {
-        
         if transactionId != nil {
             self.showPayment = false
             self.showCashbackPicker = true
         }
-        
         if customer?.address == nil {
             self.showAddressChooser = true
         } else {

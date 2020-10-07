@@ -42,12 +42,11 @@ class RazorPayViewController: UIViewController, RazorpayPaymentCompletionProtoco
         let options: [String:Any] = [
             "amount": "\(tempCartTotal! * 100)", //This is in currency subunits. 100 = 100 paise= INR 1.
             "currency": "INR",//We support more that 92 international currencies.
-            "description": "purchase description",
-            "image": "https://url-to-image.png",
-            "name": "business or product name",
+            "description": "Please pay the total bill ammount. Your cashback will be debited back into your account within 24 hours",
+            "image": "https://firebasestorage.googleapis.com/v0/b/cashback-app-94f79.appspot.com/o/Reveno%20Logo.jpg?alt=media&token=f7ee153d-56ab-43a9-a5f9-c222475f84ab",
+            "name": "Reveno",
             "prefill": [
-                "contact": "9797979797",
-                "email": "foo@bar.com"
+                "contact": customer!.phnNumber,
             ],
             "theme": [
                 "color": "#0061FF"
@@ -64,6 +63,7 @@ class RazorPayViewController: UIViewController, RazorpayPaymentCompletionProtoco
     }
     
     public func onPaymentSuccess(_ payment_id: String){
+        print(payment_id)
         transactionId = payment_id
         Helpers.makeOrderEntries(paymentId: transactionId!)
         let alertController = UIAlertController(title: "SUCCESS", message: "Payment Id \(payment_id)", preferredStyle: .alert)

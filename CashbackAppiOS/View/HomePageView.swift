@@ -57,9 +57,14 @@ struct HomePageView: View {
                             .transition(.move(edge: .leading))
                     }
                 }
+                
+                if self.showDetailedView {
+                    NavigationLink(destination: DetailedItemView(item: self.sharedItem!)) {
+                        EmptyView()
+                    }
+                }
             }
-            
-            
+
         }.onAppear(){
             customer = Helpers.retrieveStoredCustomer()
             PromoCodeViewModel().fetchPromoCodes()

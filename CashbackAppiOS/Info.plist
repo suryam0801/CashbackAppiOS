@@ -79,6 +79,8 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
 	<key>branch_key</key>
 	<string>key_live_ciPZTUdi3k1Izy1UX7ARbeaixue630Fs</string>
 </dict>

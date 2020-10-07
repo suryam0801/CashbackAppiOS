@@ -121,6 +121,7 @@ class Helpers {
             let tempOrder = Order(id: FirebasePushKeyHelper.getPushKey(), customerId: customer?.id, transactionId: paymentId, totalAmount: item.quantity * item.price, timestamp: Date().millisecondsSince1970, address: customer?.address, promocodeApplied: usedPromoCode, refundStatus: nil, trackingId: nil, cashback: Double(randomCashback), cashbackStatus: false, itemId: item.itemId, itemName: item.name, itemPrice: item.price, itemColor: item.color, itemSize: item.size, itemQuantity: item.quantity, itemPhotos: item.photos, storeId: item.storeIds)
 
             orderList.append(tempOrder)
+            DBWriteHelper().removeFromCart(cartItemId: item.itemId)
         }
 
         DBWriteHelper().writeOrders(orders: orderList)

@@ -21,10 +21,10 @@ struct UserRegistration: View {
     var body: some View {
         NavigationView {
             VStack {
-                Text("Circle").font(.custom("Roboto-Black", size: 70)).foregroundColor(Color(UIColor.titleColorDarkBlue))
-                
+                Text("Reveno").font(.system(size: 70)).bold().foregroundColor(Color(UIColor.titleColorDarkBlue))
+
                 Text("Choose your profile picture").font(Font.system(size:13)).foregroundColor(Color(UIColor.titleColorDarkBlue))
-                
+
                 ZStack {
                     if image != nil {
                         image?
@@ -36,7 +36,7 @@ struct UserRegistration: View {
                         Image("person.crop.circle.fill").resizable().frame(width:80, height: 80).foregroundColor(.gray)
                     }
                 }.frame(width:95, height: 90)
-                
+
                 HStack (spacing: 15){
                     Image("avatar1").resizable().frame(width:60, height: 60).onTapGesture {self.updateDefaultImageChoice(avatarNumber: 1)}
                     Image("avatar2").resizable().frame(width:60, height: 60).onTapGesture {self.updateDefaultImageChoice(avatarNumber: 2)}
