@@ -79,7 +79,7 @@ struct PrePurchaseView: View {
 
             BillSummaryView(cartItems: self.$cartItems, cashback: self.$cashback, totalMRP: self.$totalMRP)
             
-            NavigationLink(destination: RazorPayDisplay(cartItems: self.cartItems, cashback: self.cashback), isActive: self.$showPayment) {
+            NavigationLink(destination: RazorPayDisplay(cartItems: self.cartItems), isActive: self.$showPayment) {
                 EmptyView()
             }
             

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		171DCD23252F6F7400FD9378 /* CategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171DCD22252F6F7400FD9378 /* CategoriesViewModel.swift */; };
 		173FA16C2521A81C00F8E306 /* CashbackAmountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173FA16B2521A81C00F8E306 /* CashbackAmountModel.swift */; };
 		173FA16F2521AFA900F8E306 /* PrePurchaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173FA16E2521AFA900F8E306 /* PrePurchaseView.swift */; };
 		173FA1712521B30B00F8E306 /* BillSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173FA1702521B30B00F8E306 /* BillSummaryView.swift */; };
@@ -80,6 +81,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		171DCD22252F6F7400FD9378 /* CategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewModel.swift; sourceTree = "<group>"; };
 		173FA16B2521A81C00F8E306 /* CashbackAmountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashbackAmountModel.swift; sourceTree = "<group>"; };
 		173FA16E2521AFA900F8E306 /* PrePurchaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrePurchaseView.swift; sourceTree = "<group>"; };
 		173FA1702521B30B00F8E306 /* BillSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillSummaryView.swift; sourceTree = "<group>"; };
@@ -349,6 +351,7 @@
 				175EBDE6250FBDC500D5686F /* OrdersViewModel.swift */,
 				176702102521A5B900508396 /* CashbackAmountViewModel.swift */,
 				173FA17425223C2900F8E306 /* PromoCodeViewModel.swift */,
+				171DCD22252F6F7400FD9378 /* CategoriesViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -568,6 +571,7 @@
 				17553B21250C5B2900FF8D71 /* SceneDelegate.swift in Sources */,
 				175EBDDE250F9FEC00D5686F /* MenuView.swift in Sources */,
 				175EBDE9250FC34E00D5686F /* OrderCard.swift in Sources */,
+				171DCD23252F6F7400FD9378 /* CategoriesViewModel.swift in Sources */,
 				17553B79250C912700FF8D71 /* ItemsViewModel.swift in Sources */,
 				17553B94250CAEA400FF8D71 /* Indicator.swift in Sources */,
 				17C8BEEA250D014000C89EB3 /* CartItemCard.swift in Sources */,
@@ -691,7 +695,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -746,7 +750,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -763,16 +767,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = CashbackAppiOS/CashbackAppiOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"CashbackAppiOS/Preview Content\"";
 				DEVELOPMENT_TEAM = 478XDR2NPK;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = CashbackAppiOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = circle.circleapp.CashbackAppiOS;
 				PRODUCT_NAME = Reveno;
 				SWIFT_VERSION = 5.0;
@@ -787,16 +792,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = CashbackAppiOS/CashbackAppiOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"CashbackAppiOS/Preview Content\"";
 				DEVELOPMENT_TEAM = 478XDR2NPK;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = CashbackAppiOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = circle.circleapp.CashbackAppiOS;
 				PRODUCT_NAME = Reveno;
 				SWIFT_VERSION = 5.0;

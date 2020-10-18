@@ -10,8 +10,6 @@ import Foundation
 
 var customer:Customer? = Helpers.retrieveStoredCustomer()
 
-var types = ["All","Men","Women","Kids"]
-
 var transactionId:String?
 var tempCartItems:[CartItem]?
 var tempCashback:[Double]?

@@ -12,10 +12,9 @@ import Razorpay
 struct RazorPayDisplay : UIViewControllerRepresentable {
     
     var cartItems:[CartItem]
-    var cashback:[Double]
     
     func makeUIViewController(context: Context) -> RazorPayViewController {
-        tempCashback = cashback
+        tempCashback = Helpers.totalCashbackCalculator(items: self.cartItems)
         tempCartItems = cartItems
         return RazorPayViewController()
     }
@@ -31,7 +30,7 @@ class RazorPayViewController: UIViewController, RazorpayPaymentCompletionProtoco
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        razorpay = RazorpayCheckout.initWithKey("rzp_test_RCx7OouwDUafRY", andDelegate: self)
+        razorpay = RazorpayCheckout.initWithKey("rzp_live_elKySpgddL0dXs", andDelegate: self)
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -42,7 +41,7 @@ class RazorPayViewController: UIViewController, RazorpayPaymentCompletionProtoco
         let options: [String:Any] = [
             "amount": "\(tempCartTotal! * 100)", //This is in currency subunits. 100 = 100 paise= INR 1.
             "currency": "INR",//We support more that 92 international currencies.
-            "description": "Please pay the total bill ammount. Your cashback will be debited back into your account within 24 hours",
+            "description": "Reveno",
             "image": "https://firebasestorage.googleapis.com/v0/b/cashback-app-94f79.appspot.com/o/Reveno%20Logo.jpg?alt=media&token=f7ee153d-56ab-43a9-a5f9-c222475f84ab",
             "name": "Reveno",
             "prefill": [

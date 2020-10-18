@@ -9,16 +9,18 @@
 import Foundation
 
 class Order : Codable {
-    internal init(id: String? = nil, customerId: String? = nil, transactionId: String? = nil, totalAmount: Double? = nil, timestamp: Int64? = nil, address: String? = nil, promocodeApplied: String? = nil, refundStatus: String? = nil, trackingId: String? = nil, cashback: Double? = nil, cashbackStatus: Bool? = nil, itemId: String? = nil, itemName: String? = nil, itemPrice: Double? = nil, itemColor: String? = nil, itemSize: String? = nil, itemQuantity: Double? = nil, itemPhotos: [String]? = nil, storeId: String? = nil) {
-        self.id = id!
+    internal init(id: String, customerId: String? = nil, customerName: String? = nil, customerPhnNumber: String? = nil, transactionId: String? = nil, totalAmount: Double? = nil, timestamp: Int64? = nil, address: String? = nil, promocodeApplied: String? = nil, refundStatus: String? = nil, trackingId: String? = nil, cashback: Double? = nil, cashbackStatus: Bool? = nil, itemId: String? = nil, itemName: String? = nil, itemPrice: Double? = nil, itemColor: String? = nil, itemSize: String? = nil, itemQuantity: Double? = nil, itemPhotos: [String]? = nil, storeId: String? = nil) {
+        self.id = id
         self.customerId = customerId
+        self.customerName = customerName
+        self.customerPhnNumber = customerPhnNumber
         self.transactionId = transactionId
         self.totalAmount = totalAmount
         self.timestamp = timestamp
         self.address = address
         self.promocodeApplied = promocodeApplied
         self.refundStatus = refundStatus
-        self.trackingId = trackingId ?? ""
+        self.trackingId = trackingId
         self.cashback = cashback
         self.cashbackStatus = cashbackStatus
         self.itemId = itemId
@@ -31,8 +33,11 @@ class Order : Codable {
         self.storeId = storeId
     }
     
+    
     var id: String
     var customerId:String!
+    var customerName: String!
+    var customerPhnNumber: String!
     var transactionId:String!
     var totalAmount:Double!
     var timestamp:Int64!

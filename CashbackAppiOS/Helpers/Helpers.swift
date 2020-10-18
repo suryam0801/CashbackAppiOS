@@ -19,35 +19,37 @@ enum ChildReturnStatus {
 class Helpers {
     
     //MARK: Cashback Helpers
-    static func cashbackDisplayText (price:Double) -> String {
-        return price <= 500 ? "50 - 150₹ cashback!" : "100 - 250₹ cashback!"
+    static func cashbackDisplayText (item:Item) -> String {
+        return "\(item.minCashback!.removeZerosFromEnd()) - \(item.maxCashback!.removeZerosFromEnd())₹ cashback!"
+    }
+    
+    static func cashbackDisplayText (item:CartItem) -> String {
+        return "\(item.minCashback!.removeZerosFromEnd()) - \(item.maxCashback!.removeZerosFromEnd())₹ cashback!"
     }
 
-    static func totalCashbackCalculator (cashback:inout [Double], price:Double, itemQuantity:Double) {
-        if price <= 500 {
-            cashback[0] += (50 * itemQuantity)
-            cashback[1] += (150 * itemQuantity)
-        } else {
-            cashback[0] += (100 * itemQuantity)
-            cashback[1] += (200 * itemQuantity)
+    static func totalCashbackCalculator (cashback:inout [Double], items:[CartItem]) {
+        for item in items {
+            cashback[0] += item.minCashback
+            cashback[1] += item.maxCashback
+            print(item.minCashback)
+            print(cashback)
         }
     }
     
-    static func cashbackArraySetter (cashback: inout [Double], price: Double) {
-        cashback[0] = price <= 500 ? 50 : 150
-        cashback[1] = price <= 500 ? 100 : 200
+    static func totalCashbackCalculator (items:[CartItem]) -> [Double] {
+        var tempCashback:[Double] = [0,0]
+        for item in items {
+            tempCashback[0] += item.minCashback
+            tempCashback[1] += item.maxCashback
+        }
+        return tempCashback
     }
-    
-    static func returnCashbackLowerEnd (price:Double) -> Int {
-        let amountToReturn = price <= 500 ? 50 : 100
-        return amountToReturn
+ 
+    static func cashbackArraySetter (cashback: inout [Double], item:Item) {
+        cashback[0] = item.minCashback
+        cashback[1] = item.maxCashback
     }
-    
-    static func returnCashbackUpperEnd (price:Double) -> Int {
-        let amountToReturn = price <= 500 ? 100 : 200
-        return amountToReturn
-    }
-    
+
     //MARK: User Helpers
     static func storeCustomerToDefaults (_ customerObj: Customer) {
         let encoder = JSONEncoder()
@@ -87,26 +89,6 @@ class Helpers {
     }
     
     //MARK: View Model Helpers
-    static func makeItemsIntoGrid (itemList:[Item]) -> [Row] {
-        var itemGrid:[Row] = []
-        var counter = 0
-        var row:Row = Row()
-        
-        for item in itemList {
-            if counter % 2 == 0 {
-                row.id = counter
-                let tempCarry:[Item] = [item]
-                row.rows = tempCarry
-            } else {
-                row.rows!.append(item)
-                guard row != nil else { return itemGrid }
-                itemGrid.append(row)
-            }
-            counter+=1
-        }
-        return itemGrid
-    }
-    
     static func makeOrderEntries (paymentId:String) {
         var orderList:[Order] = []
         
@@ -118,7 +100,7 @@ class Helpers {
         let usedPromoCode = (promoCode != nil ? promoCode! : "")
         
         for item in tempCartItems! {
-            let tempOrder = Order(id: FirebasePushKeyHelper.getPushKey(), customerId: customer?.id, transactionId: paymentId, totalAmount: item.quantity * item.price, timestamp: Date().millisecondsSince1970, address: customer?.address, promocodeApplied: usedPromoCode, refundStatus: nil, trackingId: nil, cashback: Double(randomCashback), cashbackStatus: false, itemId: item.itemId, itemName: item.name, itemPrice: item.price, itemColor: item.color, itemSize: item.size, itemQuantity: item.quantity, itemPhotos: item.photos, storeId: item.storeIds)
+            let tempOrder = Order(id: FirebasePushKeyHelper.getPushKey(), customerId: customer?.id, customerName: customer?.name, customerPhnNumber: customer?.phnNumber, transactionId: paymentId, totalAmount: item.quantity * item.price, timestamp: Date().millisecondsSince1970, address: customer?.address, promocodeApplied: usedPromoCode, refundStatus: nil, trackingId: nil, cashback: Double(randomCashback), cashbackStatus: false, itemId: item.itemId, itemName: item.name, itemPrice: item.price, itemColor: item.color, itemSize: item.size, itemQuantity: item.quantity, itemPhotos: item.photos, storeId: item.storeIds)
 
             orderList.append(tempOrder)
             DBWriteHelper().removeFromCart(cartItemId: item.itemId)
@@ -132,8 +114,6 @@ class Helpers {
         var tempOrderList:[Order] = []
 
         for order in ordersList {
-            print(transactionIds)
-            print(order.transactionId)
             if !transactionIds.contains(order.transactionId) {
                 tempOrderList.append(order)
                 transactionIds.append(order.transactionId)
@@ -154,21 +134,39 @@ class Helpers {
     }
 
     //MARK: CART HELPER
-    static func quantityIncrement (quantity:inout Double, cartItemPrice:Double, currentMRP:inout Double, cashback:inout [Double]) {
+    static func quantityIncrement (quantity:inout Double, cartItem:CartItem, currentMRP:inout Double, cashback:inout [Double]) {
         if quantity != 10 {
             quantity += 1
-            currentMRP += cartItemPrice
-            cashback[0] += Double(returnCashbackLowerEnd(price: cartItemPrice))
-            cashback[1] += Double(returnCashbackUpperEnd(price: cartItemPrice))
+            currentMRP += cartItem.price
+            cashback[0] += cartItem.minCashback
+            cashback[1] += cartItem.maxCashback
         }
     }
     
-    static func quantityDecrement (quantity:inout Double, cartItemPrice:Double, currentMRP:inout Double, cashback:inout [Double]) {
+    static func quantityDecrement (quantity:inout Double, cartItem:CartItem, currentMRP:inout Double, cashback:inout [Double]) {
         if quantity != 1 {
             quantity -= 1
-            currentMRP -= cartItemPrice
-            cashback[0] -= Double(returnCashbackLowerEnd(price: cartItemPrice))
-            cashback[1] -= Double(returnCashbackUpperEnd(price: cartItemPrice))
+            currentMRP -= cartItem.price
+            cashback[0] -= cartItem.minCashback
+            cashback[1] -= cartItem.maxCashback
+        }
+    }
+    
+    static func quantityIncrement (quantity:inout Double, item:Item, currentMRP:inout Double, cashback:inout [Double]) {
+        if quantity != 10 {
+            quantity += 1
+            currentMRP += item.price
+            cashback[0] += item.minCashback
+            cashback[1] += item.maxCashback
+        }
+    }
+    
+    static func quantityDecrement (quantity:inout Double, item:Item, currentMRP:inout Double, cashback:inout [Double]) {
+        if quantity != 1 {
+            quantity -= 1
+            currentMRP -= item.price
+            cashback[0] -= item.minCashback
+            cashback[1] -= item.maxCashback
         }
     }
     

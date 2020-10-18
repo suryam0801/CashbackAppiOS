@@ -13,7 +13,7 @@ struct CartItemCard: View {
     @State var quantity:Double = 1
     @Binding var mrp:Double
     @Binding var cashback:[Double]
-
+    
     var body: some View {
         VStack {
             HStack {
@@ -23,7 +23,7 @@ struct CartItemCard: View {
                     ItemImageDisplay(url: self.cartItem.photos[0], width: 130, height: 165)
                     Spacer()
                 }
-
+                
                 VStack (alignment: .leading) {
                     Text(cartItem.name).bold().font(.headline)
                     Text("\(cartItem.price.removeZerosFromEnd())₹").font(.subheadline).foregroundColor(Color.gray)
@@ -31,21 +31,21 @@ struct CartItemCard: View {
                     Text("Color: \(cartItem.color)").font(.subheadline)
                     Text("Size: \(cartItem.size)").font(.subheadline)
                     Spacer().frame(height: 10)
- 
-                    Text(Helpers.cashbackDisplayText(price: cartItem.price))
+                    
+                    Text(Helpers.cashbackDisplayText(item: cartItem))
                         .foregroundColor(Color(UIColor.acceptColorGreen)).font(.subheadline)
                         .padding(4)
                         .overlay(
                             RoundedRectangle(cornerRadius: 3)
                                 .stroke(Color(UIColor.acceptColorGreen), lineWidth: 2))
-
+                    
                     Spacer().frame(height: 10)
                     Stepper(onIncrement: self.increment, onDecrement: self.decrement) {
                         Text("Qty: \(self.quantity.removeZerosFromEnd())").font(.subheadline)
                     }
                     Spacer()
                 }
-
+                
                 Spacer()
             }.padding(.top, 10)
             
@@ -64,12 +64,12 @@ struct CartItemCard: View {
     }
     
     private func increment () {
-        Helpers.quantityIncrement(quantity: &self.quantity, cartItemPrice: self.cartItem.price, currentMRP: &self.mrp, cashback: &self.cashback)
+        Helpers.quantityIncrement(quantity: &self.quantity, cartItem: self.cartItem, currentMRP: &self.mrp, cashback: &self.cashback)
         DBWriteHelper().updateItemQuantity(cartItemId: self.cartItem.itemId, newQuantity: self.quantity)
     }
-
+    
     private func decrement () {
-        Helpers.quantityDecrement(quantity: &self.quantity, cartItemPrice: self.cartItem.price, currentMRP: &self.mrp, cashback: &self.cashback)
+        Helpers.quantityDecrement(quantity: &self.quantity, cartItem: self.cartItem, currentMRP: &self.mrp, cashback: &self.cashback)
         DBWriteHelper().updateItemQuantity(cartItemId: self.cartItem.itemId, newQuantity: self.quantity)
     }
 }

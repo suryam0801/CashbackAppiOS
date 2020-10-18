@@ -32,9 +32,9 @@ struct HomePageView: View {
                 }
             }
         }
-        
+
         return GeometryReader { geometry in
-            
+
             NavigationView {
                 ZStack (alignment: .leading) {
                     VStack(spacing: 15){
@@ -56,15 +56,15 @@ struct HomePageView: View {
                             .frame(width: geometry.size.width/2)
                             .transition(.move(edge: .leading))
                     }
-                }
-                
-                if self.showDetailedView {
-                    NavigationLink(destination: DetailedItemView(item: self.sharedItem!)) {
-                        EmptyView()
+                    VStack {
+                        if self.showDetailedView {
+                            NavigationLink(destination: DetailedItemView(item: self.sharedItem!), isActive: self.$showDetailedView) {
+                                EmptyView()
+                            }
+                        }
                     }
                 }
             }
-
         }.onAppear(){
             customer = Helpers.retrieveStoredCustomer()
             PromoCodeViewModel().fetchPromoCodes()
@@ -76,6 +76,7 @@ struct HomePageView: View {
                     self.showDetailedView.toggle()
                 }
             }
+
         }
     }
 

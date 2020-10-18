@@ -9,38 +9,40 @@
 import SwiftUI
 
 struct DetailedItemView : View {
-
+    
     var item:Item
-
+    
     @State var sizes:[String] = [String]()
     @State var size = ""
     @State var selectedSizeSoldOut:Bool = false
-
+    
     @State var selectedColor = ""
     @State var quantity:Double = 1
     @State var cashback:[Double] = [0,0]
     @State var showCart:Bool = false
-
+    
     @State var showCheckout:Bool = false
     @State var showPayment:Bool = false
     @State var cartItems:[CartItem] = []
     @State var totalBill:Double = 0
-
+    
+    @State var showAddedAlertPopup:Bool = false
+    
     var body : some View{
-
+        
         VStack(spacing : 0){
-
+            
             if self.showCart {
                 NavigationLink(destination: CartView(), isActive: self.$showCart) {EmptyView()}
             }
-
+            
             ItemImageDisplay(url: self.item.photos[0], width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height/2)
-
+            
             if showCheckout {
                 EndOfCartPriceDisplayView(cartItems: self.$cartItems, cashback: self.$cashback, totalMRP: self.$totalBill)
             } else {
                 VStack(alignment: .leading ,spacing: 15){
-
+                    
                     if !self.showCheckout {
                         itemDetailHeader
                         
@@ -59,30 +61,36 @@ struct DetailedItemView : View {
                     } else {
                         CartItemCard(cartItem: self.cartItems[0], mrp: self.$totalBill, cashback: self.$cashback)
                     }
-
+                    
                 }.padding()
-                    .background(RoundedBG().fill(Color.white))
-                    .padding(.top, -70)
-
+                .background(RoundedBG().fill(Color.white))
+                .padding(.top, -70)
+                
             }
-        }.navigationBarTitle(item.name).navigationBarItems(trailing: NavBarEndButtons()).onAppear(){self.onAppearHelper()}
+        }
+        .alert(isPresented: $showAddedAlertPopup) {
+            Alert(title: Text("Added to cart"), message: Text("\(self.item.name) has been added to your cart. Enjoying continuing shopping"), dismissButton: .default(Text("Got it!")))
+        }
+        .navigationBarTitle(item.name)
+        .navigationBarItems(trailing: NavBarEndButtons())
+        .onAppear(){self.onAppearHelper()}
     }
-
+    
     var itemDetailHeader : some View {
         HStack (alignment: .center) {
             VStack(alignment: .leading, spacing: 8){
-
+                
                 Text(self.item.name).font(.largeTitle)
                 Text("\(self.item.price.removeZerosFromEnd())₹").fontWeight(.heavy)
             }
             Spacer()
-
+            
             Image("share").resizable().frame(width: 25, height: 30).onTapGesture {
                 SharePopup.sharePopup(id: self.item.id, name: self.item.name)
             }
         }
     }
-
+    
     var sizePicker : some View {
         VStack (alignment: .leading) {
             HStack {
@@ -101,15 +109,15 @@ struct DetailedItemView : View {
                         }
                         self.size = i
                     }) {
-
+                        
                         Text(i).padding(10).border(self.selectedSizeSoldOut ? Color.red : Color.black, width: self.size == i ? 1.5 : 0)
-
+                        
                     }.foregroundColor(.black)
                 }
             }
         }
     }
-
+    
     var quantityPicker: some View{
         VStack (alignment: .leading) {
             Stepper(onIncrement: self.increment, onDecrement: self.decrement) {
@@ -120,11 +128,11 @@ struct DetailedItemView : View {
     }
 
     private func increment () {
-        Helpers.quantityIncrement(quantity: &self.quantity, cartItemPrice: self.item.price, currentMRP: &self.totalBill, cashback: &self.cashback)
+        Helpers.quantityIncrement(quantity: &self.quantity, item: self.item, currentMRP: &self.totalBill, cashback: &self.cashback)
     }
 
     private func decrement () {
-        Helpers.quantityDecrement(quantity: &self.quantity, cartItemPrice: self.item.price, currentMRP: &self.totalBill, cashback: &self.cashback)
+        Helpers.quantityDecrement(quantity: &self.quantity, item: self.item, currentMRP: &self.totalBill, cashback: &self.cashback)
     }
 
     var checkOutHelper : some View  {
@@ -133,13 +141,14 @@ struct DetailedItemView : View {
             Button(action: {
                 guard self.selectedSizeSoldOut == false else {return}
                 let cartItem:CartItem = self.makeCartItem()
+                self.showAddedAlertPopup.toggle()
                 DBWriteHelper().addToCart(cartItem: cartItem)
             }) {
                 Text("Add To Cart").padding().border(Color.black, width: 1.4)
             }.foregroundColor(.black)
-
+            
             Spacer()
-
+            
             Button(action: {
                 guard self.selectedSizeSoldOut == false else {return}
                 self.showCheckout.toggle()
@@ -149,21 +158,21 @@ struct DetailedItemView : View {
             }) {
                 Text("Buy Now").padding()
             }.foregroundColor(.white)
-                .background(Color.black)
-                .cornerRadius(10)
-
+            .background(Color.black)
+            .cornerRadius(10)
+            
         }.padding([.leading,.trailing], 15)
-            .padding(.top, 15)
+        .padding(.top, 15)
     }
-
+    
     func makeCartItem () -> CartItem {
-        return CartItem(itemId: self.item.id, name: self.item.name, price: self.item.price, photos: self.item.photos, storeIds: self.item.storeIds, color: self.selectedColor, size: self.size, quantity: self.quantity)
+        return CartItem(itemId: self.item.id, name: self.item.name, price: self.item.price, maxCashback: self.item.maxCashback, minCashback: self.item.minCashback, photos: self.item.photos, storeIds: self.item.storeIds, color: self.selectedColor, size: self.size, quantity: self.quantity)
     }
-
+    
     func onAppearHelper () {
         self.sizes = self.item.sizes
         self.size = self.sizes[0]
         self.totalBill = self.item.price
-        Helpers.cashbackArraySetter(cashback: &cashback, price: self.item.price)
+        Helpers.cashbackArraySetter(cashback: &cashback, item: self.item)
     }
 }

@@ -30,7 +30,7 @@ struct ItemCard : View {
             HStack {
                 Spacer()
                 VStack {
-                    Text(Helpers.cashbackDisplayText(price: self.item.price))
+                    Text(Helpers.cashbackDisplayText(item: self.item))
                         .font(.system(size: 15))
                         .foregroundColor(Color.white)
                         .padding(7)

@@ -9,36 +9,30 @@
 import SwiftUI
 
 struct ItemsScroll : View {
-
+    
     @Binding var selectedCategory:String
     @ObservedObject private var itemViewModel = ItemsViewModel()
-
     @State var cashbackRetrived:Bool = false
-    
-    var body : some View{
+    let columns = [
+        GridItem(.flexible(), spacing: 40),
+        GridItem(.flexible(), spacing: 40)
+    ]
 
+    var body : some View{
+        
         VStack{
-            if self.itemViewModel.itemGrid.isEmpty {
+            if self.itemViewModel.itemsList.isEmpty {
                 Indicator()
             } else {
-                ScrollView(.vertical, showsIndicators: false) {
-
-                    VStack(spacing: 12){
-
-                        if self.cashbackRetrived {
-                            cashbackBanner
-                        }
-
-                        ForEach(self.itemViewModel.itemGrid){i in
-                            HStack{
-                                ForEach(i.rows!){j in
-                                    if j.category.contains(self.selectedCategory) {
-                                        ItemCard(item: j)
-                                    }
-                                }
+                ScrollView {
+                    LazyVGrid(columns: columns) {
+                        ForEach(self.itemViewModel.itemsList, id: \.id) { item in
+                            if item.category.contains(selectedCategory) {
+                                ItemCard(item: item)
                             }
                         }
                     }
+                    .padding(.horizontal)
                 }
             }
         }.onAppear(){
@@ -47,7 +41,7 @@ struct ItemsScroll : View {
             self.itemViewModel.cleanup()
         }
     }
-
+    
     func onAppearHelper() {
         self.itemViewModel.fetchItems()
         CashbackAmountViewModel().fetchAmount { (retrieved) in
@@ -56,10 +50,10 @@ struct ItemsScroll : View {
             }
         }
     }
-
+    
     var cashbackBanner : some View {
         VStack (alignment: .center) {
             Text("\(cashbackAmount!.amount)₹ won in cashback!").font(.system(size: 25)).foregroundColor(Color.white)
-            }.frame(width: UIScreen.main.bounds.width - 35, height: 70).background(LinearGradient(gradient: Gradient(colors: [Color(UIColor.supportTextBlue), .blue]), startPoint: .leading, endPoint: .trailing)).cornerRadius(10)
+        }.frame(width: UIScreen.main.bounds.width - 35, height: 70).background(LinearGradient(gradient: Gradient(colors: [Color(UIColor.supportTextBlue), .blue]), startPoint: .leading, endPoint: .trailing)).cornerRadius(10)
     }
 }

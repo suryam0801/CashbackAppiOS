@@ -14,4 +14,5 @@ class DBReferenceNames {
     static var ORDERS_REF_NAME:String = "Orders"
     static var CASHBACK_AMOUNT_REF_NAME:String = "CashbackAmount"
     static var PROMOCODE_REF_NAME:String = "PromoCodes"
+    static var CATEGORIES_REF_NAME:String = "Categories"
 }
