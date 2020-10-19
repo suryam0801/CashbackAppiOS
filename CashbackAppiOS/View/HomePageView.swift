@@ -45,7 +45,7 @@ struct HomePageView: View {
 
                     }.offset(x: self.showMenu ? geometry.size.width/2 : 0)
                         .disabled(self.showMenu ? true : false)
-                        .navigationBarTitle("Cashback", displayMode: .inline)
+                        .navigationBarTitle("Reveno", displayMode: .inline)
                         .edgesIgnoringSafeArea(.bottom)
                         .navigationBarItems(leading: self.navBarMenu, trailing: NavBarEndButtons())
                         .gesture(drag)
