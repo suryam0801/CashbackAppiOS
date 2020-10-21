@@ -40,7 +40,6 @@ struct HomePageView: View {
                     VStack(spacing: 15){
 
                         ItemsDisplayMainView()
-
                         Spacer()
 
                     }.offset(x: self.showMenu ? geometry.size.width/2 : 0)

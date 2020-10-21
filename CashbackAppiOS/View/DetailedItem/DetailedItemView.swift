@@ -28,7 +28,7 @@ struct DetailedItemView : View {
     
     @State var showAddedAlertPopup:Bool = false
     
-    var body : some View{
+    var body : some View {
         
         VStack(spacing : 0){
             
@@ -118,7 +118,7 @@ struct DetailedItemView : View {
         }
     }
     
-    var quantityPicker: some View{
+    var quantityPicker: some View {
         VStack (alignment: .leading) {
             Stepper(onIncrement: self.increment, onDecrement: self.decrement) {
                 Text("Select Quantity: ").font(.subheadline)

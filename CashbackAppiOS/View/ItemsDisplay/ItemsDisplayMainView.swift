@@ -11,14 +11,18 @@ import SwiftUI
 struct ItemsDisplayMainView : View {
     
     @State var selected = "All"
-    
+    @State var viewingCrafts:Bool = false
     var body : some View{
         
         VStack(spacing: 15){
             
-            ScrollViewHeaderCategory(selected: self.$selected)
+            ScrollViewHeaderCategory(selected: self.$selected, craftsSelected: self.$viewingCrafts)
                         
-            ItemsScroll(selectedCategory: self.$selected)
+            if viewingCrafts {
+                CraftItemView()
+            } else {
+                ItemsScroll(selectedCategory: self.$selected)
+            }
             
         }.padding()
         .background(Color("Color"))

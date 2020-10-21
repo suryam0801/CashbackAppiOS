@@ -26,6 +26,10 @@ class Helpers {
     static func cashbackDisplayText (item:CartItem) -> String {
         return "\(item.minCashback!.removeZerosFromEnd()) - \(item.maxCashback!.removeZerosFromEnd())₹ cashback!"
     }
+    
+    static func cashbackDisplayText (item:CraftItem) -> String {
+        return "\(item.minCashback!.removeZerosFromEnd()) - \(item.maxCashback!.removeZerosFromEnd())₹ cashback!"
+    }
 
     static func totalCashbackCalculator (cashback:inout [Double], items:[CartItem]) {
         for item in items {
@@ -46,6 +50,11 @@ class Helpers {
     }
  
     static func cashbackArraySetter (cashback: inout [Double], item:Item) {
+        cashback[0] = item.minCashback
+        cashback[1] = item.maxCashback
+    }
+    
+    static func cashbackArraySetter (cashback: inout [Double], item:CraftItem) {
         cashback[0] = item.minCashback
         cashback[1] = item.maxCashback
     }

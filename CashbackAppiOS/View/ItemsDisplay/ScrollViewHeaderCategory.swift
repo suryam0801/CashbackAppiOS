@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ScrollViewHeaderCategory: View {
     @Binding var selected:String
-    
+    @Binding var craftsSelected:Bool
     @State var categories:[String] = []
     
     var body: some View {
@@ -22,12 +22,15 @@ struct ScrollViewHeaderCategory: View {
                     HStack{
                         ForEach(categories,id: \.self){ i in
                             HStack{
-                                
                                 Button(action: {
                                     self.selected = i
                                     
+                                    if self.selected == "Crafts" {
+                                        self.craftsSelected = true
+                                    } else {
+                                        self.craftsSelected = false
+                                    }
                                 }) {
-                                    
                                     Text(i).padding()
                                 }
                                 .foregroundColor(self.selected == i ? .white : .black)

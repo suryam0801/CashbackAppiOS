@@ -20,6 +20,7 @@ pod 'Firebase/Crashlytics'
 pod 'Firebase/Analytics'
 pod 'ConcentricOnboarding'
 pod 'razorpay-pod', '~> 1.1.7'
+pod 'MaterialComponents/Chips'
 
 post_install do |installer|
   installer.pods_project.targets.each do |target|

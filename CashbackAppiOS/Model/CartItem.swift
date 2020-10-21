@@ -9,7 +9,7 @@
 import Foundation
 
 struct CartItem : Codable {
-    internal init(itemId: String? = nil, name: String? = nil, price: Double? = nil, maxCashback: Double? = nil, minCashback: Double? = nil, photos: [String]? = nil, storeIds: String? = nil, color: String? = nil, size: String? = nil, quantity: Double? = nil) {
+    internal init(itemId: String? = nil, name: String? = nil, price: Double? = nil, maxCashback: Double? = nil, minCashback: Double? = nil, photos: [String]? = nil, storeIds: String? = nil, color: String? = nil, size: String? = nil, quantity: Double? = nil, photoNeeded: Bool? = nil, options: [String]? = nil, TextEntry: [String]? = nil) {
         self.itemId = itemId
         self.name = name
         self.price = price
@@ -20,8 +20,11 @@ struct CartItem : Codable {
         self.color = color
         self.size = size
         self.quantity = quantity
+        self.photoNeeded = photoNeeded
+        self.options = options
+        self.TextEntry = TextEntry
     }
-
+    
     var itemId:String!
     var name:String!
     var price: Double!
@@ -32,4 +35,7 @@ struct CartItem : Codable {
     var color: String!
     var size: String!
     var quantity:Double!
+    var photoNeeded:Bool!
+    var options:[String]!
+    var TextEntry:[String]!
 }

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		171DCD23252F6F7400FD9378 /* CategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171DCD22252F6F7400FD9378 /* CategoriesViewModel.swift */; };
+		172464F62540A0F90030AF46 /* Chips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172464F52540A0F90030AF46 /* Chips.swift */; };
+		172464FA2540A9A50030AF46 /* ChipsContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172464F92540A9A40030AF46 /* ChipsContent.swift */; };
 		173FA16C2521A81C00F8E306 /* CashbackAmountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173FA16B2521A81C00F8E306 /* CashbackAmountModel.swift */; };
 		173FA16F2521AFA900F8E306 /* PrePurchaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173FA16E2521AFA900F8E306 /* PrePurchaseView.swift */; };
 		173FA1712521B30B00F8E306 /* BillSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173FA1702521B30B00F8E306 /* BillSummaryView.swift */; };
@@ -63,6 +65,12 @@
 		175EBDEF250FD8EB00D5686F /* CashbackPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175EBDEE250FD8EB00D5686F /* CashbackPickerView.swift */; };
 		175EBDF125108A1200D5686F /* WinnerCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175EBDF025108A1200D5686F /* WinnerCard.swift */; };
 		175EBDF52510D4B100D5686F /* CashbackHistoryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175EBDF42510D4B100D5686F /* CashbackHistoryCard.swift */; };
+		175FB464253ED0D000215BFA /* CraftItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175FB463253ED0D000215BFA /* CraftItem.swift */; };
+		175FB469253EDC4900215BFA /* CraftItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175FB468253EDC4900215BFA /* CraftItemViewModel.swift */; };
+		175FB46D253EDC9500215BFA /* CraftItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175FB46C253EDC9500215BFA /* CraftItemView.swift */; };
+		175FB470253EDE1100215BFA /* CraftItemCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175FB46F253EDE1100215BFA /* CraftItemCard.swift */; };
+		175FB473253EE0B600215BFA /* ImageCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175FB472253EE0B600215BFA /* ImageCarouselView.swift */; };
+		175FB478253EE76500215BFA /* DetailedCraftItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175FB477253EE76500215BFA /* DetailedCraftItem.swift */; };
 		176702112521A5B900508396 /* CashbackAmountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176702102521A5B900508396 /* CashbackAmountViewModel.swift */; };
 		17A93906251C656000A70FD6 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A93905251C656000A70FD6 /* ImageLoader.swift */; };
 		17C0A859252AEA4A003B327E /* SkipChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C0A858252AEA4A003B327E /* SkipChecker.swift */; };
@@ -82,6 +90,8 @@
 
 /* Begin PBXFileReference section */
 		171DCD22252F6F7400FD9378 /* CategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewModel.swift; sourceTree = "<group>"; };
+		172464F52540A0F90030AF46 /* Chips.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chips.swift; sourceTree = "<group>"; };
+		172464F92540A9A40030AF46 /* ChipsContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipsContent.swift; sourceTree = "<group>"; };
 		173FA16B2521A81C00F8E306 /* CashbackAmountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashbackAmountModel.swift; sourceTree = "<group>"; };
 		173FA16E2521AFA900F8E306 /* PrePurchaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrePurchaseView.swift; sourceTree = "<group>"; };
 		173FA1702521B30B00F8E306 /* BillSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillSummaryView.swift; sourceTree = "<group>"; };
@@ -140,6 +150,12 @@
 		175EBDEE250FD8EB00D5686F /* CashbackPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashbackPickerView.swift; sourceTree = "<group>"; };
 		175EBDF025108A1200D5686F /* WinnerCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerCard.swift; sourceTree = "<group>"; };
 		175EBDF42510D4B100D5686F /* CashbackHistoryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashbackHistoryCard.swift; sourceTree = "<group>"; };
+		175FB463253ED0D000215BFA /* CraftItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CraftItem.swift; sourceTree = "<group>"; };
+		175FB468253EDC4900215BFA /* CraftItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CraftItemViewModel.swift; sourceTree = "<group>"; };
+		175FB46C253EDC9500215BFA /* CraftItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CraftItemView.swift; sourceTree = "<group>"; };
+		175FB46F253EDE1100215BFA /* CraftItemCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CraftItemCard.swift; sourceTree = "<group>"; };
+		175FB472253EE0B600215BFA /* ImageCarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCarouselView.swift; sourceTree = "<group>"; };
+		175FB477253EE76500215BFA /* DetailedCraftItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedCraftItem.swift; sourceTree = "<group>"; };
 		176702102521A5B900508396 /* CashbackAmountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashbackAmountViewModel.swift; sourceTree = "<group>"; };
 		17A93905251C656000A70FD6 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		17C0A858252AEA4A003B327E /* SkipChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkipChecker.swift; sourceTree = "<group>"; };
@@ -171,6 +187,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		172464F42540A0E40030AF46 /* MaterialChips */ = {
+			isa = PBXGroup;
+			children = (
+				172464F52540A0F90030AF46 /* Chips.swift */,
+				172464F92540A9A40030AF46 /* ChipsContent.swift */,
+			);
+			path = MaterialChips;
+			sourceTree = "<group>";
+		};
 		173FA16D2521AF8D00F8E306 /* PrePurchase */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,9 +273,12 @@
 		17553B34250C5E1800FF8D71 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				172464F42540A0E40030AF46 /* MaterialChips */,
 				17DFC1E12529A1E5005A1A3F /* HomePageView.swift */,
 				17553B8D250CAA2E00FF8D71 /* DetailedItem */,
 				17553B86250CA96E00FF8D71 /* ItemsDisplay */,
+				175FB467253EDC1800215BFA /* CraftItemsDisplay */,
+				175FB476253EE75000215BFA /* DetailedCraftItem */,
 				175EBDDC250F9FDE00D5686F /* HamburgerMenu */,
 				17C8BEDE250CE99D00C89EB3 /* Cart */,
 				17C8BEF3250E79E100C89EB3 /* Payment */,
@@ -295,6 +323,7 @@
 				17DFC1DD25299697005A1A3F /* SharePopupHelper.swift */,
 				17DFC1E32529AC68005A1A3F /* OpenInstagram.swift */,
 				17C0A858252AEA4A003B327E /* SkipChecker.swift */,
+				175FB472253EE0B600215BFA /* ImageCarouselView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -313,6 +342,7 @@
 			isa = PBXGroup;
 			children = (
 				17553B7A250C915900FF8D71 /* Item.swift */,
+				175FB463253ED0D000215BFA /* CraftItem.swift */,
 				17553B60250C687200FF8D71 /* Customer.swift */,
 				17553B6D250C6FA200FF8D71 /* CartItem.swift */,
 				17553B4B250C661E00FF8D71 /* CountryCodeDictionary.swift */,
@@ -352,6 +382,7 @@
 				176702102521A5B900508396 /* CashbackAmountViewModel.swift */,
 				173FA17425223C2900F8E306 /* PromoCodeViewModel.swift */,
 				171DCD22252F6F7400FD9378 /* CategoriesViewModel.swift */,
+				175FB468253EDC4900215BFA /* CraftItemViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -409,6 +440,23 @@
 				175EBDF025108A1200D5686F /* WinnerCard.swift */,
 			);
 			path = CashbackPicker;
+			sourceTree = "<group>";
+		};
+		175FB467253EDC1800215BFA /* CraftItemsDisplay */ = {
+			isa = PBXGroup;
+			children = (
+				175FB46C253EDC9500215BFA /* CraftItemView.swift */,
+				175FB46F253EDE1100215BFA /* CraftItemCard.swift */,
+			);
+			path = CraftItemsDisplay;
+			sourceTree = "<group>";
+		};
+		175FB476253EE75000215BFA /* DetailedCraftItem */ = {
+			isa = PBXGroup;
+			children = (
+				175FB477253EE76500215BFA /* DetailedCraftItem.swift */,
+			);
+			path = DetailedCraftItem;
 			sourceTree = "<group>";
 		};
 		17C8BEDE250CE99D00C89EB3 /* Cart */ = {
@@ -566,6 +614,7 @@
 				175EBDF52510D4B100D5686F /* CashbackHistoryCard.swift in Sources */,
 				17C8BEF0250DFD9000C89EB3 /* PaymentView.swift in Sources */,
 				17553B1F250C5B2900FF8D71 /* AppDelegate.swift in Sources */,
+				175FB464253ED0D000215BFA /* CraftItem.swift in Sources */,
 				17553B66250C6AE400FF8D71 /* UserViewModel.swift in Sources */,
 				17553B63250C6A5A00FF8D71 /* UIColor.swift in Sources */,
 				17553B21250C5B2900FF8D71 /* SceneDelegate.swift in Sources */,
@@ -581,17 +630,22 @@
 				17C8BEF2250E53C000C89EB3 /* Order.swift in Sources */,
 				17553B96250CC8D100FF8D71 /* ScrollViewHeaderCategory.swift in Sources */,
 				175EBDE3250FBBAD00D5686F /* OrdersView.swift in Sources */,
+				175FB473253EE0B600215BFA /* ImageCarouselView.swift in Sources */,
 				17553B8F250CAA3D00FF8D71 /* DetailedItemView.swift in Sources */,
+				172464FA2540A9A50030AF46 /* ChipsContent.swift in Sources */,
 				17553B49250C65E500FF8D71 /* PhoneAuthHelper.swift in Sources */,
 				17553B3E250C624700FF8D71 /* DatabaseReadHelper.swift in Sources */,
 				17553B45250C653200FF8D71 /* PhoneVerificationView.swift in Sources */,
 				175EBDE5250FBBB700D5686F /* CashbackHistoryView.swift in Sources */,
+				175FB469253EDC4900215BFA /* CraftItemViewModel.swift in Sources */,
 				17C8BEE8250CFE2200C89EB3 /* NavBarEndButtons.swift in Sources */,
+				175FB478253EE76500215BFA /* DetailedCraftItem.swift in Sources */,
 				17553B6E250C6FA200FF8D71 /* CartItem.swift in Sources */,
 				17553B42250C62BF00FF8D71 /* SnapshotHelpers.swift in Sources */,
 				17A93906251C656000A70FD6 /* ImageLoader.swift in Sources */,
 				175EBDF125108A1200D5686F /* WinnerCard.swift in Sources */,
 				173FA1732521B7DB00F8E306 /* AddressView.swift in Sources */,
+				175FB470253EDE1100215BFA /* CraftItemCard.swift in Sources */,
 				17553B88250CA98700FF8D71 /* ItemsDisplayMainView.swift in Sources */,
 				17C8BEEC250DE0E700C89EB3 /* EndOfCartPriceDisplayView.swift in Sources */,
 				17553B55250C66D600FF8D71 /* UIResponder+Current.swift in Sources */,
@@ -620,7 +674,9 @@
 				17553B40250C626C00FF8D71 /* DBInstanceInitialize.swift in Sources */,
 				17553B5A250C675600FF8D71 /* OTPVerificationView.swift in Sources */,
 				17C8BEE4250CE9D900C89EB3 /* CartViewModel.swift in Sources */,
+				175FB46D253EDC9500215BFA /* CraftItemView.swift in Sources */,
 				173FA17525223C2900F8E306 /* PromoCodeViewModel.swift in Sources */,
+				172464F62540A0F90030AF46 /* Chips.swift in Sources */,
 				175EBDED250FD8B600D5686F /* CashbackCard.swift in Sources */,
 				17553B75250C743700FF8D71 /* OnBoardingPageView.swift in Sources */,
 				175EBDEF250FD8EB00D5686F /* CashbackPickerView.swift in Sources */,
