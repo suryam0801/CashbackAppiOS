@@ -35,10 +35,10 @@ struct DetailedCraftItem: View {
                 NavigationLink(destination: CartView(), isActive: self.$showCart) {EmptyView()}
             }
             
-            ImageCarouselView(numberOfImages: 3) {
-                ItemImageDisplay(url: self.craftItem.photos[0], width: UIScreen.main.bounds.width, height: 200)
-                ItemImageDisplay(url: self.craftItem.photos[1], width: UIScreen.main.bounds.width, height: 200)
-                ItemImageDisplay(url: self.craftItem.photos[2], width: UIScreen.main.bounds.width, height: 200)
+            ImageCarouselView(numberOfImages: self.craftItem.photos.count) {
+                ForEach(self.craftItem.photos, id: \.self) { photoURL in
+                    ItemImageDisplay(url: photoURL, width: UIScreen.main.bounds.width, height: 200)
+                }
             }.shadow(radius: 5).frame(height: 200)
             
             if showCheckout {
