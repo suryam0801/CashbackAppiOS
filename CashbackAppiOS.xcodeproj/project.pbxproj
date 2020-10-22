@@ -273,8 +273,8 @@
 		17553B34250C5E1800FF8D71 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				172464F42540A0E40030AF46 /* MaterialChips */,
 				17DFC1E12529A1E5005A1A3F /* HomePageView.swift */,
+				172464F42540A0E40030AF46 /* MaterialChips */,
 				17553B8D250CAA2E00FF8D71 /* DetailedItem */,
 				17553B86250CA96E00FF8D71 /* ItemsDisplay */,
 				175FB467253EDC1800215BFA /* CraftItemsDisplay */,

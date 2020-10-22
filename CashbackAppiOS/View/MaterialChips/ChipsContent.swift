@@ -7,9 +7,12 @@
 //
 
 import SwiftUI
+
 struct ChipsContent: View {
+    var title:String
     var chipsData:[String]
     @Binding var selectedChip:String
+    @Binding var maxCharacters:Int
     
     var body: some View {
         var width = CGFloat.zero
@@ -48,6 +51,13 @@ struct ChipsContent: View {
     
     func chipCallBack (id : String) {
         selectedChip = id
+        
+        if self.title == "Number Of Letters" {
+            var limitString = selectedChip
+            var limitStringArr = limitString.components(separatedBy: " ")
+            var maxCount = Int(limitStringArr[0])
+            self.maxCharacters = maxCount!
+        }
     }
 
 }

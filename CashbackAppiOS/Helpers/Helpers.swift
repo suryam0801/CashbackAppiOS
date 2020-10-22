@@ -220,4 +220,7 @@ class Helpers {
         return String(id)
     }
     
+    static func getMaxCharCount (arr:[String]) {
+        
+    }
 }

@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import MaterialComponents.MaterialChips
+import Combine
 
 struct DetailedCraftItem: View {
     var craftItem:CraftItem
@@ -18,6 +18,7 @@ struct DetailedCraftItem: View {
     
     @State var selectedOptions:[String] = [String](repeating: "", count: 10)
     @State var enteredText:[String] = [String](repeating: "", count: 10)
+    @State var maxCharacters:Int = 0
     
     @State var showCheckout:Bool = false
     @State var showPayment:Bool = false
@@ -57,22 +58,38 @@ struct DetailedCraftItem: View {
                             .foregroundColor(Color.white)
                             .fixedSize(horizontal: false, vertical: true)
 
-                        ForEach(craftItem.options.keys.sorted(by: >), id: \.self) { key in
-                            VStack (alignment: .leading) {
-                                Text(key).foregroundColor(Color.black).lineLimit(nil)
-                                ChipsContent(chipsData: craftItem.options[key]!, selectedChip: self.$selectedOptions[Array(craftItem.options.keys).firstIndex(of: key)!])
+                        if self.craftItem.options != nil {
+                            ForEach(craftItem.options.keys.sorted(by: >), id: \.self) { key in
+                                VStack (alignment: .leading) {
+                                    Text(key).foregroundColor(Color.black).lineLimit(nil)
+                                    ChipsContent(title: key,
+                                        chipsData: craftItem.options[key]!,
+                                        selectedChip: self.$selectedOptions[Array(craftItem.options.keys).firstIndex(of: key)!],
+                                        maxCharacters: self.$maxCharacters)
+                                }
+                            }
+                        }
+
+                        if self.craftItem.TextEntry != nil {
+                            ForEach(craftItem.TextEntry.keys.sorted(by: >), id: \.self) { entry in
+                                Text("Please enter \(entry) below").foregroundColor(Color.black).lineLimit(nil)
+                                TextField("",
+                                          text: $enteredText[Array(craftItem.TextEntry.keys).firstIndex(of: entry)!])
+                                    .padding()
+                                    .background(Color(UIColor.textFieldLightGrey))
+                                    .cornerRadius(5)
+                                    .onReceive(Just(enteredText[Array(craftItem.TextEntry.keys).firstIndex(of: entry)!])) { inputValue in
+                                        if inputValue.count > maxCharacters {
+                                            self.enteredText[Array(craftItem.TextEntry.keys).firstIndex(of: entry)!].removeLast()
+                                        }
+                                    }
                             }
                         }
                         
-                        ForEach(craftItem.TextEntry.keys.sorted(by: >), id: \.self) { entry in
-                            Text(entry).foregroundColor(Color.black).lineLimit(nil)
-                            TextField("Please enter \(entry)",
-                                      text: $enteredText[Array(craftItem.TextEntry.keys).firstIndex(of: entry)!])
-                                .padding()
-                                .background(Color(UIColor.textFieldLightGrey))
-                                .cornerRadius(5)
+                        if self.craftItem.photoNeeded {
+                            Text("As we need photos for this product, we will message you to gather them once your order has been placed :)")
                         }
-                        
+
                         checkOutHelper
 
                     }.padding([.leading, .trailing])
